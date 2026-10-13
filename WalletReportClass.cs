@@ -22,7 +22,7 @@ namespace prac
                 db.Executescalar(
                 "SELECT ISNULL(SUM(Amount),0) " +
                 "FROM WalletTransactions " +
-                "WHERE Type='Top-Up'");
+                "WHERE Type='TopUp'");
 
             return Convert.ToDecimal(result);
         }

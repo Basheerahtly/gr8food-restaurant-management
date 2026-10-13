@@ -1,4 +1,5 @@
-﻿using assignment.Helpers;
+﻿using assignment;
+using assignment.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,19 +21,22 @@ namespace CHEF
 
         private bool isUpdating = false;
 
-        private int loggedInChefID; //store logged-in chefID
+        public string ChefID; //store logged-in chefID
+
+        public string ChefName;
 
         OrderService orderService = new OrderService();
 
+
         // Track latest order seen
         private int lastMaxOrderID = 0;
-        public Manage_Orders()
+        public Manage_Orders(string ChefRole)
         {
             InitializeComponent();
             // Allow custom button colors in DataGridView
             Application.EnableVisualStyles();
             dgvOrders.EnableHeadersVisualStyles = false;
-            loggedInChefID = SessionManager.CurrentUser.Id;
+            ChefID = ChefRole;
 
         }
 
@@ -44,7 +48,7 @@ namespace CHEF
                 selectedFilter = "All";
 
             // Load only chef-specific orders
-            DataTable dt = orderService.GetChefOrders(loggedInChefID);
+            DataTable dt = orderService.GetChefOrders(ChefID);
 
 
             // Applying filter
@@ -263,10 +267,10 @@ namespace CHEF
         // Method to load dashboard card values
         private void LoadDashboardCards()
         {
-            lblNumOrders.Text = orderService.GetChefOrderCount(loggedInChefID,"Pending").ToString();
-            lblNumProcess.Text = orderService.GetChefOrderCount(loggedInChefID,"In Progress").ToString();
-            lblNumCompl.Text = orderService.GetChefOrderCount(loggedInChefID,"Completed").ToString();
-            lblNumCanc.Text = orderService.GetChefOrderCount(loggedInChefID,"Cancelled").ToString();
+            lblNumOrders.Text = orderService.GetChefOrderCount(ChefID,"Pending").ToString();
+            lblNumProcess.Text = orderService.GetChefOrderCount(ChefID,"In Progress").ToString();
+            lblNumCompl.Text = orderService.GetChefOrderCount(ChefID,"Completed").ToString();
+            lblNumCanc.Text = orderService.GetChefOrderCount(ChefID,"Cancelled").ToString();
         }
 
         private void dgvOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -356,7 +360,7 @@ namespace CHEF
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Chef_Dashboard chef_Dashboard = new Chef_Dashboard();
+            Chef_Dashboard chef_Dashboard = new Chef_Dashboard(ChefID,ChefName);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 chef_Dashboard.WindowState = FormWindowState.Maximized;
@@ -371,7 +375,7 @@ namespace CHEF
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            Manage_Menu manage_Menu = new Manage_Menu();
+            Manage_Menu manage_Menu = new Manage_Menu(ChefID);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 manage_Menu.WindowState = FormWindowState.Maximized;
@@ -388,6 +392,14 @@ namespace CHEF
         private void btnOrders_Click(object sender, EventArgs e)
         {
             btnOrders.Enabled = false;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+            this.Close();
         }
     }
 

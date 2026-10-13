@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.flwLytBottom = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.flowlytTop = new System.Windows.Forms.FlowLayoutPanel();
@@ -39,7 +39,6 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
-            this.pnlTop = new System.Windows.Forms.Panel();
             this.flwLytPnlSearch = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSearchResult = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -69,10 +68,10 @@
             this.pnlIntro = new System.Windows.Forms.Panel();
             this.lblDescription = new System.Windows.Forms.Label();
             this.lblMenuCanvas = new System.Windows.Forms.Label();
+            this.pnlTop = new System.Windows.Forms.Panel();
             this.flwLytBottom.SuspendLayout();
             this.flowlytTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
-            this.pnlTop.SuspendLayout();
             this.flwLytPnlSearch.SuspendLayout();
             this.pnlSidebar.SuspendLayout();
             this.pnlMainContainer.SuspendLayout();
@@ -80,6 +79,7 @@
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.pnlIntro.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // flwLytBottom
@@ -89,9 +89,10 @@
             this.flwLytBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(58)))), ((int)(((byte)(47)))));
             this.flwLytBottom.Controls.Add(this.btnLogOut);
             this.flwLytBottom.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flwLytBottom.Location = new System.Drawing.Point(10, 571);
+            this.flwLytBottom.Location = new System.Drawing.Point(11, 714);
+            this.flwLytBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flwLytBottom.Name = "flwLytBottom";
-            this.flwLytBottom.Size = new System.Drawing.Size(157, 50);
+            this.flwLytBottom.Size = new System.Drawing.Size(177, 62);
             this.flwLytBottom.TabIndex = 9;
             // 
             // btnLogOut
@@ -102,13 +103,15 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Location = new System.Drawing.Point(3, -18);
+            this.btnLogOut.Location = new System.Drawing.Point(3, -23);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(154, 65);
+            this.btnLogOut.Size = new System.Drawing.Size(173, 81);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "➜] Log out";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // flowlytTop
             // 
@@ -118,19 +121,21 @@
             this.flowlytTop.Controls.Add(this.btnMenu);
             this.flowlytTop.Controls.Add(this.btnOrders);
             this.flowlytTop.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowlytTop.Location = new System.Drawing.Point(10, 0);
+            this.flowlytTop.Location = new System.Drawing.Point(11, 0);
+            this.flowlytTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flowlytTop.Name = "flowlytTop";
-            this.flowlytTop.Size = new System.Drawing.Size(158, 338);
+            this.flowlytTop.Size = new System.Drawing.Size(178, 422);
             this.flowlytTop.TabIndex = 8;
             // 
             // picBoxLogo
             // 
             this.picBoxLogo.ErrorImage = null;
-
+            this.picBoxLogo.Image = global::assignment.Properties.Resources.WhatsApp_Image_2026_04_15_at_22_476;
             this.picBoxLogo.InitialImage = null;
-            this.picBoxLogo.Location = new System.Drawing.Point(3, 3);
+            this.picBoxLogo.Location = new System.Drawing.Point(3, 4);
+            this.picBoxLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picBoxLogo.Name = "picBoxLogo";
-            this.picBoxLogo.Size = new System.Drawing.Size(158, 114);
+            this.picBoxLogo.Size = new System.Drawing.Size(178, 142);
             this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBoxLogo.TabIndex = 4;
             this.picBoxLogo.TabStop = false;
@@ -141,11 +146,12 @@
             this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashboard.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Font = new System.Drawing.Font("Gabriola", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Location = new System.Drawing.Point(3, 123);
+            this.btnDashboard.Location = new System.Drawing.Point(3, 154);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(158, 47);
+            this.btnDashboard.Size = new System.Drawing.Size(173, 69);
             this.btnDashboard.TabIndex = 4;
             this.btnDashboard.Text = "⌂   Dashboard ";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,11 +165,12 @@
             this.btnMenu.Enabled = false;
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Gabriola", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMenu.Location = new System.Drawing.Point(3, 176);
+            this.btnMenu.Location = new System.Drawing.Point(3, 231);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(170, 47);
+            this.btnMenu.Size = new System.Drawing.Size(184, 52);
             this.btnMenu.TabIndex = 5;
             this.btnMenu.Text = "🍽  Manage Menu ";
             this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,29 +183,17 @@
             this.btnOrders.BackColor = System.Drawing.Color.Transparent;
             this.btnOrders.FlatAppearance.BorderSize = 0;
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrders.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.Font = new System.Drawing.Font("Gabriola", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOrders.Location = new System.Drawing.Point(3, 229);
+            this.btnOrders.Location = new System.Drawing.Point(3, 291);
+            this.btnOrders.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(155, 47);
+            this.btnOrders.Size = new System.Drawing.Size(174, 69);
             this.btnOrders.TabIndex = 6;
             this.btnOrders.Text = "🛎️  Orders";
             this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrders.UseVisualStyleBackColor = false;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
-            // 
-            // pnlTop
-            // 
-            this.pnlTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlTop.AutoSize = true;
-            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(135)))), ((int)(((byte)(39)))));
-            this.pnlTop.Controls.Add(this.flwLytPnlSearch);
-            this.pnlTop.Controls.Add(this.lblManageMenu);
-            this.pnlTop.Location = new System.Drawing.Point(157, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(982, 38);
-            this.pnlTop.TabIndex = 10;
             // 
             // flwLytPnlSearch
             // 
@@ -207,19 +202,20 @@
             this.flwLytPnlSearch.Controls.Add(this.lblSearchResult);
             this.flwLytPnlSearch.Controls.Add(this.btnSearch);
             this.flwLytPnlSearch.Controls.Add(this.tbxSearch);
-            this.flwLytPnlSearch.Location = new System.Drawing.Point(300, 4);
+            this.flwLytPnlSearch.Location = new System.Drawing.Point(245, 4);
+            this.flwLytPnlSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flwLytPnlSearch.Name = "flwLytPnlSearch";
             this.flwLytPnlSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flwLytPnlSearch.Size = new System.Drawing.Size(513, 29);
+            this.flwLytPnlSearch.Size = new System.Drawing.Size(676, 36);
             this.flwLytPnlSearch.TabIndex = 10;
             // 
             // lblSearchResult
             // 
             this.lblSearchResult.AutoSize = true;
-            this.lblSearchResult.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchResult.Location = new System.Drawing.Point(510, 0);
+            this.lblSearchResult.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchResult.Location = new System.Drawing.Point(673, 0);
             this.lblSearchResult.Name = "lblSearchResult";
-            this.lblSearchResult.Size = new System.Drawing.Size(0, 21);
+            this.lblSearchResult.Size = new System.Drawing.Size(0, 29);
             this.lblSearchResult.TabIndex = 2;
             this.lblSearchResult.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -230,9 +226,10 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Yu Gothic UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Ivory;
-            this.btnSearch.Location = new System.Drawing.Point(468, 3);
+            this.btnSearch.Location = new System.Drawing.Point(627, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(36, 25);
+            this.btnSearch.Size = new System.Drawing.Size(40, 31);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "🔎︎";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -240,9 +237,10 @@
             // 
             // tbxSearch
             // 
-            this.tbxSearch.Location = new System.Drawing.Point(288, 3);
+            this.tbxSearch.Location = new System.Drawing.Point(426, 4);
+            this.tbxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbxSearch.Name = "tbxSearch";
-            this.tbxSearch.Size = new System.Drawing.Size(174, 22);
+            this.tbxSearch.Size = new System.Drawing.Size(195, 26);
             this.tbxSearch.TabIndex = 10;
             this.tbxSearch.Enter += new System.EventHandler(this.tbxSearch_Enter);
             this.tbxSearch.Leave += new System.EventHandler(this.tbxSearch_Leave);
@@ -256,9 +254,9 @@
             this.lblManageMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblManageMenu.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblManageMenu.ForeColor = System.Drawing.Color.Black;
-            this.lblManageMenu.Location = new System.Drawing.Point(3, 1);
+            this.lblManageMenu.Location = new System.Drawing.Point(3, 0);
             this.lblManageMenu.Name = "lblManageMenu";
-            this.lblManageMenu.Size = new System.Drawing.Size(117, 37);
+            this.lblManageMenu.Size = new System.Drawing.Size(136, 45);
             this.lblManageMenu.TabIndex = 9;
             this.lblManageMenu.Text = "Manage Menu";
             // 
@@ -269,9 +267,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(639, 130);
+            this.btnAdd.Location = new System.Drawing.Point(689, 162);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(166, 30);
+            this.btnAdd.Size = new System.Drawing.Size(217, 38);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "+ Add New Item";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -284,9 +283,10 @@
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(58)))), ((int)(((byte)(47)))));
             this.pnlSidebar.Controls.Add(this.flowlytTop);
             this.pnlSidebar.Controls.Add(this.flwLytBottom);
-            this.pnlSidebar.Location = new System.Drawing.Point(-10, 0);
+            this.pnlSidebar.Location = new System.Drawing.Point(-11, 0);
+            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(167, 603);
+            this.pnlSidebar.Size = new System.Drawing.Size(185, 754);
             this.pnlSidebar.TabIndex = 11;
             // 
             // pnlMainContainer
@@ -299,10 +299,11 @@
             this.pnlMainContainer.Controls.Add(this.pnlListTop);
             this.pnlMainContainer.Controls.Add(this.pnlMenu);
             this.pnlMainContainer.Controls.Add(this.pnlIntro);
-            this.pnlMainContainer.Location = new System.Drawing.Point(157, 40);
+            this.pnlMainContainer.Location = new System.Drawing.Point(177, 50);
+            this.pnlMainContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlMainContainer.Name = "pnlMainContainer";
-            this.pnlMainContainer.Padding = new System.Windows.Forms.Padding(20);
-            this.pnlMainContainer.Size = new System.Drawing.Size(828, 564);
+            this.pnlMainContainer.Padding = new System.Windows.Forms.Padding(22, 25, 22, 25);
+            this.pnlMainContainer.Size = new System.Drawing.Size(932, 705);
             this.pnlMainContainer.TabIndex = 12;
             // 
             // flwLytItems
@@ -310,9 +311,10 @@
             this.flwLytItems.AutoScroll = true;
             this.flwLytItems.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flwLytItems.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flwLytItems.Location = new System.Drawing.Point(20, 544);
+            this.flwLytItems.Location = new System.Drawing.Point(22, 680);
+            this.flwLytItems.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flwLytItems.Name = "flwLytItems";
-            this.flwLytItems.Size = new System.Drawing.Size(788, 0);
+            this.flwLytItems.Size = new System.Drawing.Size(888, 0);
             this.flwLytItems.TabIndex = 3;
             this.flwLytItems.WrapContents = false;
             // 
@@ -326,9 +328,10 @@
             this.pnlListTop.Controls.Add(this.btnMainCat);
             this.pnlListTop.Controls.Add(this.btnAll);
             this.pnlListTop.Controls.Add(this.lblMenuSelection);
-            this.pnlListTop.Location = new System.Drawing.Point(10, 166);
+            this.pnlListTop.Location = new System.Drawing.Point(11, 208);
+            this.pnlListTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlListTop.Name = "pnlListTop";
-            this.pnlListTop.Size = new System.Drawing.Size(795, 50);
+            this.pnlListTop.Size = new System.Drawing.Size(894, 62);
             this.pnlListTop.TabIndex = 1;
             // 
             // btnDrinks
@@ -337,9 +340,10 @@
             this.btnDrinks.FlatAppearance.BorderSize = 0;
             this.btnDrinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrinks.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDrinks.Location = new System.Drawing.Point(700, 12);
+            this.btnDrinks.Location = new System.Drawing.Point(788, 15);
+            this.btnDrinks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDrinks.Name = "btnDrinks";
-            this.btnDrinks.Size = new System.Drawing.Size(75, 26);
+            this.btnDrinks.Size = new System.Drawing.Size(84, 32);
             this.btnDrinks.TabIndex = 6;
             this.btnDrinks.Text = "Drinks";
             this.btnDrinks.UseVisualStyleBackColor = true;
@@ -351,9 +355,10 @@
             this.btnSnacks.FlatAppearance.BorderSize = 0;
             this.btnSnacks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSnacks.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSnacks.Location = new System.Drawing.Point(629, 12);
+            this.btnSnacks.Location = new System.Drawing.Point(708, 15);
+            this.btnSnacks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSnacks.Name = "btnSnacks";
-            this.btnSnacks.Size = new System.Drawing.Size(75, 29);
+            this.btnSnacks.Size = new System.Drawing.Size(84, 36);
             this.btnSnacks.TabIndex = 5;
             this.btnSnacks.Text = "Snacks";
             this.btnSnacks.UseVisualStyleBackColor = true;
@@ -365,9 +370,10 @@
             this.btnMainCat.FlatAppearance.BorderSize = 0;
             this.btnMainCat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMainCat.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMainCat.Location = new System.Drawing.Point(548, 12);
+            this.btnMainCat.Location = new System.Drawing.Point(616, 15);
+            this.btnMainCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMainCat.Name = "btnMainCat";
-            this.btnMainCat.Size = new System.Drawing.Size(75, 29);
+            this.btnMainCat.Size = new System.Drawing.Size(84, 36);
             this.btnMainCat.TabIndex = 2;
             this.btnMainCat.Text = "Dinner";
             this.btnMainCat.UseVisualStyleBackColor = true;
@@ -379,9 +385,10 @@
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAll.Font = new System.Drawing.Font("Javanese Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.Location = new System.Drawing.Point(467, 12);
+            this.btnAll.Location = new System.Drawing.Point(525, 15);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(75, 29);
+            this.btnAll.Size = new System.Drawing.Size(84, 36);
             this.btnAll.TabIndex = 1;
             this.btnAll.Text = "All Items";
             this.btnAll.UseVisualStyleBackColor = true;
@@ -393,9 +400,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMenuSelection.AutoSize = true;
             this.lblMenuSelection.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenuSelection.Location = new System.Drawing.Point(17, 18);
+            this.lblMenuSelection.Location = new System.Drawing.Point(19, 22);
             this.lblMenuSelection.Name = "lblMenuSelection";
-            this.lblMenuSelection.Size = new System.Drawing.Size(149, 20);
+            this.lblMenuSelection.Size = new System.Drawing.Size(179, 25);
             this.lblMenuSelection.TabIndex = 0;
             this.lblMenuSelection.Text = "Menu Selection";
             // 
@@ -405,9 +412,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMenu.Controls.Add(this.dgvMenu);
-            this.pnlMenu.Location = new System.Drawing.Point(10, 222);
+            this.pnlMenu.Location = new System.Drawing.Point(11, 278);
+            this.pnlMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(795, 329);
+            this.pnlMenu.Size = new System.Drawing.Size(894, 411);
             this.pnlMenu.TabIndex = 2;
             // 
             // dgvMenu
@@ -419,14 +427,14 @@
             this.dgvMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMenu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMenu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(165)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColMenuID,
@@ -438,35 +446,36 @@
             this.colAvailable,
             this.colUpdate,
             this.Coldelete});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(214)))), ((int)(((byte)(168)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMenu.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(214)))), ((int)(((byte)(168)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(190)))), ((int)(((byte)(140)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMenu.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMenu.EnableHeadersVisualStyles = false;
             this.dgvMenu.GridColor = System.Drawing.SystemColors.Control;
             this.dgvMenu.Location = new System.Drawing.Point(0, 0);
+            this.dgvMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMenu.MultiSelect = false;
             this.dgvMenu.Name = "dgvMenu";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMenu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMenu.RowHeadersVisible = false;
             this.dgvMenu.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvMenu.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvMenu.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMenu.RowTemplate.Height = 45;
             this.dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMenu.Size = new System.Drawing.Size(795, 329);
+            this.dgvMenu.Size = new System.Drawing.Size(894, 411);
             this.dgvMenu.TabIndex = 0;
             this.dgvMenu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellClick);
             this.dgvMenu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMenu_CellFormatting);
@@ -537,10 +546,11 @@
             this.pnlIntro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(246)))), ((int)(((byte)(223)))));
             this.pnlIntro.Controls.Add(this.lblDescription);
             this.pnlIntro.Controls.Add(this.lblMenuCanvas);
-            this.pnlIntro.Location = new System.Drawing.Point(10, 5);
+            this.pnlIntro.Location = new System.Drawing.Point(11, 6);
+            this.pnlIntro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlIntro.Name = "pnlIntro";
-            this.pnlIntro.Padding = new System.Windows.Forms.Padding(15);
-            this.pnlIntro.Size = new System.Drawing.Size(795, 116);
+            this.pnlIntro.Padding = new System.Windows.Forms.Padding(17, 19, 17, 19);
+            this.pnlIntro.Size = new System.Drawing.Size(894, 158);
             this.pnlIntro.TabIndex = 0;
             // 
             // lblDescription
@@ -548,9 +558,9 @@
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Comic Sans MS", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.Black;
-            this.lblDescription.Location = new System.Drawing.Point(13, 53);
+            this.lblDescription.Location = new System.Drawing.Point(15, 66);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(512, 48);
+            this.lblDescription.Size = new System.Drawing.Size(624, 58);
             this.lblDescription.TabIndex = 1;
             this.lblDescription.Text = "Refine your culinary offerings. Organize categories,\r\nadjust prices and manage it" +
     "em details with executive precision.";
@@ -561,21 +571,36 @@
             this.lblMenuCanvas.BackColor = System.Drawing.Color.Transparent;
             this.lblMenuCanvas.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMenuCanvas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(61)))), ((int)(((byte)(43)))));
-            this.lblMenuCanvas.Location = new System.Drawing.Point(13, 15);
+            this.lblMenuCanvas.Location = new System.Drawing.Point(15, 19);
             this.lblMenuCanvas.Name = "lblMenuCanvas";
-            this.lblMenuCanvas.Size = new System.Drawing.Size(191, 24);
+            this.lblMenuCanvas.Size = new System.Drawing.Size(232, 29);
             this.lblMenuCanvas.TabIndex = 0;
             this.lblMenuCanvas.Text = "The Menu Canvas";
             // 
+            // pnlTop
+            // 
+            this.pnlTop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTop.AutoSize = true;
+            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(135)))), ((int)(((byte)(39)))));
+            this.pnlTop.Controls.Add(this.flwLytPnlSearch);
+            this.pnlTop.Controls.Add(this.lblManageMenu);
+            this.pnlTop.Location = new System.Drawing.Point(172, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(936, 46);
+            this.pnlTop.TabIndex = 13;
+            // 
             // Manage_Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(982, 603);
+            this.ClientSize = new System.Drawing.Size(1105, 754);
+            this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlMainContainer);
             this.Controls.Add(this.pnlSidebar);
-            this.Controls.Add(this.pnlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Manage_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage_Menu";
@@ -585,8 +610,6 @@
             this.flowlytTop.ResumeLayout(false);
             this.flowlytTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
-            this.pnlTop.ResumeLayout(false);
-            this.pnlTop.PerformLayout();
             this.flwLytPnlSearch.ResumeLayout(false);
             this.flwLytPnlSearch.PerformLayout();
             this.pnlSidebar.ResumeLayout(false);
@@ -598,6 +621,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.pnlIntro.ResumeLayout(false);
             this.pnlIntro.PerformLayout();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -612,7 +637,6 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnOrders;
-        private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Label lblManageMenu;
         private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.Button btnAdd;
@@ -642,5 +666,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAvailable;
         private System.Windows.Forms.DataGridViewButtonColumn colUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn Coldelete;
+        private System.Windows.Forms.Panel pnlTop;
     }
 }

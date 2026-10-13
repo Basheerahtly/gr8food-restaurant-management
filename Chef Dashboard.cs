@@ -1,4 +1,5 @@
-﻿using assignment.Helpers;
+﻿using assignment;
+using assignment.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,23 +20,26 @@ namespace CHEF
         //Service class to handle order-related database operations
         OrderService orderService = new OrderService();
         MenuService menuService = new MenuService();
+        ShiftHelper ShiftHelper = new ShiftHelper();
 
-        private int loggedInChefID; //store logged-in chefID
-        public Chef_Dashboard()
+
+        public string chefID; //store logged-in chef
+        public string chefName;//stored logged-in chef name
+        
+        public Chef_Dashboard(string chefRole,string ChefName)
         {
             InitializeComponent();
-            loggedInChefID = SessionManager.CurrentUser.Id;
+            chefID = chefRole;
+            chefName = ChefName;
         }
         private void ChefDashboard_Load(object sender, EventArgs e)
         {
-            // Logged in chef ID
-            int chefID = loggedInChefID;
 
             // Display chef name
-            lblChefName.Text = SessionManager.CurrentUser.Username;
+            lblChefName.Text = chefName;
 
             //Display chef name in profile
-            lblName.Text = SessionManager.CurrentUser.Username;
+            lblName.Text = chefName;
 
             // Display chef shift
             lblCatshift.Text =ShiftHelper.GetChefShift(chefID);
@@ -59,9 +63,6 @@ namespace CHEF
             Series series = new Series();
             series.Name = "Top Dishes";
             series.ChartType = SeriesChartType.Pie;
-
-            // Logged in chef ID
-            int chefID =loggedInChefID;
 
             // Fetching chef-specific dishes
             DataTable dataTable =orderService.GetChefTopDishes(chefID);
@@ -91,9 +92,6 @@ namespace CHEF
         {
             // Clear previous chart data
             chartOrderStatus.Series.Clear();
-
-            // Logged in chef ID
-            int chefID =loggedInChefID;
 
             // Creatinb new series
             Series series =new Series();
@@ -127,8 +125,7 @@ namespace CHEF
         // Method to load categories
         private void LoadCategories()
         {
-            // Logged in chef ID
-            int chefID = loggedInChefID;
+
             // Gettingg chef main category
             string category =
                 ShiftHelper.GetChefShift(chefID);
@@ -142,7 +139,7 @@ namespace CHEF
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            Manage_Menu manage_Menu = new Manage_Menu();
+            Manage_Menu manage_Menu = new Manage_Menu(chefID);
             if (this.WindowState ==FormWindowState.Maximized)
             {
                 manage_Menu.WindowState =FormWindowState.Maximized;
@@ -158,7 +155,7 @@ namespace CHEF
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            Manage_Orders manage_Orders = new Manage_Orders();
+            Manage_Orders manage_Orders = new Manage_Orders(chefID);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 manage_Orders.WindowState = FormWindowState.Maximized;
@@ -175,6 +172,27 @@ namespace CHEF
         {
             // Display current date and time
             lblDateTime.Text =DateTime.Now.ToString("dddd, dd MMMM yyyy | hh:mm tt");
+        }
+
+        private void lblItemCat3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+            this.Close();
+        }
+
+        private void btnUpdateProf_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmUpdateOwnProfile frmUpdateOwnProfile = new frmUpdateOwnProfile();
+            frmUpdateOwnProfile.ShowDialog();
+            this.Show();
         }
     }
     }

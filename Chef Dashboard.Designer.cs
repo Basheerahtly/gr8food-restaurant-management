@@ -41,8 +41,8 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.pnlProfile = new System.Windows.Forms.Panel();
-            this.btnUpdLogOut = new System.Windows.Forms.Button();
-            this.picProfile = new System.Windows.Forms.PictureBox();
+            this.btnUpdateProf = new System.Windows.Forms.Button();
+            this.picBoxProfile = new System.Windows.Forms.PictureBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
@@ -58,7 +58,6 @@
             this.picHeaderLeft = new System.Windows.Forms.PictureBox();
             this.lblReady = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.picProf = new System.Windows.Forms.PictureBox();
             this.tblLytShift = new System.Windows.Forms.TableLayoutPanel();
             this.tblLytPnlLeft = new System.Windows.Forms.TableLayoutPanel();
             this.lblShiftTime = new System.Windows.Forms.Label();
@@ -67,57 +66,58 @@
             this.picShift = new System.Windows.Forms.PictureBox();
             this.tblLytPnlRight = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.picBoxProf = new System.Windows.Forms.PictureBox();
             this.tblLytPnlProf = new System.Windows.Forms.TableLayoutPanel();
             this.lblChef = new System.Windows.Forms.Label();
             this.lblChefName = new System.Windows.Forms.Label();
             this.lblCat = new System.Windows.Forms.Label();
             this.tblLytPnlCat = new System.Windows.Forms.TableLayoutPanel();
             this.pnlCat1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picBoxCat1 = new System.Windows.Forms.PictureBox();
             this.lblItemCat1 = new System.Windows.Forms.Label();
             this.lblCat1 = new System.Windows.Forms.Label();
             this.pnlCat2 = new System.Windows.Forms.Panel();
             this.lblItemCat2 = new System.Windows.Forms.Label();
             this.lblCat2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picBoxCat2 = new System.Windows.Forms.PictureBox();
             this.pnlCat3 = new System.Windows.Forms.Panel();
             this.lblItemCat3 = new System.Windows.Forms.Label();
             this.lblCat3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.picBoxCat3 = new System.Windows.Forms.PictureBox();
             this.chartOrderStatus = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tblLytpnlChart = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblOrderStatus = new System.Windows.Forms.Label();
             this.lblTopDishes = new System.Windows.Forms.Label();
             this.chartDish = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.picBoxBottom = new System.Windows.Forms.PictureBox();
             this.flowlytTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).BeginInit();
             this.pnlProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxProfile)).BeginInit();
             this.flwLytBottom.SuspendLayout();
             this.pnlSidebar.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.pnlWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHeaderRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeaderLeft)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProf)).BeginInit();
             this.tblLytShift.SuspendLayout();
             this.tblLytPnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShift)).BeginInit();
             this.tblLytPnlRight.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxProf)).BeginInit();
             this.tblLytPnlProf.SuspendLayout();
             this.tblLytPnlCat.SuspendLayout();
             this.pnlCat1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCat1)).BeginInit();
             this.pnlCat2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCat2)).BeginInit();
             this.pnlCat3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCat3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartOrderStatus)).BeginInit();
             this.tblLytpnlChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDish)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxBottom)).BeginInit();
             this.SuspendLayout();
             // 
             // flowlytTop
@@ -130,22 +130,21 @@
             this.flowlytTop.Controls.Add(this.btnMenu);
             this.flowlytTop.Controls.Add(this.btnOrders);
             this.flowlytTop.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowlytTop.Location = new System.Drawing.Point(7, 5);
-            this.flowlytTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowlytTop.Location = new System.Drawing.Point(6, 4);
             this.flowlytTop.Name = "flowlytTop";
-            this.flowlytTop.Size = new System.Drawing.Size(178, 738);
+            this.flowlytTop.Size = new System.Drawing.Size(171, 590);
             this.flowlytTop.TabIndex = 0;
             // 
             // picBoxLogo
             // 
             this.picBoxLogo.ErrorImage = null;
+            this.picBoxLogo.Image = global::assignment.Properties.Resources.image;
             this.picBoxLogo.InitialImage = null;
-            this.picBoxLogo.Location = new System.Drawing.Point(3, 4);
-            this.picBoxLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxLogo.Location = new System.Drawing.Point(3, 3);
             this.picBoxLogo.Name = "picBoxLogo";
-            this.picBoxLogo.Size = new System.Drawing.Size(178, 142);
+            this.picBoxLogo.Size = new System.Drawing.Size(158, 114);
             this.picBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBoxLogo.TabIndex = 4;
+            this.picBoxLogo.TabIndex = 7;
             this.picBoxLogo.TabStop = false;
             // 
             // btnDashboard
@@ -157,10 +156,9 @@
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Location = new System.Drawing.Point(3, 154);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDashboard.Location = new System.Drawing.Point(3, 123);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(189, 69);
+            this.btnDashboard.Size = new System.Drawing.Size(158, 55);
             this.btnDashboard.TabIndex = 4;
             this.btnDashboard.Text = "⌂   Dashboard ";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,12 +170,11 @@
             this.btnMenu.BackColor = System.Drawing.Color.Transparent;
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Gabriola", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMenu.Location = new System.Drawing.Point(3, 231);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMenu.Location = new System.Drawing.Point(3, 184);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(224, 69);
+            this.btnMenu.Size = new System.Drawing.Size(164, 55);
             this.btnMenu.TabIndex = 5;
             this.btnMenu.Text = "🍽  Manage Menu ";
             this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -192,10 +189,9 @@
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.Transparent;
-            this.btnOrders.Location = new System.Drawing.Point(3, 308);
-            this.btnOrders.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOrders.Location = new System.Drawing.Point(3, 245);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(174, 69);
+            this.btnOrders.Size = new System.Drawing.Size(155, 55);
             this.btnOrders.TabIndex = 6;
             this.btnOrders.Text = "🛎️  Orders";
             this.btnOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,40 +202,38 @@
             // 
             this.pnlProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlProfile.BackColor = System.Drawing.Color.Transparent;
-            this.pnlProfile.Controls.Add(this.btnUpdLogOut);
-            this.pnlProfile.Controls.Add(this.picProfile);
+            this.pnlProfile.Controls.Add(this.btnUpdateProf);
+            this.pnlProfile.Controls.Add(this.picBoxProfile);
             this.pnlProfile.Controls.Add(this.lblRole);
             this.pnlProfile.Controls.Add(this.lblName);
-            this.pnlProfile.Location = new System.Drawing.Point(734, 5);
-            this.pnlProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlProfile.Location = new System.Drawing.Point(652, 4);
             this.pnlProfile.Name = "pnlProfile";
-            this.pnlProfile.Size = new System.Drawing.Size(181, 40);
+            this.pnlProfile.Size = new System.Drawing.Size(161, 32);
             this.pnlProfile.TabIndex = 3;
             // 
-            // btnUpdLogOut
+            // btnUpdateProf
             // 
-            this.btnUpdLogOut.FlatAppearance.BorderSize = 0;
-            this.btnUpdLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdLogOut.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdLogOut.Location = new System.Drawing.Point(136, 0);
-            this.btnUpdLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnUpdLogOut.Name = "btnUpdLogOut";
-            this.btnUpdLogOut.Size = new System.Drawing.Size(56, 36);
-            this.btnUpdLogOut.TabIndex = 4;
-            this.btnUpdLogOut.Text = "⌄";
-            this.btnUpdLogOut.UseVisualStyleBackColor = true;
+            this.btnUpdateProf.FlatAppearance.BorderSize = 0;
+            this.btnUpdateProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateProf.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateProf.Location = new System.Drawing.Point(121, 0);
+            this.btnUpdateProf.Name = "btnUpdateProf";
+            this.btnUpdateProf.Size = new System.Drawing.Size(50, 29);
+            this.btnUpdateProf.TabIndex = 4;
+            this.btnUpdateProf.Text = "⌄";
+            this.btnUpdateProf.UseVisualStyleBackColor = true;
+            this.btnUpdateProf.Click += new System.EventHandler(this.btnUpdateProf_Click);
             // 
-            // picProfile
+            // picBoxProfile
             // 
-            this.picProfile.BackColor = System.Drawing.Color.Transparent;
-            this.picProfile.Image = global::assignment.Properties.Resources.user;
-            this.picProfile.Location = new System.Drawing.Point(20, 4);
-            this.picProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picProfile.Name = "picProfile";
-            this.picProfile.Size = new System.Drawing.Size(33, 31);
-            this.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProfile.TabIndex = 2;
-            this.picProfile.TabStop = false;
+            this.picBoxProfile.BackColor = System.Drawing.Color.Transparent;
+            this.picBoxProfile.Image = global::assignment.Properties.Resources.user;
+            this.picBoxProfile.Location = new System.Drawing.Point(18, 3);
+            this.picBoxProfile.Name = "picBoxProfile";
+            this.picBoxProfile.Size = new System.Drawing.Size(29, 25);
+            this.picBoxProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxProfile.TabIndex = 2;
+            this.picBoxProfile.TabStop = false;
             // 
             // lblRole
             // 
@@ -248,9 +242,9 @@
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Times New Roman", 6F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.ForeColor = System.Drawing.Color.Silver;
-            this.lblRole.Location = new System.Drawing.Point(73, 22);
+            this.lblRole.Location = new System.Drawing.Point(65, 18);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(38, 15);
+            this.lblRole.Size = new System.Drawing.Size(31, 12);
             this.lblRole.TabIndex = 4;
             this.lblRole.Text = "CHEF";
             this.lblRole.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -261,9 +255,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Georgia", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(61, 2);
+            this.lblName.Location = new System.Drawing.Point(54, 2);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(83, 18);
+            this.lblName.Size = new System.Drawing.Size(69, 15);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "HAJRAH ";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -281,10 +275,9 @@
             this.flwLytBottom.BackColor = System.Drawing.Color.Transparent;
             this.flwLytBottom.Controls.Add(this.btnLogOut);
             this.flwLytBottom.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flwLytBottom.Location = new System.Drawing.Point(11, 714);
-            this.flwLytBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flwLytBottom.Location = new System.Drawing.Point(10, 571);
             this.flwLytBottom.Name = "flwLytBottom";
-            this.flwLytBottom.Size = new System.Drawing.Size(177, 62);
+            this.flwLytBottom.Size = new System.Drawing.Size(157, 50);
             this.flwLytBottom.TabIndex = 7;
             // 
             // btnLogOut
@@ -295,14 +288,14 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Gabriola", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogOut.Location = new System.Drawing.Point(3, -30);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogOut.Location = new System.Drawing.Point(3, -23);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(195, 88);
+            this.btnLogOut.Size = new System.Drawing.Size(173, 70);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "➜] Log out";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pnlSidebar
             // 
@@ -312,10 +305,9 @@
             this.pnlSidebar.Controls.Add(this.FlwLytWhole);
             this.pnlSidebar.Controls.Add(this.flwLytBottom);
             this.pnlSidebar.Controls.Add(this.flowlytTop);
-            this.pnlSidebar.Location = new System.Drawing.Point(-11, 0);
-            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlSidebar.Location = new System.Drawing.Point(-10, 0);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(188, 754);
+            this.pnlSidebar.Size = new System.Drawing.Size(167, 603);
             this.pnlSidebar.TabIndex = 7;
             // 
             // FlwLytWhole
@@ -326,10 +318,9 @@
             this.FlwLytWhole.AutoSize = true;
             this.FlwLytWhole.BackColor = System.Drawing.Color.White;
             this.FlwLytWhole.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.FlwLytWhole.Location = new System.Drawing.Point(188, 55);
-            this.FlwLytWhole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FlwLytWhole.Location = new System.Drawing.Point(167, 44);
             this.FlwLytWhole.Name = "FlwLytWhole";
-            this.FlwLytWhole.Size = new System.Drawing.Size(932, 576);
+            this.FlwLytWhole.Size = new System.Drawing.Size(828, 461);
             this.FlwLytWhole.TabIndex = 9;
             // 
             // pnlTop
@@ -341,10 +332,9 @@
             this.pnlTop.Controls.Add(this.lblDateTime);
             this.pnlTop.Controls.Add(this.lblDashboardOverview);
             this.pnlTop.Controls.Add(this.pnlProfile);
-            this.pnlTop.Location = new System.Drawing.Point(177, 0);
-            this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlTop.Location = new System.Drawing.Point(157, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1109, 52);
+            this.pnlTop.Size = new System.Drawing.Size(986, 42);
             this.pnlTop.TabIndex = 8;
             // 
             // lblDateTime
@@ -355,9 +345,9 @@
             this.lblDateTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDateTime.Font = new System.Drawing.Font("Georgia", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateTime.ForeColor = System.Drawing.Color.Black;
-            this.lblDateTime.Location = new System.Drawing.Point(444, 14);
+            this.lblDateTime.Location = new System.Drawing.Point(349, 11);
             this.lblDateTime.Name = "lblDateTime";
-            this.lblDateTime.Size = new System.Drawing.Size(55, 18);
+            this.lblDateTime.Size = new System.Drawing.Size(50, 16);
             this.lblDateTime.TabIndex = 10;
             this.lblDateTime.Text = "DATE";
             this.lblDateTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -371,9 +361,9 @@
             this.lblDashboardOverview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDashboardOverview.Font = new System.Drawing.Font("Gabriola", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDashboardOverview.ForeColor = System.Drawing.Color.Black;
-            this.lblDashboardOverview.Location = new System.Drawing.Point(3, 6);
+            this.lblDashboardOverview.Location = new System.Drawing.Point(3, 5);
             this.lblDashboardOverview.Name = "lblDashboardOverview";
-            this.lblDashboardOverview.Size = new System.Drawing.Size(193, 45);
+            this.lblDashboardOverview.Size = new System.Drawing.Size(161, 37);
             this.lblDashboardOverview.TabIndex = 9;
             this.lblDashboardOverview.Text = "Dashboard Overview";
             // 
@@ -386,21 +376,20 @@
             this.pnlWelcome.Controls.Add(this.picHeaderLeft);
             this.pnlWelcome.Controls.Add(this.lblReady);
             this.pnlWelcome.Controls.Add(this.lblWelcome);
-            this.pnlWelcome.Location = new System.Drawing.Point(202, 62);
-            this.pnlWelcome.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
+            this.pnlWelcome.Location = new System.Drawing.Point(180, 50);
+            this.pnlWelcome.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.pnlWelcome.Name = "pnlWelcome";
-            this.pnlWelcome.Padding = new System.Windows.Forms.Padding(22, 25, 22, 25);
-            this.pnlWelcome.Size = new System.Drawing.Size(874, 96);
+            this.pnlWelcome.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.pnlWelcome.Size = new System.Drawing.Size(777, 77);
             this.pnlWelcome.TabIndex = 9;
             // 
             // picHeaderRight
             // 
             this.picHeaderRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.picHeaderRight.Image = global::assignment.Properties.Resources.healthy_food;
-            this.picHeaderRight.Location = new System.Drawing.Point(736, 11);
-            this.picHeaderRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picHeaderRight.Location = new System.Drawing.Point(654, 9);
             this.picHeaderRight.Name = "picHeaderRight";
-            this.picHeaderRight.Size = new System.Drawing.Size(112, 78);
+            this.picHeaderRight.Size = new System.Drawing.Size(100, 62);
             this.picHeaderRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picHeaderRight.TabIndex = 12;
             this.picHeaderRight.TabStop = false;
@@ -408,10 +397,9 @@
             // picHeaderLeft
             // 
             this.picHeaderLeft.Image = global::assignment.Properties.Resources.chef_hat;
-            this.picHeaderLeft.Location = new System.Drawing.Point(26, 11);
-            this.picHeaderLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picHeaderLeft.Location = new System.Drawing.Point(23, 9);
             this.picHeaderLeft.Name = "picHeaderLeft";
-            this.picHeaderLeft.Size = new System.Drawing.Size(112, 78);
+            this.picHeaderLeft.Size = new System.Drawing.Size(100, 62);
             this.picHeaderLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picHeaderLeft.TabIndex = 11;
             this.picHeaderLeft.TabStop = false;
@@ -424,9 +412,9 @@
             this.lblReady.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblReady.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReady.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(107)))), ((int)(((byte)(107)))));
-            this.lblReady.Location = new System.Drawing.Point(204, 51);
+            this.lblReady.Location = new System.Drawing.Point(181, 41);
             this.lblReady.Name = "lblReady";
-            this.lblReady.Size = new System.Drawing.Size(487, 45);
+            this.lblReady.Size = new System.Drawing.Size(433, 36);
             this.lblReady.TabIndex = 10;
             this.lblReady.Text = "Ready to manage today\'s orders?";
             this.lblReady.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -437,25 +425,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWelcome.Font = new System.Drawing.Font("Georgia", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(61)))), ((int)(((byte)(43)))));
-            this.lblWelcome.Location = new System.Drawing.Point(237, 6);
+            this.lblWelcome.Location = new System.Drawing.Point(211, 5);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(446, 48);
+            this.lblWelcome.Size = new System.Drawing.Size(396, 38);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome back, Chef.";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // picProf
-            // 
-            this.picProf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.picProf.Image = global::assignment.Properties.Resources.user__1_;
-            this.picProf.Location = new System.Drawing.Point(3, 4);
-            this.picProf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.picProf.Name = "picProf";
-            this.picProf.Size = new System.Drawing.Size(100, 66);
-            this.picProf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picProf.TabIndex = 0;
-            this.picProf.TabStop = false;
             // 
             // tblLytShift
             // 
@@ -468,13 +443,12 @@
             this.tblLytShift.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
             this.tblLytShift.Controls.Add(this.tblLytPnlLeft, 0, 0);
             this.tblLytShift.Controls.Add(this.tblLytPnlRight, 1, 0);
-            this.tblLytShift.Location = new System.Drawing.Point(215, 168);
-            this.tblLytShift.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblLytShift.Location = new System.Drawing.Point(191, 134);
             this.tblLytShift.Name = "tblLytShift";
             this.tblLytShift.RowCount = 1;
             this.tblLytShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblLytShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 276F));
-            this.tblLytShift.Size = new System.Drawing.Size(843, 280);
+            this.tblLytShift.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 222F));
+            this.tblLytShift.Size = new System.Drawing.Size(749, 224);
             this.tblLytShift.TabIndex = 20;
             // 
             // tblLytPnlLeft
@@ -485,20 +459,19 @@
             this.tblLytPnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(252)))), ((int)(((byte)(245)))));
             this.tblLytPnlLeft.ColumnCount = 1;
             this.tblLytPnlLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblLytPnlLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tblLytPnlLeft.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblLytPnlLeft.Controls.Add(this.lblShiftTime, 0, 3);
             this.tblLytPnlLeft.Controls.Add(this.lblCatshift, 0, 2);
             this.tblLytPnlLeft.Controls.Add(this.lblShiftCurrent, 0, 1);
             this.tblLytPnlLeft.Controls.Add(this.picShift, 0, 0);
-            this.tblLytPnlLeft.Location = new System.Drawing.Point(6, 7);
-            this.tblLytPnlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblLytPnlLeft.Location = new System.Drawing.Point(6, 6);
             this.tblLytPnlLeft.Name = "tblLytPnlLeft";
             this.tblLytPnlLeft.RowCount = 4;
             this.tblLytPnlLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tblLytPnlLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tblLytPnlLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tblLytPnlLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tblLytPnlLeft.Size = new System.Drawing.Size(364, 266);
+            this.tblLytPnlLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblLytPnlLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tblLytPnlLeft.Size = new System.Drawing.Size(322, 212);
             this.tblLytPnlLeft.TabIndex = 20;
             // 
             // lblShiftTime
@@ -507,9 +480,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblShiftTime.AutoSize = true;
             this.lblShiftTime.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShiftTime.Location = new System.Drawing.Point(3, 207);
+            this.lblShiftTime.Location = new System.Drawing.Point(3, 165);
             this.lblShiftTime.Name = "lblShiftTime";
-            this.lblShiftTime.Size = new System.Drawing.Size(358, 27);
+            this.lblShiftTime.Size = new System.Drawing.Size(316, 21);
             this.lblShiftTime.TabIndex = 3;
             this.lblShiftTime.Text = "5:00 PM - 11.59 PM";
             this.lblShiftTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -520,9 +493,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCatshift.AutoSize = true;
             this.lblCatshift.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCatshift.Location = new System.Drawing.Point(3, 167);
+            this.lblCatshift.Location = new System.Drawing.Point(3, 133);
             this.lblCatshift.Name = "lblCatshift";
-            this.lblCatshift.Size = new System.Drawing.Size(358, 27);
+            this.lblCatshift.Size = new System.Drawing.Size(316, 21);
             this.lblCatshift.TabIndex = 2;
             this.lblCatshift.Text = "Dinner Shift";
             this.lblCatshift.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -533,9 +506,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblShiftCurrent.AutoSize = true;
             this.lblShiftCurrent.Font = new System.Drawing.Font("Javanese Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShiftCurrent.Location = new System.Drawing.Point(3, 134);
+            this.lblShiftCurrent.Location = new System.Drawing.Point(3, 107);
             this.lblShiftCurrent.Name = "lblShiftCurrent";
-            this.lblShiftCurrent.Size = new System.Drawing.Size(358, 33);
+            this.lblShiftCurrent.Size = new System.Drawing.Size(316, 26);
             this.lblShiftCurrent.TabIndex = 1;
             this.lblShiftCurrent.Text = "Current Shift";
             this.lblShiftCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -544,10 +517,9 @@
             // 
             this.picShift.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picShift.Image = global::assignment.Properties.Resources.work_schedule;
-            this.picShift.Location = new System.Drawing.Point(3, 4);
-            this.picShift.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picShift.Location = new System.Drawing.Point(3, 3);
             this.picShift.Name = "picShift";
-            this.picShift.Size = new System.Drawing.Size(358, 126);
+            this.picShift.Size = new System.Drawing.Size(316, 101);
             this.picShift.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picShift.TabIndex = 12;
             this.picShift.TabStop = false;
@@ -559,20 +531,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblLytPnlRight.ColumnCount = 1;
             this.tblLytPnlRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblLytPnlRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tblLytPnlRight.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblLytPnlRight.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tblLytPnlRight.Controls.Add(this.lblCat, 0, 2);
             this.tblLytPnlRight.Controls.Add(this.tblLytPnlCat, 0, 3);
-            this.tblLytPnlRight.Location = new System.Drawing.Point(379, 7);
-            this.tblLytPnlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblLytPnlRight.Location = new System.Drawing.Point(337, 6);
             this.tblLytPnlRight.Name = "tblLytPnlRight";
             this.tblLytPnlRight.RowCount = 5;
             this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tblLytPnlRight.Size = new System.Drawing.Size(458, 266);
+            this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
+            this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tblLytPnlRight.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tblLytPnlRight.Size = new System.Drawing.Size(406, 212);
             this.tblLytPnlRight.TabIndex = 21;
             // 
             // flowLayoutPanel1
@@ -580,13 +551,24 @@
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.picProf);
+            this.flowLayoutPanel1.Controls.Add(this.picBoxProf);
             this.flowLayoutPanel1.Controls.Add(this.tblLytPnlProf);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(452, 83);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 67);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // picBoxProf
+            // 
+            this.picBoxProf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxProf.Image = global::assignment.Properties.Resources.user__1_;
+            this.picBoxProf.Location = new System.Drawing.Point(3, 3);
+            this.picBoxProf.Name = "picBoxProf";
+            this.picBoxProf.Size = new System.Drawing.Size(89, 53);
+            this.picBoxProf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxProf.TabIndex = 0;
+            this.picBoxProf.TabStop = false;
             // 
             // tblLytPnlProf
             // 
@@ -595,16 +577,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tblLytPnlProf.ColumnCount = 1;
             this.tblLytPnlProf.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblLytPnlProf.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tblLytPnlProf.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblLytPnlProf.Controls.Add(this.lblChef, 0, 0);
             this.tblLytPnlProf.Controls.Add(this.lblChefName, 0, 1);
-            this.tblLytPnlProf.Location = new System.Drawing.Point(109, 4);
-            this.tblLytPnlProf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblLytPnlProf.Location = new System.Drawing.Point(98, 3);
             this.tblLytPnlProf.Name = "tblLytPnlProf";
             this.tblLytPnlProf.RowCount = 2;
             this.tblLytPnlProf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblLytPnlProf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tblLytPnlProf.Size = new System.Drawing.Size(334, 66);
+            this.tblLytPnlProf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tblLytPnlProf.Size = new System.Drawing.Size(297, 53);
             this.tblLytPnlProf.TabIndex = 58;
             // 
             // lblChef
@@ -613,7 +594,7 @@
             this.lblChef.Font = new System.Drawing.Font("Javanese Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChef.Location = new System.Drawing.Point(3, 0);
             this.lblChef.Name = "lblChef";
-            this.lblChef.Size = new System.Drawing.Size(54, 32);
+            this.lblChef.Size = new System.Drawing.Size(44, 26);
             this.lblChef.TabIndex = 2;
             this.lblChef.Text = "Chef";
             this.lblChef.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -622,9 +603,9 @@
             // 
             this.lblChefName.AutoSize = true;
             this.lblChefName.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChefName.Location = new System.Drawing.Point(3, 32);
+            this.lblChefName.Location = new System.Drawing.Point(3, 26);
             this.lblChefName.Name = "lblChefName";
-            this.lblChefName.Size = new System.Drawing.Size(92, 27);
+            this.lblChefName.Size = new System.Drawing.Size(76, 21);
             this.lblChefName.TabIndex = 3;
             this.lblChefName.Text = "Hajrah";
             // 
@@ -634,9 +615,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCat.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCat.Location = new System.Drawing.Point(3, 89);
+            this.lblCat.Location = new System.Drawing.Point(3, 70);
             this.lblCat.Name = "lblCat";
-            this.lblCat.Size = new System.Drawing.Size(452, 45);
+            this.lblCat.Size = new System.Drawing.Size(400, 36);
             this.lblCat.TabIndex = 59;
             this.lblCat.Text = "Active Categories";
             this.lblCat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -653,12 +634,11 @@
             this.tblLytPnlCat.Controls.Add(this.pnlCat1, 0, 0);
             this.tblLytPnlCat.Controls.Add(this.pnlCat2, 1, 0);
             this.tblLytPnlCat.Controls.Add(this.pnlCat3, 2, 0);
-            this.tblLytPnlCat.Location = new System.Drawing.Point(3, 138);
-            this.tblLytPnlCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblLytPnlCat.Location = new System.Drawing.Point(3, 109);
             this.tblLytPnlCat.Name = "tblLytPnlCat";
             this.tblLytPnlCat.RowCount = 1;
             this.tblLytPnlCat.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblLytPnlCat.Size = new System.Drawing.Size(452, 114);
+            this.tblLytPnlCat.Size = new System.Drawing.Size(400, 92);
             this.tblLytPnlCat.TabIndex = 60;
             // 
             // pnlCat1
@@ -669,25 +649,23 @@
             this.pnlCat1.AutoSize = true;
             this.pnlCat1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(245)))), ((int)(((byte)(224)))));
             this.pnlCat1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlCat1.Controls.Add(this.pictureBox1);
+            this.pnlCat1.Controls.Add(this.picBoxCat1);
             this.pnlCat1.Controls.Add(this.lblItemCat1);
             this.pnlCat1.Controls.Add(this.lblCat1);
-            this.pnlCat1.Location = new System.Drawing.Point(3, 4);
-            this.pnlCat1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlCat1.Location = new System.Drawing.Point(3, 3);
             this.pnlCat1.Name = "pnlCat1";
-            this.pnlCat1.Size = new System.Drawing.Size(144, 106);
+            this.pnlCat1.Size = new System.Drawing.Size(127, 86);
             this.pnlCat1.TabIndex = 58;
             // 
-            // pictureBox1
+            // picBoxCat1
             // 
-            this.pictureBox1.Image = global::assignment.Properties.Resources.dinner;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 86);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picBoxCat1.Image = global::assignment.Properties.Resources.dinner;
+            this.picBoxCat1.Location = new System.Drawing.Point(-2, 3);
+            this.picBoxCat1.Name = "picBoxCat1";
+            this.picBoxCat1.Size = new System.Drawing.Size(44, 69);
+            this.picBoxCat1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxCat1.TabIndex = 0;
+            this.picBoxCat1.TabStop = false;
             // 
             // lblItemCat1
             // 
@@ -695,9 +673,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemCat1.AutoSize = true;
             this.lblItemCat1.Font = new System.Drawing.Font("Javanese Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemCat1.Location = new System.Drawing.Point(54, 45);
+            this.lblItemCat1.Location = new System.Drawing.Point(48, 36);
             this.lblItemCat1.Name = "lblItemCat1";
-            this.lblItemCat1.Size = new System.Drawing.Size(83, 41);
+            this.lblItemCat1.Size = new System.Drawing.Size(68, 34);
             this.lblItemCat1.TabIndex = 3;
             this.lblItemCat1.Text = "12 Items";
             this.lblItemCat1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -708,9 +686,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCat1.AutoSize = true;
             this.lblCat1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCat1.Location = new System.Drawing.Point(54, 22);
+            this.lblCat1.Location = new System.Drawing.Point(48, 18);
             this.lblCat1.Name = "lblCat1";
-            this.lblCat1.Size = new System.Drawing.Size(76, 21);
+            this.lblCat1.Size = new System.Drawing.Size(61, 18);
             this.lblCat1.TabIndex = 2;
             this.lblCat1.Text = "Dinner";
             this.lblCat1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -724,11 +702,10 @@
             this.pnlCat2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlCat2.Controls.Add(this.lblItemCat2);
             this.pnlCat2.Controls.Add(this.lblCat2);
-            this.pnlCat2.Controls.Add(this.pictureBox2);
-            this.pnlCat2.Location = new System.Drawing.Point(153, 4);
-            this.pnlCat2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlCat2.Controls.Add(this.picBoxCat2);
+            this.pnlCat2.Location = new System.Drawing.Point(136, 3);
             this.pnlCat2.Name = "pnlCat2";
-            this.pnlCat2.Size = new System.Drawing.Size(144, 106);
+            this.pnlCat2.Size = new System.Drawing.Size(127, 86);
             this.pnlCat2.TabIndex = 17;
             // 
             // lblItemCat2
@@ -737,9 +714,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemCat2.AutoSize = true;
             this.lblItemCat2.Font = new System.Drawing.Font("Javanese Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemCat2.Location = new System.Drawing.Point(56, 45);
+            this.lblItemCat2.Location = new System.Drawing.Point(50, 36);
             this.lblItemCat2.Name = "lblItemCat2";
-            this.lblItemCat2.Size = new System.Drawing.Size(76, 41);
+            this.lblItemCat2.Size = new System.Drawing.Size(63, 34);
             this.lblItemCat2.TabIndex = 7;
             this.lblItemCat2.Text = "8 Items";
             this.lblItemCat2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -750,23 +727,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCat2.AutoSize = true;
             this.lblCat2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCat2.Location = new System.Drawing.Point(56, 22);
+            this.lblCat2.Location = new System.Drawing.Point(50, 18);
             this.lblCat2.Name = "lblCat2";
-            this.lblCat2.Size = new System.Drawing.Size(76, 21);
+            this.lblCat2.Size = new System.Drawing.Size(61, 18);
             this.lblCat2.TabIndex = 6;
             this.lblCat2.Text = "Snacks";
             this.lblCat2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
+            // picBoxCat2
             // 
-            this.pictureBox2.Image = global::assignment.Properties.Resources.snack;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 86);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.picBoxCat2.Image = global::assignment.Properties.Resources.snack;
+            this.picBoxCat2.Location = new System.Drawing.Point(0, 3);
+            this.picBoxCat2.Name = "picBoxCat2";
+            this.picBoxCat2.Size = new System.Drawing.Size(44, 69);
+            this.picBoxCat2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxCat2.TabIndex = 1;
+            this.picBoxCat2.TabStop = false;
             // 
             // pnlCat3
             // 
@@ -778,11 +754,10 @@
             this.pnlCat3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlCat3.Controls.Add(this.lblItemCat3);
             this.pnlCat3.Controls.Add(this.lblCat3);
-            this.pnlCat3.Controls.Add(this.pictureBox3);
-            this.pnlCat3.Location = new System.Drawing.Point(303, 4);
-            this.pnlCat3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlCat3.Controls.Add(this.picBoxCat3);
+            this.pnlCat3.Location = new System.Drawing.Point(269, 3);
             this.pnlCat3.Name = "pnlCat3";
-            this.pnlCat3.Size = new System.Drawing.Size(146, 106);
+            this.pnlCat3.Size = new System.Drawing.Size(128, 86);
             this.pnlCat3.TabIndex = 16;
             // 
             // lblItemCat3
@@ -791,12 +766,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemCat3.AutoSize = true;
             this.lblItemCat3.Font = new System.Drawing.Font("Javanese Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemCat3.Location = new System.Drawing.Point(52, 45);
+            this.lblItemCat3.Location = new System.Drawing.Point(46, 36);
             this.lblItemCat3.Name = "lblItemCat3";
-            this.lblItemCat3.Size = new System.Drawing.Size(82, 41);
+            this.lblItemCat3.Size = new System.Drawing.Size(68, 34);
             this.lblItemCat3.TabIndex = 5;
             this.lblItemCat3.Text = "16 items";
             this.lblItemCat3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblItemCat3.Click += new System.EventHandler(this.lblItemCat3_Click);
             // 
             // lblCat3
             // 
@@ -804,37 +780,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCat3.AutoSize = true;
             this.lblCat3.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCat3.Location = new System.Drawing.Point(55, 22);
+            this.lblCat3.Location = new System.Drawing.Point(49, 18);
             this.lblCat3.Name = "lblCat3";
-            this.lblCat3.Size = new System.Drawing.Size(73, 21);
+            this.lblCat3.Size = new System.Drawing.Size(59, 18);
             this.lblCat3.TabIndex = 7;
             this.lblCat3.Text = "Drinks";
             this.lblCat3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox3
+            // picBoxCat3
             // 
-            this.pictureBox3.Image = global::assignment.Properties.Resources.cocktail;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(47, 84);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = global::assignment.Properties.Resources.empty_wood_table_top_with_chef_cooking_restaurant_kitchen_blurred_defocused_background_688350_3919;
-            this.pictureBox4.Location = new System.Drawing.Point(177, 734);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(932, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 21;
-            this.pictureBox4.TabStop = false;
+            this.picBoxCat3.Image = global::assignment.Properties.Resources.cocktail;
+            this.picBoxCat3.Location = new System.Drawing.Point(0, 3);
+            this.picBoxCat3.Name = "picBoxCat3";
+            this.picBoxCat3.Size = new System.Drawing.Size(42, 67);
+            this.picBoxCat3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxCat3.TabIndex = 2;
+            this.picBoxCat3.TabStop = false;
             // 
             // chartOrderStatus
             // 
@@ -847,8 +808,7 @@
             this.chartOrderStatus.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartOrderStatus.Legends.Add(legend1);
-            this.chartOrderStatus.Location = new System.Drawing.Point(424, 30);
-            this.chartOrderStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chartOrderStatus.Location = new System.Drawing.Point(377, 24);
             this.chartOrderStatus.Name = "chartOrderStatus";
             this.chartOrderStatus.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
@@ -858,7 +818,7 @@
             series1.Name = "Series1";
             series1.ShadowColor = System.Drawing.Color.Black;
             this.chartOrderStatus.Series.Add(series1);
-            this.chartOrderStatus.Size = new System.Drawing.Size(416, 237);
+            this.chartOrderStatus.Size = new System.Drawing.Size(369, 190);
             this.chartOrderStatus.TabIndex = 22;
             // 
             // tblLytpnlChart
@@ -868,32 +828,31 @@
             this.tblLytpnlChart.ColumnCount = 2;
             this.tblLytpnlChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblLytpnlChart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblLytpnlChart.Controls.Add(this.label1, 1, 0);
+            this.tblLytpnlChart.Controls.Add(this.lblOrderStatus, 1, 0);
             this.tblLytpnlChart.Controls.Add(this.lblTopDishes, 0, 0);
             this.tblLytpnlChart.Controls.Add(this.chartOrderStatus, 1, 1);
             this.tblLytpnlChart.Controls.Add(this.chartDish, 0, 1);
-            this.tblLytpnlChart.Location = new System.Drawing.Point(215, 455);
-            this.tblLytpnlChart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblLytpnlChart.Location = new System.Drawing.Point(191, 364);
             this.tblLytpnlChart.Name = "tblLytpnlChart";
             this.tblLytpnlChart.RowCount = 2;
             this.tblLytpnlChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.67742F));
             this.tblLytpnlChart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.32258F));
-            this.tblLytpnlChart.Size = new System.Drawing.Size(843, 271);
+            this.tblLytpnlChart.Size = new System.Drawing.Size(749, 217);
             this.tblLytpnlChart.TabIndex = 22;
             // 
-            // label1
+            // lblOrderStatus
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblOrderStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
-            this.label1.Location = new System.Drawing.Point(424, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(416, 26);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Order Status";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblOrderStatus.AutoSize = true;
+            this.lblOrderStatus.Font = new System.Drawing.Font("Georgia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.lblOrderStatus.Location = new System.Drawing.Point(377, 0);
+            this.lblOrderStatus.Name = "lblOrderStatus";
+            this.lblOrderStatus.Size = new System.Drawing.Size(369, 21);
+            this.lblOrderStatus.TabIndex = 25;
+            this.lblOrderStatus.Text = "Order Status";
+            this.lblOrderStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTopDishes
             // 
@@ -904,7 +863,7 @@
             this.lblTopDishes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.lblTopDishes.Location = new System.Drawing.Point(3, 0);
             this.lblTopDishes.Name = "lblTopDishes";
-            this.lblTopDishes.Size = new System.Drawing.Size(415, 26);
+            this.lblTopDishes.Size = new System.Drawing.Size(368, 21);
             this.lblTopDishes.TabIndex = 24;
             this.lblTopDishes.Text = "Top Dishes\r\n";
             this.lblTopDishes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -920,8 +879,7 @@
             this.chartDish.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartDish.Legends.Add(legend2);
-            this.chartDish.Location = new System.Drawing.Point(3, 30);
-            this.chartDish.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chartDish.Location = new System.Drawing.Point(3, 24);
             this.chartDish.Name = "chartDish";
             this.chartDish.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series2.ChartArea = "ChartArea1";
@@ -929,22 +887,34 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartDish.Series.Add(series2);
-            this.chartDish.Size = new System.Drawing.Size(415, 237);
+            this.chartDish.Size = new System.Drawing.Size(368, 190);
             this.chartDish.TabIndex = 23;
+            // 
+            // picBoxBottom
+            // 
+            this.picBoxBottom.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picBoxBottom.Image = global::assignment.Properties.Resources.empty_wood_table_top_with_chef_cooking_restaurant_kitchen_blurred_defocused_background_688350_3919;
+            this.picBoxBottom.Location = new System.Drawing.Point(157, 587);
+            this.picBoxBottom.Name = "picBoxBottom";
+            this.picBoxBottom.Size = new System.Drawing.Size(828, 16);
+            this.picBoxBottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxBottom.TabIndex = 21;
+            this.picBoxBottom.TabStop = false;
             // 
             // Chef_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(1105, 754);
+            this.ClientSize = new System.Drawing.Size(982, 603);
             this.Controls.Add(this.tblLytpnlChart);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.picBoxBottom);
             this.Controls.Add(this.tblLytShift);
             this.Controls.Add(this.pnlWelcome);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Chef_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHEF DASHBOARD";
@@ -954,7 +924,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogo)).EndInit();
             this.pnlProfile.ResumeLayout(false);
             this.pnlProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxProfile)).EndInit();
             this.flwLytBottom.ResumeLayout(false);
             this.flwLytBottom.PerformLayout();
             this.pnlSidebar.ResumeLayout(false);
@@ -964,31 +934,31 @@
             this.pnlWelcome.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picHeaderRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeaderLeft)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picProf)).EndInit();
             this.tblLytShift.ResumeLayout(false);
             this.tblLytPnlLeft.ResumeLayout(false);
             this.tblLytPnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picShift)).EndInit();
             this.tblLytPnlRight.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxProf)).EndInit();
             this.tblLytPnlProf.ResumeLayout(false);
             this.tblLytPnlProf.PerformLayout();
             this.tblLytPnlCat.ResumeLayout(false);
             this.tblLytPnlCat.PerformLayout();
             this.pnlCat1.ResumeLayout(false);
             this.pnlCat1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCat1)).EndInit();
             this.pnlCat2.ResumeLayout(false);
             this.pnlCat2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCat2)).EndInit();
             this.pnlCat3.ResumeLayout(false);
             this.pnlCat3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCat3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartOrderStatus)).EndInit();
             this.tblLytpnlChart.ResumeLayout(false);
             this.tblLytpnlChart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDish)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxBottom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -997,12 +967,11 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowlytTop;
-        private System.Windows.Forms.PictureBox picProfile;
+        private System.Windows.Forms.PictureBox picBoxProfile;
         private System.Windows.Forms.Panel pnlProfile;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.Button btnUpdLogOut;
-        private System.Windows.Forms.PictureBox picBoxLogo;
+        private System.Windows.Forms.Button btnUpdateProf;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnOrders;
@@ -1019,7 +988,7 @@
         private System.Windows.Forms.Label lblReady;
         private System.Windows.Forms.PictureBox picHeaderRight;
         private System.Windows.Forms.PictureBox picHeaderLeft;
-        private System.Windows.Forms.PictureBox picProf;
+        private System.Windows.Forms.PictureBox picBoxProf;
         private System.Windows.Forms.TableLayoutPanel tblLytShift;
         private System.Windows.Forms.TableLayoutPanel tblLytPnlLeft;
         private System.Windows.Forms.Label lblShiftTime;
@@ -1035,21 +1004,22 @@
         private System.Windows.Forms.Panel pnlCat3;
         private System.Windows.Forms.Label lblItemCat3;
         private System.Windows.Forms.Label lblCat3;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picBoxCat3;
         private System.Windows.Forms.Panel pnlCat1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxCat1;
         private System.Windows.Forms.Label lblItemCat1;
         private System.Windows.Forms.Label lblCat1;
         private System.Windows.Forms.Panel pnlCat2;
         private System.Windows.Forms.Label lblItemCat2;
         private System.Windows.Forms.Label lblCat2;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picBoxCat2;
         private System.Windows.Forms.TableLayoutPanel tblLytPnlCat;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox picBoxBottom;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartOrderStatus;
         private System.Windows.Forms.TableLayoutPanel tblLytpnlChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDish;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOrderStatus;
         private System.Windows.Forms.Label lblTopDishes;
+        private System.Windows.Forms.PictureBox picBoxLogo;
     }
 }

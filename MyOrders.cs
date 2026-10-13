@@ -1,4 +1,5 @@
-﻿using System;
+﻿using assignment;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -7,11 +8,16 @@ using System.Windows.Forms;
 namespace Gr8FoodSystem_Final
 {
     public partial class MyOrders : Form
+
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=GR8Food;Integrated Security=True;TrustServerCertificate=True";
-        public MyOrders()
+        private int customerId;
+        private DatabaseHelper db = new DatabaseHelper();
+        private string connectionString =
+"Data Source=localhost;Initial Catalog=GR8Food;Integrated Security=True;TrustServerCertificate=True";
+        public MyOrders(int customerId)
         {
             InitializeComponent();
+            this.customerId = customerId;
 
             CreateBottomPanel();
 
@@ -40,20 +46,9 @@ namespace Gr8FoodSystem_Final
             lbl.Location = new Point(20, 35);
             lbl.AutoSize = true;
 
-            Button btn = new Button();
-
-            btn.Text = "Checkout";
-            btn.Size = new Size(140, 45);
-            btn.Location = new Point(620, 25);
-
-            btn.BackColor = Color.Crimson;
-            btn.ForeColor = Color.White;
-            btn.FlatStyle = FlatStyle.Flat;
-
-            btn.Click += btnCheckout_Click;
 
             panelBottom.Controls.Add(lbl);
-            panelBottom.Controls.Add(btn);
+
 
             this.Controls.Add(panelBottom);
 
@@ -79,7 +74,7 @@ namespace Gr8FoodSystem_Final
             lblName.AutoSize = true;
 
             // PRICE
-          
+
 
             Label lblPrice = new Label();
 
@@ -123,38 +118,33 @@ namespace Gr8FoodSystem_Final
 
             flowOrders.Controls.Clear();
 
-            int total = 0;
+            decimal total = 0;
 
             foreach (var item in Cart.items)
             {
-
                 string name = item.Key;
                 int qty = item.Value;
 
-               
+                string query =
+                    "SELECT Price FROM Menu_Table WHERE MenuName=@name";
 
-                using (SqlConnection con =
-                    new SqlConnection(connectionString))
+                SqlParameter[] parameters =
                 {
-                    con.Open();
+            new SqlParameter("@name", name)
+        };
 
-                    SqlCommand cmd = new SqlCommand(
-                        "SELECT Price FROM Menu_Table WHERE MenuName=@name", con);
+                object result =
+                    db.Executescalar(query, parameters);
 
-                    cmd.Parameters.AddWithValue("@name", name);
+                if (result != null)
+                {
+                    decimal price =
+                        Convert.ToDecimal(result);
 
-                    object result = cmd.ExecuteScalar();
+                    total += (price * qty);
 
-                    if (result != null)
-                    {
-                        decimal price =
-                            Convert.ToDecimal(result);
-
-                        total += (int)(price * qty);
-                        flowOrders.Controls.Add(
-                   CreateOrderCard(name, qty, price));
-
-                    }
+                    flowOrders.Controls.Add(
+                        CreateOrderCard(name, qty, price));
                 }
             }
 
@@ -163,27 +153,25 @@ namespace Gr8FoodSystem_Final
 
             lbl.Text = "Total: RM " + total;
         }
-
         // CHECKOUT
         private void btnCheckout_Click(object sender, EventArgs e)
-        
+
         {
             try
             {
                 if (Cart.items.Count == 0)
                 {
                     MessageBox.Show("Your cart is empty!");
-
                     return;
                 }
-                int customerId = 4;
+
 
                 using (SqlConnection con =
                     new SqlConnection(connectionString))
                 {
                     con.Open();
 
-                    int total = 0;
+                    decimal total = 0;
 
                     // CALCULATE TOTAL
 
@@ -192,26 +180,40 @@ namespace Gr8FoodSystem_Final
                         string menuName = item.Key;
                         int qty = item.Value;
 
-                        SqlCommand priceCmd = new SqlCommand(
-                            "SELECT Price FROM Menu_Table WHERE MenuName=@name", con);
+                        string priceQuery =
+                            "SELECT Price FROM Menu_Table WHERE MenuName=@name";
 
-                        priceCmd.Parameters.AddWithValue("@name", menuName);
+                        SqlParameter[] priceParams =
+                        {
+                    new SqlParameter("@name", menuName)
+                };
 
                         decimal price =
-                            Convert.ToDecimal(priceCmd.ExecuteScalar());
+                            Convert.ToDecimal(
+                                db.Executescalar(priceQuery, priceParams));
 
-                        total += (int)(price * qty);
+                        total += (price * qty);
                     }
 
                     // CHECK WALLET BALANCE
 
-                    SqlCommand walletCmd = new SqlCommand(
-                        "SELECT Balance FROM Wallet WHERE CustomerID=@id", con);
+                    string walletQuery =
+                        "SELECT Balance FROM Wallet WHERE CustomerID=@id";
 
-                    walletCmd.Parameters.AddWithValue("@id", customerId);
+                    SqlParameter[] walletParams =
+                    {
+                new SqlParameter("@id", customerId)
+            };
 
                     decimal balance =
-                        Convert.ToDecimal(walletCmd.ExecuteScalar());
+                        Convert.ToDecimal(
+                            db.Executescalar(walletQuery, walletParams));
+
+                    if (balance <= 0)
+                    {
+                        MessageBox.Show("Wallet balance is empty!");
+                        return;
+                    }
 
                     if (balance < total)
                     {
@@ -220,61 +222,73 @@ namespace Gr8FoodSystem_Final
 
                         return;
                     }
-                    if (balance <= 0)
-                    {
-                        MessageBox.Show(
-                            "Wallet balance is empty!");
-
-                        return;
-                    }
 
                     // DEDUCT WALLET BALANCE
 
-                    SqlCommand deductCmd = new SqlCommand(
-                        @"UPDATE Wallet
+                    string deductQuery =
+                    @"UPDATE Wallet
               SET Balance = Balance - @total
-              WHERE CustomerID=@id", con);
+              WHERE CustomerID=@id";
 
-                    deductCmd.Parameters.AddWithValue("@total", total);
-                    deductCmd.Parameters.AddWithValue("@id", customerId);
+                    SqlParameter[] deductParams =
+                    {
+                new SqlParameter("@total", total),
+                new SqlParameter("@id", customerId)
+            };
 
-                    deductCmd.ExecuteNonQuery();
-                    // MONEY DEDUCT AND RECORDS INSIDE WALLETTRANSACTIONS
-                    SqlCommand transCmd = new SqlCommand(
-                 @"INSERT INTO WalletTransactions
-             (TransactionID, WalletID, Amount, Type, Date)
-             VALUES
-             (@tid, @wid, @amt, @type, @date)", con);
+                    db.ExecuteNonQuery(deductQuery, deductParams);
 
-                    transCmd.Parameters.AddWithValue("@tid",
-                        "T" + DateTime.Now.Ticks.ToString().Substring(10));
+                    // STORE WALLET TRANSACTION
+                    string walletId = GetWalletID(customerId);
 
-                    transCmd.Parameters.AddWithValue("@wid", "W001");
+                    if (walletId == null)
+                    {
+                        MessageBox.Show("Wallet not found!");
+                        return;
+                    }
+                    string transQuery =
+                    @"INSERT INTO WalletTransactions
+            (TransactionID, WalletID, Amount, Type, Date)
+            VALUES
+            (@tid, @wid, @amt, @type, @date)";
 
-                    transCmd.Parameters.AddWithValue("@amt", total);
+                    SqlParameter[] transParams =
+                    {
+                new SqlParameter("@tid",
+                    "T" + DateTime.Now.Ticks.ToString().Substring(10)),
 
-                    transCmd.Parameters.AddWithValue("@type", "Payment");
+                new SqlParameter("@wid", walletId),
 
-                    transCmd.Parameters.AddWithValue("@date", DateTime.Now);
+                new SqlParameter("@amt", total),
 
-                    transCmd.ExecuteNonQuery();
+                new SqlParameter("@type", "Payment"),
+
+                new SqlParameter("@date", DateTime.Now)
+            };
+
+                    db.ExecuteNonQuery(transQuery, transParams);
 
                     // INSERT ORDER
 
                     SqlCommand orderCmd = new SqlCommand(
-                        @"INSERT INTO Orders
+                    @"INSERT INTO Orders
             (CustomerID, TotalAmount, Status, OrderDateTime, StatusTime)
             OUTPUT INSERTED.OrderID
             VALUES
             (@cust, @total, @status, @datetime, @statustime)", con);
 
                     orderCmd.Parameters.AddWithValue("@cust", customerId);
+
                     orderCmd.Parameters.AddWithValue("@total", total);
+
                     orderCmd.Parameters.AddWithValue("@status", "Pending");
+
                     orderCmd.Parameters.AddWithValue("@datetime", DateTime.Now);
+
                     orderCmd.Parameters.AddWithValue("@statustime", DateTime.Now);
 
-                    int orderId = (int)orderCmd.ExecuteScalar();
+                    int orderId =
+                        (int)orderCmd.ExecuteScalar();
 
                     // INSERT ORDER ITEMS
 
@@ -308,14 +322,17 @@ namespace Gr8FoodSystem_Final
                         decimal subtotal = price * qty;
 
                         SqlCommand itemCmd = new SqlCommand(
-                            @"INSERT INTO OrderItems
+                        @"INSERT INTO OrderItems
                 (OrderID, MenuID, Quantity, Subtotal)
                 VALUES
                 (@oid, @mid, @qty, @sub)", con);
 
                         itemCmd.Parameters.AddWithValue("@oid", orderId);
+
                         itemCmd.Parameters.AddWithValue("@mid", menuId);
+
                         itemCmd.Parameters.AddWithValue("@qty", qty);
+
                         itemCmd.Parameters.AddWithValue("@sub", subtotal);
 
                         itemCmd.ExecuteNonQuery();
@@ -334,12 +351,34 @@ namespace Gr8FoodSystem_Final
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        private string GetWalletID(int customerId)
+        {
+            string query =
+                "SELECT WalletID FROM Wallet WHERE CustomerID=@id";
+
+            SqlParameter[] param =
+            {
+        new SqlParameter("@id", customerId)
+    };
+
+            object result =
+                db.Executescalar(query, param);
+
+            if (result == null || result == DBNull.Value)
+                return null;
+
+            return result.ToString();
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void flowOrders_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
-        

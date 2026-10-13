@@ -76,7 +76,7 @@
             this.pictureBoxBackToHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBackToHome.Image")));
             this.pictureBoxBackToHome.Location = new System.Drawing.Point(35, 60);
             this.pictureBoxBackToHome.Name = "pictureBoxBackToHome";
-            this.pictureBoxBackToHome.Size = new System.Drawing.Size(40, 43);
+            this.pictureBoxBackToHome.Size = new System.Drawing.Size(60, 65);
             this.pictureBoxBackToHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxBackToHome.TabIndex = 5;
             this.pictureBoxBackToHome.TabStop = false;
@@ -88,7 +88,7 @@
             this.lblBackToHome.BackColor = System.Drawing.Color.Transparent;
             this.lblBackToHome.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBackToHome.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblBackToHome.Location = new System.Drawing.Point(79, 69);
+            this.lblBackToHome.Location = new System.Drawing.Point(96, 79);
             this.lblBackToHome.Name = "lblBackToHome";
             this.lblBackToHome.Size = new System.Drawing.Size(150, 23);
             this.lblBackToHome.TabIndex = 4;
@@ -97,9 +97,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(503, 135);
+            this.pictureBox1.Location = new System.Drawing.Point(503, 121);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(105, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(158, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -119,7 +119,7 @@
             this.txtUsername.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(35, 320);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(271, 32);
+            this.txtUsername.Size = new System.Drawing.Size(322, 32);
             this.txtUsername.TabIndex = 9;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
@@ -127,6 +127,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -143,7 +146,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1164, 209);
+            this.dataGridView1.Size = new System.Drawing.Size(1094, 314);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -224,9 +227,9 @@
             // 
             // btnFindUser
             // 
-            this.btnFindUser.Location = new System.Drawing.Point(103, 413);
+            this.btnFindUser.Location = new System.Drawing.Point(83, 380);
             this.btnFindUser.Name = "btnFindUser";
-            this.btnFindUser.Size = new System.Drawing.Size(117, 45);
+            this.btnFindUser.Size = new System.Drawing.Size(221, 68);
             this.btnFindUser.TabIndex = 12;
             this.btnFindUser.Text = "Find User";
             this.btnFindUser.UseVisualStyleBackColor = true;
@@ -245,9 +248,9 @@
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(66, 771);
+            this.btnDeleteUser.Location = new System.Drawing.Point(83, 771);
             this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(192, 70);
+            this.btnDeleteUser.Size = new System.Drawing.Size(217, 60);
             this.btnDeleteUser.TabIndex = 14;
             this.btnDeleteUser.Text = "Delete User";
             this.btnDeleteUser.UseVisualStyleBackColor = true;

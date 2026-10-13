@@ -240,7 +240,7 @@ namespace assignment
         private void frmSalesReport_Load(object sender, EventArgs e)
         {
             try
-            {
+            { 
                 LoadCategoryDropdown();
                 LoadMonthDropdown();
                 LoadYearDropdown();
@@ -253,6 +253,15 @@ namespace assignment
             }
         }
 
+        private void lblSummary_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxBackToHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
     

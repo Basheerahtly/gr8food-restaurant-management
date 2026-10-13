@@ -9,11 +9,13 @@ namespace assignment
 {
     // Customer self-registration form.
     // Role is hardcoded to "Customer" — customers cannot choose their own role.
-    // All database operations delegated to UserRepository (Separation of Concerns)
+    // All database operations delegated to UserRepository 
     public partial class frmEntrance : Form
     {
 
         private readonly UserRepository _userRepository;
+        Validator Validator = new Validator();
+        PasswordHelper PasswordHelper = new PasswordHelper();
 
         public frmEntrance()
         {
@@ -42,9 +44,10 @@ namespace assignment
             try
             {
                 _userRepository.AddUser(newCustomer);
-                MessageBox.Show($"User '{newCustomer.Username}' added successfully!", "Success",
+                MessageBox.Show($"User '{newCustomer.Username}' added successfully! Please Proceed to Login Menu", "Success",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ResetText();
+                ClearForm();
             }
             catch (Exception ex)
             {
@@ -157,6 +160,23 @@ namespace assignment
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClearForm()
+        {
+            txtUsername.Clear();
+            txtPassword.Clear();
+            txtConfirmPassword.Clear();
+            txtEmail.Clear();
+            txtPhoneNumber.Clear();
+            lblErrorEmail.Text = "";
+            lblErrorPassword.Text = "";
+            lblErrorUsername.Text = "";
+            lblError3.Text = "";
+            lblErrorPhone.Text = "";
+            lblPasswordStrength.Text = "";
+            radioButtonFemale.Checked = false;
+            radioButtonMale.Checked = false;
         }
     }
 }

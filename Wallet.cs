@@ -236,8 +236,19 @@ namespace prac
 
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.ShowDialog();
+                this.Close();
             }
+        }
+
+        private void btnUpdProf_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmUpdateOwnProfile frmUpdateOwnProfile = new frmUpdateOwnProfile();
+            frmUpdateOwnProfile.ShowDialog();
+            this.Close();
         }
     }
     

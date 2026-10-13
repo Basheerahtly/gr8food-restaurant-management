@@ -8,21 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using assignment;
 
 namespace CHEF
 {
     public partial class Add_menu : Form
     {
-        private int loggedInChefID; //storing logged-in chefID
+        private string ChefID; //storing logged-in chefID
         private byte[] menuImage; // storing image bytes
+        private string ChefName;
 
         MenuService menuService = new MenuService();//creating a menuService object
-
-        public Add_menu(int chefID)
+        ShiftHelper ShiftHelper = new ShiftHelper();
+        public Add_menu(string ChefID)
         {
             InitializeComponent();
-            loggedInChefID = chefID;// storing chefID
-         
+            this.ChefID = ChefID;
+
         }
 
         private void Add_menu_Load(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace CHEF
 
             // Getting chef main category
             string chefCategory =
-                ShiftHelper.GetChefShift(loggedInChefID);
+                ShiftHelper.GetChefShift(ChefID);
             // Adding chef category
             cmbCategory.Items.Add(chefCategory);
             // Adding shared categories
@@ -54,7 +56,7 @@ namespace CHEF
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            Manage_Menu manage_Menu = new Manage_Menu();
+            Manage_Menu manage_Menu = new Manage_Menu(ChefID);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 manage_Menu.WindowState = FormWindowState.Maximized;
@@ -68,7 +70,7 @@ namespace CHEF
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Chef_Dashboard chef_Dashboard = new Chef_Dashboard();
+            Chef_Dashboard chef_Dashboard = new Chef_Dashboard(ChefID,ChefName);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 chef_Dashboard.WindowState = FormWindowState.Maximized;
@@ -84,7 +86,7 @@ namespace CHEF
         }
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            Manage_Orders manage_Orders = new Manage_Orders();
+            Manage_Orders manage_Orders = new Manage_Orders(ChefID);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 manage_Orders.WindowState = FormWindowState.Maximized;
@@ -168,7 +170,6 @@ namespace CHEF
         }
         private void btnSave_Click(object sender, EventArgs e) 
         {
-            ValidateForm();
             // Final validation check
             if (!ValidateForm())
                 return;
@@ -185,8 +186,6 @@ namespace CHEF
                 Price =numPrice.Value,
 
                 MenuPic =menuImage,
-
-                ChefID =loggedInChefID,
 
                 Available =chbAvailability.Checked,
 
@@ -220,7 +219,6 @@ namespace CHEF
 
             menuImage = null;
 
-            btnSave.Enabled = false;
         }
         private bool ValidateForm()
         {
@@ -239,7 +237,7 @@ namespace CHEF
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Manage_Menu manage_Menu = new Manage_Menu();
+            Manage_Menu manage_Menu = new Manage_Menu(ChefID);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 manage_Menu.WindowState = FormWindowState.Maximized;
@@ -270,6 +268,14 @@ namespace CHEF
         private void numPrice_Leave(object sender, EventArgs e)
         {
             ValidatePrice();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+            this.Close();
         }
     }
 

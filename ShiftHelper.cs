@@ -9,7 +9,7 @@ namespace CHEF
     public class ShiftHelper
     {
         // getting current shift
-        public static string GetCurrentShift()
+        public string GetCurrentShift()
         {
             // Current system time
             TimeSpan currentTime =DateTime.Now.TimeOfDay;
@@ -21,7 +21,7 @@ namespace CHEF
             }
 
             // Lunch Shift
-            else if (currentTime >= TimeSpan.Parse("12:00") && currentTime < TimeSpan.Parse("17:00"))
+            else if (currentTime >= TimeSpan.Parse("12:00") && currentTime < TimeSpan.Parse("16:00"))
             {
                 return "Lunch";
             }
@@ -34,7 +34,7 @@ namespace CHEF
         }
 
         // Getting active ChefID
-        public static int GetActiveChefID()
+        public string GetActiveChefID()
         {
             // Current active shift
             string shift =GetCurrentShift();
@@ -42,126 +42,115 @@ namespace CHEF
             // Breakfast Chef
             if (shift == "Breakfast")
             {
-                return 5;
+                return "Chef1";
             }
 
             // Lunch Chef
             else if (shift == "Lunch")
             {
-                return 6;
+                return "Chef2";
             }
 
             // Dinner Chef
             else
             {
-                return 7;
+                return "Chef3";
             }
         }
-        // Method to get shift timing
 
         // Method to get chef shift
-        public static string GetChefShift(int chefID)
+        public  string GetChefShift(string chefID)
         {
             // Breakfast chef
-            if (chefID == 5)
+            if (chefID =="Chef1")
             {
                 return "Breakfast";
             }
 
             // Lunch chef
-            else if (chefID == 6)
+            else if (chefID == "Chef2")
             {
                 return "Lunch";
             }
 
             // Dinner chef
-            else
+            else if (chefID == "Chef3")
             {
                 return "Dinner";
             }
-        }
-
-        // Method to get chef shift timing
-        public static string GetChefShiftTime(int chefID
-        )
-        {
-            // Breakfast shift
-            if (chefID == 5)
-            {
-                return "7:00 AM - 11:59 AM";
-            }
-
-            // Lunch shift
-            else if (chefID == 6)
-            {
-                return "12:00 PM - 4:59 PM";
-            }
-
-            // Dinner shift
-            else
-            {
-                return "5:00 PM - 11:59 PM";
-            }
+            return "";
         }
 
         // Method to get shift start time
-        public static TimeSpan GetShiftStartTime(
-            int chefID
-        )
+        public TimeSpan GetShiftStartTime(string chefID)
         {
             // Breakfast
-            if (chefID == 5)
+            if (chefID == "Chef1")
             {
                 return TimeSpan.Parse("07:00");
             }
 
-            // Lunch
-            else if (chefID == 6)
+            // Lunchr
+            else if (chefID == "Chef2")
             {
                 return TimeSpan.Parse("12:00");
             }
 
             // Dinner
-            else
+            else if (chefID == "Chef3")
             {
-                return TimeSpan.Parse("17:00");
+                return TimeSpan.Parse("16:00");
             }
+            return TimeSpan.Zero;
+        }
+        public string GetChefShiftTime(string chefID)
+        {
+            // Breakfast shift
+            if (chefID =="Chef1" )
+            {
+                return "7:00 AM - 11:59 AM";
+            }
+
+            // Lunch shift
+            else if (chefID == "Chef2")
+            {
+                return "12:00 PM - 4:59 PM";
+            }
+
+            // Dinner shift
+            else if (chefID == "Chef3")
+            {
+                return "5:00 PM - 11:59 PM";
+            }
+            return "";
         }
 
-
         // Method to get shift end time
-        public static TimeSpan GetShiftEndTime(
-            int chefID
-        )
+        public TimeSpan GetShiftEndTime(string chefID)
         {
             // Breakfast
-            if (chefID == 5)
+            if (chefID == "Chef1")
             {
                 return TimeSpan.Parse("11:59");
             }
 
             // Lunch
-            else if (chefID == 6)
+            else if (chefID == "Chef2")
             {
                 return TimeSpan.Parse("16:59");
             }
 
             // Dinner
-            else
+            else if (chefID == "Chef3")
             {
                 return TimeSpan.Parse("23:59");
             }
-        }
-        public static bool IsMenuAvailable(TimeSpan availableFrom,TimeSpan availableUntil)// Method to check if menu is available
-        {
-            // Current system time
-            TimeSpan currentTime = DateTime.Now.TimeOfDay;
-
-            // Return availability status
-            return currentTime >= availableFrom && currentTime <= availableUntil;
+            return TimeSpan.Zero;
         }
 
-        public static bool CanChefAccessCategory(int chefID,string category) // Method to check if chef can access category
+
+
+        public  bool CanChefAccessCategory(string chefID,string category) // Method to check if chef can access category
         {
             // Shared categories
             if (category == "Snacks" || category == "Drinks")
@@ -170,19 +159,19 @@ namespace CHEF
             }
 
             // Breakfast Chef
-            if (chefID == 5 && category == "Breakfast")
+            if (chefID == "Chef1"  && category == "Breakfast")
             {
                 return true;
             }
 
             // Lunch Chef
-            if (chefID == 6 && category == "Lunch")
+            if (chefID == "Chef2" && category == "Lunch")
             {
                 return true;
             }
 
             // Dinner Chef
-            if (chefID == 7 && category == "Dinner")
+            if (chefID == "Chef3" && category == "Dinner")
             {
                 return true;
             }

@@ -185,7 +185,7 @@
             this.lblError.AutoSize = true;
             this.lblError.BackColor = System.Drawing.Color.Transparent;
             this.lblError.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblError.Location = new System.Drawing.Point(314, 714);
+            this.lblError.Location = new System.Drawing.Point(261, 714);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 20);
             this.lblError.TabIndex = 9;
@@ -220,7 +220,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.Controls.Add(this.lblRegisterNewAccount);
             this.panel1.Controls.Add(this.lblError);
             this.panel1.Controls.Add(this.lblAttemptsLeft);
@@ -239,6 +239,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(766, 747);
             this.panel1.TabIndex = 12;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblRegisterNewAccount
             // 
@@ -282,8 +283,9 @@
             // 
             this.mnuExit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
+            this.mnuExit.ForeColor = System.Drawing.Color.White;
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(73, 32);
+            this.mnuExit.Size = new System.Drawing.Size(73, 30);
             this.mnuExit.Text = "Menu";
             // 
             // exitToolStripMenuItem
@@ -297,13 +299,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(58)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(1478, 919);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

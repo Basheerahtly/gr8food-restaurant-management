@@ -2,12 +2,12 @@
 
 namespace Gr8FoodSystem_Final
 {
-    public static class Cart
+    public class Cart
     {
         public static Dictionary<string, int> items =
             new Dictionary<string, int>();
 
-        public static void AddItem(string name)
+        public void AddItem(string name)
         {
             if (items.ContainsKey(name))
             {

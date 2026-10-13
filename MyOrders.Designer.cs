@@ -41,19 +41,22 @@
             this.flowOrders.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowOrders.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowOrders.Location = new System.Drawing.Point(0, 0);
+            this.flowOrders.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowOrders.Name = "flowOrders";
-            this.flowOrders.Size = new System.Drawing.Size(800, 350);
+            this.flowOrders.Size = new System.Drawing.Size(1200, 538);
             this.flowOrders.TabIndex = 0;
             this.flowOrders.WrapContents = false;
+            this.flowOrders.Paint += new System.Windows.Forms.PaintEventHandler(this.flowOrders_Paint);
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.btnCheckout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 360);
+            this.panel1.Location = new System.Drawing.Point(0, 554);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 90);
+            this.panel1.Size = new System.Drawing.Size(1200, 138);
             this.panel1.TabIndex = 3;
             // 
             // btnCheckout
@@ -61,9 +64,10 @@
             this.btnCheckout.BackColor = System.Drawing.Color.Crimson;
             this.btnCheckout.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckout.ForeColor = System.Drawing.Color.White;
-            this.btnCheckout.Location = new System.Drawing.Point(300, 20);
+            this.btnCheckout.Location = new System.Drawing.Point(450, 31);
+            this.btnCheckout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(180, 70);
+            this.btnCheckout.Size = new System.Drawing.Size(270, 108);
             this.btnCheckout.TabIndex = 0;
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.UseVisualStyleBackColor = false;
@@ -71,13 +75,14 @@
             // 
             // MyOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowOrders);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MyOrders";
             this.Text = "MyOrders";
             this.panel1.ResumeLayout(false);

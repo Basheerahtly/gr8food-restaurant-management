@@ -407,6 +407,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(58)))), ((int)(((byte)(47)))));
             this.ClientSize = new System.Drawing.Size(1489, 946);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);

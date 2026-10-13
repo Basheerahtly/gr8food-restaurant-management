@@ -33,7 +33,7 @@
             this.pictureBoxBackToHome = new System.Windows.Forms.PictureBox();
             this.lblBackToHome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblRemoveUserPortal = new System.Windows.Forms.Label();
+            this.lblViewAllAccounts = new System.Windows.Forms.Label();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gR8FoodDataSet = new assignment.GR8FoodDataSet();
             this.usersTableAdapter = new assignment.GR8FoodDataSetTableAdapters.UsersTableAdapter();
@@ -46,13 +46,20 @@
             this.btnUpdateUserProfile = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnClearFilters = new System.Windows.Forms.Button();
+            this.cmbFilterRole = new System.Windows.Forms.ComboBox();
+            this.cmbFilterGender = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblFilterRole = new System.Windows.Forms.Label();
+            this.lblFilterGender = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -62,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxBackToHome
@@ -98,16 +106,16 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // lblRemoveUserPortal
+            // lblViewAllAccounts
             // 
-            this.lblRemoveUserPortal.AutoSize = true;
-            this.lblRemoveUserPortal.Font = new System.Drawing.Font("Century Gothic", 24F);
-            this.lblRemoveUserPortal.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblRemoveUserPortal.Location = new System.Drawing.Point(25, 120);
-            this.lblRemoveUserPortal.Name = "lblRemoveUserPortal";
-            this.lblRemoveUserPortal.Size = new System.Drawing.Size(441, 58);
-            this.lblRemoveUserPortal.TabIndex = 12;
-            this.lblRemoveUserPortal.Text = "View All Accounts";
+            this.lblViewAllAccounts.AutoSize = true;
+            this.lblViewAllAccounts.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.lblViewAllAccounts.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblViewAllAccounts.Location = new System.Drawing.Point(25, 120);
+            this.lblViewAllAccounts.Name = "lblViewAllAccounts";
+            this.lblViewAllAccounts.Size = new System.Drawing.Size(441, 58);
+            this.lblViewAllAccounts.TabIndex = 12;
+            this.lblViewAllAccounts.Text = "View All Accounts";
             // 
             // usersBindingSource
             // 
@@ -127,7 +135,8 @@
             // 
             this.lblQuickAccess.AutoSize = true;
             this.lblQuickAccess.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuickAccess.Location = new System.Drawing.Point(30, 807);
+            this.lblQuickAccess.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblQuickAccess.Location = new System.Drawing.Point(30, 785);
             this.lblQuickAccess.Name = "lblQuickAccess";
             this.lblQuickAccess.Size = new System.Drawing.Size(251, 30);
             this.lblQuickAccess.TabIndex = 15;
@@ -136,7 +145,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(116, 860);
+            this.pictureBox3.Location = new System.Drawing.Point(116, 838);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(64, 60);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -146,7 +155,7 @@
             // btnAddUser
             // 
             this.btnAddUser.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.btnAddUser.Location = new System.Drawing.Point(72, 926);
+            this.btnAddUser.Location = new System.Drawing.Point(72, 904);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(136, 41);
             this.btnAddUser.TabIndex = 16;
@@ -157,7 +166,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(349, 860);
+            this.pictureBox4.Location = new System.Drawing.Point(349, 838);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(64, 60);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -167,7 +176,7 @@
             // btnRemoveUser
             // 
             this.btnRemoveUser.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.btnRemoveUser.Location = new System.Drawing.Point(311, 926);
+            this.btnRemoveUser.Location = new System.Drawing.Point(311, 904);
             this.btnRemoveUser.Name = "btnRemoveUser";
             this.btnRemoveUser.Size = new System.Drawing.Size(136, 41);
             this.btnRemoveUser.TabIndex = 18;
@@ -178,7 +187,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(610, 860);
+            this.pictureBox5.Location = new System.Drawing.Point(610, 838);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(64, 60);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,7 +197,7 @@
             // btnUpdateUserProfile
             // 
             this.btnUpdateUserProfile.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.btnUpdateUserProfile.Location = new System.Drawing.Point(526, 926);
+            this.btnUpdateUserProfile.Location = new System.Drawing.Point(526, 904);
             this.btnUpdateUserProfile.Name = "btnUpdateUserProfile";
             this.btnUpdateUserProfile.Size = new System.Drawing.Size(241, 41);
             this.btnUpdateUserProfile.TabIndex = 20;
@@ -198,10 +207,11 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(788, 190);
+            this.txtSearch.Location = new System.Drawing.Point(531, 53);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(264, 26);
+            this.txtSearch.Size = new System.Drawing.Size(201, 26);
             this.txtSearch.TabIndex = 22;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
             // 
             // dataGridView1
             // 
@@ -218,19 +228,14 @@
             this.phoneDataGridViewTextBoxColumn,
             this.genderDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.usersBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(85, 240);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 375);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1666, 501);
+            this.dataGridView1.Size = new System.Drawing.Size(1716, 366);
             this.dataGridView1.TabIndex = 23;
-            // 
-            // usersBindingSource1
-            // 
-            this.usersBindingSource1.DataMember = "Users";
-            this.usersBindingSource1.DataSource = this.gR8FoodDataSet;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
@@ -286,13 +291,97 @@
             this.genderDataGridViewTextBoxColumn.ReadOnly = true;
             this.genderDataGridViewTextBoxColumn.Width = 150;
             // 
+            // usersBindingSource1
+            // 
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.gR8FoodDataSet;
+            // 
+            // btnClearFilters
+            // 
+            this.btnClearFilters.Location = new System.Drawing.Point(831, 41);
+            this.btnClearFilters.Name = "btnClearFilters";
+            this.btnClearFilters.Size = new System.Drawing.Size(123, 43);
+            this.btnClearFilters.TabIndex = 24;
+            this.btnClearFilters.Text = "Clear Filters";
+            this.btnClearFilters.UseVisualStyleBackColor = true;
+            this.btnClearFilters.Click += new System.EventHandler(this.btnClearFilters_Click_1);
+            // 
+            // cmbFilterRole
+            // 
+            this.cmbFilterRole.FormattingEnabled = true;
+            this.cmbFilterRole.Location = new System.Drawing.Point(37, 53);
+            this.cmbFilterRole.Name = "cmbFilterRole";
+            this.cmbFilterRole.Size = new System.Drawing.Size(186, 31);
+            this.cmbFilterRole.TabIndex = 25;
+            this.cmbFilterRole.SelectedIndexChanged += new System.EventHandler(this.cmbFilterRole_SelectedIndexChanged_1);
+            // 
+            // cmbFilterGender
+            // 
+            this.cmbFilterGender.FormattingEnabled = true;
+            this.cmbFilterGender.Location = new System.Drawing.Point(298, 54);
+            this.cmbFilterGender.Name = "cmbFilterGender";
+            this.cmbFilterGender.Size = new System.Drawing.Size(181, 31);
+            this.cmbFilterGender.TabIndex = 26;
+            this.cmbFilterGender.SelectedIndexChanged += new System.EventHandler(this.cmbFilterGender_SelectedIndexChanged_1);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblSearch);
+            this.groupBox1.Controls.Add(this.btnClearFilters);
+            this.groupBox1.Controls.Add(this.lblFilterGender);
+            this.groupBox1.Controls.Add(this.lblFilterRole);
+            this.groupBox1.Controls.Add(this.cmbFilterRole);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Controls.Add(this.cmbFilterGender);
+            this.groupBox1.Font = new System.Drawing.Font("Gill Sans MT", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.groupBox1.Location = new System.Drawing.Point(35, 207);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(977, 114);
+            this.groupBox1.TabIndex = 27;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filter";
+            // 
+            // lblFilterRole
+            // 
+            this.lblFilterRole.AutoSize = true;
+            this.lblFilterRole.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilterRole.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblFilterRole.Location = new System.Drawing.Point(33, 30);
+            this.lblFilterRole.Name = "lblFilterRole";
+            this.lblFilterRole.Size = new System.Drawing.Size(106, 21);
+            this.lblFilterRole.TabIndex = 28;
+            this.lblFilterRole.Text = "Filter Role";
+            // 
+            // lblFilterGender
+            // 
+            this.lblFilterGender.AutoSize = true;
+            this.lblFilterGender.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilterGender.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblFilterGender.Location = new System.Drawing.Point(294, 30);
+            this.lblFilterGender.Name = "lblFilterGender";
+            this.lblFilterGender.Size = new System.Drawing.Size(134, 21);
+            this.lblFilterGender.TabIndex = 29;
+            this.lblFilterGender.Text = "Filter Gender";
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblSearch.Location = new System.Drawing.Point(527, 29);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(75, 21);
+            this.lblSearch.TabIndex = 30;
+            this.lblSearch.Text = "Search";
+            // 
             // frmViewAllAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1933, 1023);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btnUpdateUserProfile);
             this.Controls.Add(this.pictureBox4);
@@ -301,7 +390,7 @@
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.lblQuickAccess);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblRemoveUserPortal);
+            this.Controls.Add(this.lblViewAllAccounts);
             this.Controls.Add(this.pictureBoxBackToHome);
             this.Controls.Add(this.lblBackToHome);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -317,6 +406,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,7 +418,7 @@
         private System.Windows.Forms.PictureBox pictureBoxBackToHome;
         private System.Windows.Forms.Label lblBackToHome;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblRemoveUserPortal;
+        private System.Windows.Forms.Label lblViewAllAccounts;
         private GR8FoodDataSet gR8FoodDataSet;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private GR8FoodDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
@@ -347,5 +438,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource usersBindingSource1;
+        private System.Windows.Forms.Button btnClearFilters;
+        private System.Windows.Forms.ComboBox cmbFilterRole;
+        private System.Windows.Forms.ComboBox cmbFilterGender;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Label lblFilterGender;
+        private System.Windows.Forms.Label lblFilterRole;
     }
 }

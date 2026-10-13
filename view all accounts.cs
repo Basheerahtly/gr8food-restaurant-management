@@ -5,9 +5,6 @@ using System.Windows.Forms;
 
 namespace assignment
 {
-    // Displays all user accounts in a DataGridView.
-    // Uses both the auto-generated TableAdapter for initial load
-    // and UserRepository for any additional filtering or stat display.
     public partial class frmViewAllAccounts : Form
     {
         private readonly UserRepository _userRepository;
@@ -18,32 +15,41 @@ namespace assignment
             _userRepository = new UserRepository();
         }
 
-        // ─── Form Load ────────────────────────────────────────────────
-
         private void view_all_accounts_Load(object sender, EventArgs e)
         {
+            cmbFilterRole.SelectedIndexChanged -= cmbFilterRole_SelectedIndexChanged_1;
+            cmbFilterGender.SelectedIndexChanged -= cmbFilterGender_SelectedIndexChanged_1;
+
+            cmbFilterRole.Items.Clear();
+            cmbFilterRole.Items.AddRange(new string[] { "All", "System Admin", "Manager", "Customer", "Chef1", "Chef2", "Chef3" });
+            cmbFilterRole.SelectedIndex = 0;
+
+            cmbFilterGender.Items.Clear();
+            cmbFilterGender.Items.AddRange(new string[] { "All", "Male", "Female" });
+            cmbFilterGender.SelectedIndex = 0;
+
             LoadAccounts();
+
+            cmbFilterRole.SelectedIndexChanged += cmbFilterRole_SelectedIndexChanged_1;
+            cmbFilterGender.SelectedIndexChanged += cmbFilterGender_SelectedIndexChanged_1;
         }
 
-        // Loads all accounts into the DataGridView
-        // Keeps the TableAdapter fill (auto-generated) but wraps it in a named method
-        // so it can be called again after any changes (add/remove/update)
+        private DataTable _fullData; // stores the unfiltered data
+
         private void LoadAccounts()
         {
-            // Replace TableAdapter with UserRepository (consistent with OOP approach)
             var users = _userRepository.GetAllUsers();
 
-            // Build a clean DataTable to display — hides password column entirely
-            DataTable dt = new DataTable();
-            dt.Columns.Add("Username");
-            dt.Columns.Add("Role");
-            dt.Columns.Add("Email");
-            dt.Columns.Add("Phone");
-            dt.Columns.Add("Gender");
+            _fullData = new DataTable();
+            _fullData.Columns.Add("Username");
+            _fullData.Columns.Add("Role");
+            _fullData.Columns.Add("Email");
+            _fullData.Columns.Add("Phone");
+            _fullData.Columns.Add("Gender");
 
             foreach (var user in users)
             {
-                dt.Rows.Add(
+                _fullData.Rows.Add(
                     user.Username,
                     user.Role,
                     user.Email,
@@ -52,44 +58,40 @@ namespace assignment
                 );
             }
 
-            dataGridView1.DataSource = dt;
-
-
-            // Hide the password column from the grid for security
-            // Passwords (even hashed) should never be visible in a UI grid
-            if (dataGridView1.Columns["Password"] != null)
-                dataGridView1.Columns["Password"].Visible = false;
+            dataGridView1.DataSource = _fullData;
         }
 
-        // Updates the summary labels at the top of the form
-        /*
-        private void UpdateStatLabels()
+        private void ApplyFilters()
         {
-            lblTotalAccounts.Text = "Total accounts: " + _userRepository.GetTotalUserCount();
-            lblTotalStaff.Text = "Staff accounts: " + _userRepository.GetStaffCount();
-            lblTotalCustomers.Text = "Customer accounts: " + _userRepository.GetCustomerCount();
-            lblActiveAccounts.Text = "Active: " + _userRepository.GetActiveUserCount();
-            lblInactiveAccounts.Text = "Inactive: " + _userRepository.GetInactiveUserCount();
-        }
-        */
-        // ─── Search / Filter ──────────────────────────────────────────
+            if (_fullData == null) return;
 
-        // Filters the DataGridView rows by username as the admin types
-        // No extra database call needed — filters the already-loaded data in memory
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
             string search = txtSearch.Text.Trim().ToLower();
+            string roleFilter = cmbFilterRole.SelectedItem?.ToString() ?? "All";
+            string genderFilter = cmbFilterGender.SelectedItem?.ToString() ?? "All";
 
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            // Build filter expression for DataTable
+            string filter = "";
+
+            if (!string.IsNullOrEmpty(search))
+                filter += $"Username LIKE '%{search}%'";
+
+            if (roleFilter != "All")
             {
-                if (row.IsNewRow) continue;
-
-                string username = row.Cells["Username"].Value?.ToString().ToLower() ?? "";
-                string role = row.Cells["Role"].Value?.ToString().ToLower() ?? "";
-
-                row.Visible = username.Contains(search) || role.Contains(search);
+                if (filter != "") filter += " AND ";
+                filter += $"Role = '{roleFilter}'";
             }
+
+            if (genderFilter != "All")
+            {
+                if (filter != "") filter += " AND ";
+                filter += $"Gender = '{genderFilter}'";
+            }
+
+            // Apply filter directly to the DataTable view
+            _fullData.DefaultView.RowFilter = filter;
+            dataGridView1.DataSource = _fullData.DefaultView.ToTable();
         }
+
 
         // ─── Navigation Buttons ───────────────────────────────────────
 
@@ -98,7 +100,6 @@ namespace assignment
             this.Hide();
             frmAddUser frmAddUser = new frmAddUser();
             frmAddUser.ShowDialog();
-            // Reload after returning in case a new user was added
             LoadAccounts();
             this.Show();
         }
@@ -126,11 +127,33 @@ namespace assignment
             this.Close();
         }
 
-        // ─── Other Events ─────────────────────────────────────────────
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        // ─── Filter Event Handlers ────────────────────────────────────
+        private void cmbFilterRole_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void cmbFilterGender_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void btnClearFilters_Click_1(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            cmbFilterRole.SelectedIndex = 0;
+            cmbFilterGender.SelectedIndex = 0;
+            ApplyFilters();
         }
     }
 }

@@ -36,17 +36,20 @@
             this.flowHistory.AutoScroll = true;
             this.flowHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowHistory.Location = new System.Drawing.Point(0, 0);
+            this.flowHistory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowHistory.Name = "flowHistory";
-            this.flowHistory.Size = new System.Drawing.Size(800, 450);
+            this.flowHistory.Size = new System.Drawing.Size(1200, 692);
             this.flowHistory.TabIndex = 0;
+            this.flowHistory.Paint += new System.Windows.Forms.PaintEventHandler(this.flowHistory_Paint);
             // 
             // OrderHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.flowHistory);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "OrderHistory";
             this.Text = "OrderHistory";
             this.Load += new System.EventHandler(this.OrderHistory_Load);

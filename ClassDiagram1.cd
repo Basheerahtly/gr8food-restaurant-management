@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="assignment.DatabaseHelper">
+    <Position X="8.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAEAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>DatabaseHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="prac.FeedbackClass">
+    <Position X="10.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAAAASAAAAQIAAAAAQAAAIAAAAAAAAAAAAIAIABAAA=</HashCode>
+      <FileName>FeedbackClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OrderService">
+    <Position X="2.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAACAAEAAIIAAAAAACAAAAAgAAAAAAAgBg=</HashCode>
+      <FileName>OrderService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="assignment.Helpers.SessionManager">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAIAAAAAAAAAAAAIAAAAAAAAAAAASAAAAAAA=</HashCode>
+      <FileName>Sessionmanager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="assignment.Models.User">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAACEEQAAQAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="assignment.Helpers.PasswordHelper">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAACBAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Passwordhelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="assignment.Repositories.UserRepository">
+    <Position X="15" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAASgAAIAAQAAAAUAAAAQAAAARAAAAAoAAECAAEAAAA=</HashCode>
+      <FileName>Userrepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gr8FoodSystem_Final.Cart">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CHEF.MenuService">
+    <Position X="4.25" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAEAAAAAEAQAAAAAAAIAAAAACAAAABA=</HashCode>
+      <FileName>MenuService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gr8FoodSystem_Final.MenuItem">
+    <Position X="13" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQCAAAAAAAAAAAAAAAAABAAAAAAAAAAACAA=</HashCode>
+      <FileName>MenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CHEF.Menu">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAQCgAAAAAAAAAABCAAAABAAAAAAEAAAACAA=</HashCode>
+      <FileName>menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="prac.WalletReportClass">
+    <Position X="6.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABCQAAAAAACAAAIAAAgAAAAAAAAAAAABIAA=</HashCode>
+      <FileName>WalletReportClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CHEF.ShiftHelper">
+    <Position X="15" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAACBAAAAAAAAgAAAAAAAAAAgAAIIAAAAAA=</HashCode>
+      <FileName>ShiftHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="assignment.SalesRepository">
+    <Position X="13" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sales.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CHEF.Program">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="assignment.Helpers.Validator">
+    <Position X="2" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAIAAAAAAAAAAAAAIAAAIA=</HashCode>
+      <FileName>Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

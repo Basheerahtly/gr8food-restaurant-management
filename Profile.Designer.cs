@@ -29,192 +29,150 @@
         private void InitializeComponent()
         {
             this.panelProfileCard = new System.Windows.Forms.Panel();
+            this.labelWallet = new System.Windows.Forms.Label();
+            this.btnUpdateProfile = new System.Windows.Forms.Button();
+            this.btnTopUp = new System.Windows.Forms.Button();
+            this.txtTopUp = new System.Windows.Forms.TextBox();
             this.lblWallet = new System.Windows.Forms.Label();
-            this.btnEditProfile = new System.Windows.Forms.Button();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelSettings = new System.Windows.Forms.Panel();
-            this.panelLogout = new System.Windows.Forms.Panel();
-            this.labelLogout = new System.Windows.Forms.Label();
-            this.panelChange = new System.Windows.Forms.Panel();
-            this.lblChangePassword = new System.Windows.Forms.Label();
-            this.labelAccountSettings = new System.Windows.Forms.Label();
             this.panelProfileCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelSettings.SuspendLayout();
-            this.panelLogout.SuspendLayout();
-            this.panelChange.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelProfileCard
             // 
             this.panelProfileCard.BackColor = System.Drawing.Color.White;
+            this.panelProfileCard.Controls.Add(this.labelWallet);
+            this.panelProfileCard.Controls.Add(this.btnUpdateProfile);
+            this.panelProfileCard.Controls.Add(this.btnTopUp);
+            this.panelProfileCard.Controls.Add(this.txtTopUp);
             this.panelProfileCard.Controls.Add(this.lblWallet);
-            this.panelProfileCard.Controls.Add(this.btnEditProfile);
             this.panelProfileCard.Controls.Add(this.lblPhone);
             this.panelProfileCard.Controls.Add(this.lblEmail);
             this.panelProfileCard.Controls.Add(this.lblUsername);
             this.panelProfileCard.Controls.Add(this.pictureBox1);
-            this.panelProfileCard.Location = new System.Drawing.Point(36, 24);
+            this.panelProfileCard.Location = new System.Drawing.Point(48, 30);
+            this.panelProfileCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelProfileCard.Name = "panelProfileCard";
-            this.panelProfileCard.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.panelProfileCard.Size = new System.Drawing.Size(600, 180);
+            this.panelProfileCard.Padding = new System.Windows.Forms.Padding(27, 0, 0, 0);
+            this.panelProfileCard.Size = new System.Drawing.Size(800, 242);
             this.panelProfileCard.TabIndex = 0;
+            // 
+            // labelWallet
+            // 
+            this.labelWallet.AutoSize = true;
+            this.labelWallet.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWallet.Location = new System.Drawing.Point(185, 118);
+            this.labelWallet.Name = "labelWallet";
+            this.labelWallet.Size = new System.Drawing.Size(204, 23);
+            this.labelWallet.TabIndex = 1;
+            this.labelWallet.Text = "Wallet Balance : RM 787\r\n";
+            // 
+            // btnUpdateProfile
+            // 
+            this.btnUpdateProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateProfile.Location = new System.Drawing.Point(570, 98);
+            this.btnUpdateProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateProfile.Name = "btnUpdateProfile";
+            this.btnUpdateProfile.Size = new System.Drawing.Size(176, 42);
+            this.btnUpdateProfile.TabIndex = 9;
+            this.btnUpdateProfile.Text = "Update Profile";
+            this.btnUpdateProfile.UseVisualStyleBackColor = true;
+            this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
+            // 
+            // btnTopUp
+            // 
+            this.btnTopUp.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.btnTopUp.Location = new System.Drawing.Point(636, 156);
+            this.btnTopUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTopUp.Name = "btnTopUp";
+            this.btnTopUp.Size = new System.Drawing.Size(109, 26);
+            this.btnTopUp.TabIndex = 8;
+            this.btnTopUp.Text = "Top Up";
+            this.btnTopUp.UseVisualStyleBackColor = true;
+            this.btnTopUp.Click += new System.EventHandler(this.btnTopUp_Click);
+            // 
+            // txtTopUp
+            // 
+            this.txtTopUp.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTopUp.Location = new System.Drawing.Point(196, 156);
+            this.txtTopUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTopUp.Name = "txtTopUp";
+            this.txtTopUp.Size = new System.Drawing.Size(141, 25);
+            this.txtTopUp.TabIndex = 7;
+            this.txtTopUp.Text = "Enter Amount";
             // 
             // lblWallet
             // 
             this.lblWallet.AutoSize = true;
             this.lblWallet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWallet.Location = new System.Drawing.Point(142, 137);
+            this.lblWallet.Location = new System.Drawing.Point(189, 169);
+            this.lblWallet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWallet.Name = "lblWallet";
-            this.lblWallet.Size = new System.Drawing.Size(137, 17);
+            this.lblWallet.Size = new System.Drawing.Size(0, 23);
             this.lblWallet.TabIndex = 6;
-            this.lblWallet.Text = "Wallet Balance: Rm 0";
-            // 
-            // btnEditProfile
-            // 
-            this.btnEditProfile.BackColor = System.Drawing.Color.Silver;
-            this.btnEditProfile.FlatAppearance.BorderSize = 0;
-            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditProfile.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProfile.ForeColor = System.Drawing.Color.White;
-            this.btnEditProfile.Location = new System.Drawing.Point(450, 70);
-            this.btnEditProfile.Name = "btnEditProfile";
-            this.btnEditProfile.Size = new System.Drawing.Size(120, 35);
-            this.btnEditProfile.TabIndex = 5;
-            this.btnEditProfile.Text = "Edit Profile";
-            this.btnEditProfile.UseVisualStyleBackColor = false;
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.ForeColor = System.Drawing.Color.Gray;
-            this.lblPhone.Location = new System.Drawing.Point(140, 110);
+            this.lblPhone.Location = new System.Drawing.Point(187, 135);
+            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(98, 17);
+            this.lblPhone.Size = new System.Drawing.Size(0, 23);
             this.lblPhone.TabIndex = 4;
-            this.lblPhone.Text = "+60 123456789";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.Color.Gray;
-            this.lblEmail.Location = new System.Drawing.Point(140, 85);
+            this.lblEmail.Location = new System.Drawing.Point(187, 105);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(125, 19);
+            this.lblEmail.Size = new System.Drawing.Size(0, 23);
             this.lblEmail.TabIndex = 2;
-            this.lblEmail.Text = "duha@email.com";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblUsername.Location = new System.Drawing.Point(140, 50);
+            this.lblUsername.Location = new System.Drawing.Point(187, 62);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(108, 25);
+            this.lblUsername.Size = new System.Drawing.Size(90, 32);
             this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Duha Bulla";
+            this.lblUsername.Text = "Profile";
             // 
             // pictureBox1
             // 
-
-            this.pictureBox1.Location = new System.Drawing.Point(20, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 50);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 114);
+            this.pictureBox1.Size = new System.Drawing.Size(152, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panelSettings
-            // 
-            this.panelSettings.BackColor = System.Drawing.Color.White;
-            this.panelSettings.Controls.Add(this.panelLogout);
-            this.panelSettings.Controls.Add(this.panelChange);
-            this.panelSettings.Controls.Add(this.labelAccountSettings);
-            this.panelSettings.Location = new System.Drawing.Point(36, 227);
-            this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(600, 200);
-            this.panelSettings.TabIndex = 6;
-            // 
-            // panelLogout
-            // 
-            this.panelLogout.Controls.Add(this.labelLogout);
-            this.panelLogout.Location = new System.Drawing.Point(20, 125);
-            this.panelLogout.Name = "panelLogout";
-            this.panelLogout.Size = new System.Drawing.Size(550, 40);
-            this.panelLogout.TabIndex = 5;
-            // 
-            // labelLogout
-            // 
-            this.labelLogout.AutoSize = true;
-            this.labelLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelLogout.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.labelLogout.ForeColor = System.Drawing.Color.Red;
-            this.labelLogout.Location = new System.Drawing.Point(20, 10);
-            this.labelLogout.Name = "labelLogout";
-            this.labelLogout.Size = new System.Drawing.Size(56, 19);
-            this.labelLogout.TabIndex = 3;
-            this.labelLogout.Text = "Logout";
-            this.labelLogout.Click += new System.EventHandler(this.labelLogout_Click);
-            this.labelLogout.MouseEnter += new System.EventHandler(this.labelLogout_MouseEnter);
-            this.labelLogout.MouseLeave += new System.EventHandler(this.labelLogout_MouseLeave);
-            // 
-            // panelChange
-            // 
-            this.panelChange.Controls.Add(this.lblChangePassword);
-            this.panelChange.Location = new System.Drawing.Point(20, 68);
-            this.panelChange.Name = "panelChange";
-            this.panelChange.Size = new System.Drawing.Size(550, 40);
-            this.panelChange.TabIndex = 4;
-            // 
-            // lblChangePassword
-            // 
-            this.lblChangePassword.AutoSize = true;
-            this.lblChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblChangePassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblChangePassword.Location = new System.Drawing.Point(20, 11);
-            this.lblChangePassword.Name = "lblChangePassword";
-            this.lblChangePassword.Size = new System.Drawing.Size(127, 19);
-            this.lblChangePassword.TabIndex = 2;
-            this.lblChangePassword.Text = "Change Password";
-            this.lblChangePassword.MouseEnter += new System.EventHandler(this.labelChangePassword_MouseEnter);
-            this.lblChangePassword.MouseLeave += new System.EventHandler(this.labelChangePassword_MouseLeave);
-            // 
-            // labelAccountSettings
-            // 
-            this.labelAccountSettings.AutoSize = true;
-            this.labelAccountSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccountSettings.Location = new System.Drawing.Point(20, 10);
-            this.labelAccountSettings.Name = "labelAccountSettings";
-            this.labelAccountSettings.Size = new System.Drawing.Size(139, 21);
-            this.labelAccountSettings.TabIndex = 1;
-            this.labelAccountSettings.Text = "Account Settings";
-            // 
             // Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelSettings);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panelProfileCard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Profile";
             this.Text = "Profile";
             this.Load += new System.EventHandler(this.Profile_Load);
             this.panelProfileCard.ResumeLayout(false);
             this.panelProfileCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelSettings.ResumeLayout(false);
-            this.panelSettings.PerformLayout();
-            this.panelLogout.ResumeLayout(false);
-            this.panelLogout.PerformLayout();
-            this.panelChange.ResumeLayout(false);
-            this.panelChange.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -225,14 +183,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Button btnEditProfile;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.Panel panelSettings;
-        private System.Windows.Forms.Label labelAccountSettings;
-        private System.Windows.Forms.Label labelLogout;
-        private System.Windows.Forms.Label lblChangePassword;
-        private System.Windows.Forms.Panel panelChange;
-        private System.Windows.Forms.Panel panelLogout;
         private System.Windows.Forms.Label lblWallet;
+        private System.Windows.Forms.TextBox txtTopUp;
+        private System.Windows.Forms.Button btnTopUp;
+        private System.Windows.Forms.Button btnUpdateProfile;
+        private System.Windows.Forms.Label labelWallet;
     }
 }

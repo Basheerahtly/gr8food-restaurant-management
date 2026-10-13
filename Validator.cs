@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace assignment.Helpers
 {
     // Handles all input validation logic, separated from the UI (Encapsulation + Abstraction)
-    public static class Validator
+    public class Validator
     {
         public static bool ValidateEmail(string email, out string error)
         {

@@ -5,7 +5,7 @@ using System.Text;
 namespace assignment.Helpers
 {
     // Utility class — abstracts all password hashing logic (Abstraction)
-    public static class PasswordHelper
+    public class PasswordHelper
     {
         // Hashes a plain text password using SHA256
         public static string HashPassword(string plainText)
@@ -18,7 +18,7 @@ namespace assignment.Helpers
         }
 
         // Verifies a plain text password against a stored hash
-        public static bool VerifyPassword(string plainText, string storedHash)
+        public bool VerifyPassword(string plainText, string storedHash)
         {
             return HashPassword(plainText) == storedHash;
         }

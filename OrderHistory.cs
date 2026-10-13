@@ -1,132 +1,131 @@
-﻿
+﻿using assignment;
 using System;
-using System.Data.SqlClient;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Gr8FoodSystem_Final
 {
     public partial class OrderHistory : Form
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=GR8Food;Integrated Security=True;TrustServerCertificate=True";
-        public OrderHistory()
+        DatabaseHelper db = new DatabaseHelper();
+        private int customerId;
+        public OrderHistory(int customerId)
         {
             InitializeComponent();
-
-            LoadOrderHistory();
+            this.customerId = customerId;
             this.TopLevel = false;
-            this.FormBorderStyle =
-                FormBorderStyle.None;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
         }
+        private string GetWalletID(int customerId)
+        {
+            string query = "SELECT WalletID FROM Wallet WHERE CustomerID=@id";
 
+            SqlParameter[] param =
+            {
+        new SqlParameter("@id", customerId)
+    };
+
+            object result = db.Executescalar(query, param);
+
+            if (result == null || result == DBNull.Value)
+                return null;
+
+            return result.ToString();
+        }
+
+
+
+        // =========================
+        // LOAD EVENT
+        // =========================
         private void OrderHistory_Load(object sender, EventArgs e)
         {
-
+            LoadOrderHistory();
         }
+
+        // =========================
+        // LOAD ORDERS
+        // =========================
         private void LoadOrderHistory()
         {
-          
             flowHistory.Controls.Clear();
+            string query =
+                @"SELECT *
+                  FROM Orders
+                  WHERE CustomerID = @id
+                  ORDER BY OrderID DESC";
 
-            using (SqlConnection con =
-                new SqlConnection(connectionString))
+            SqlParameter[] param =
             {
-                con.Open();
+                new SqlParameter("@id", customerId)
+            };
 
-                SqlCommand cmd = new SqlCommand(
-                    @"SELECT *
-              FROM Orders
-              WHERE CustomerID = 4
-              ORDER BY OrderID DESC", con);
+            DataTable dt = db.ExecuteQuery(query, param);
 
-                SqlDataReader reader =
-                    cmd.ExecuteReader();
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No orders found!");
+                return;
+            }
 
-                while (reader.Read())
-                {
-                    int orderId =
-                        Convert.ToInt32(reader["OrderID"]);
+            foreach (DataRow row in dt.Rows)
+            {
+                int orderId = Convert.ToInt32(row["OrderID"]);
+                decimal total = Convert.ToDecimal(row["TotalAmount"]);
+                string status = row["Status"].ToString();
+                DateTime date = Convert.ToDateTime(row["OrderDateTime"]);
 
-                    decimal total =
-                        Convert.ToDecimal(reader["TotalAmount"]);
-
-                    string status =
-                        reader["Status"].ToString();
-
-                    DateTime date =
-                        Convert.ToDateTime(reader["OrderDateTime"]);
-
-                    flowHistory.Controls.Add(
-                        CreateHistoryCard(
-                            orderId,
-                            total,
-                            status,
-                            date));
-                }
-
-                reader.Close();
+                flowHistory.Controls.Add(
+                    CreateHistoryCard(orderId, total, status, date));
             }
         }
+
+        // =========================
+        // CREATE ORDER CARD
+        // =========================
         private Panel CreateHistoryCard(
-    int orderId,
-    decimal total,
-    string status,
-    DateTime date)
+            int orderId,
+            decimal total,
+            string status,
+            DateTime date)
         {
             Panel card = new Panel();
-
             card.Size = new Size(650, 120);
             card.BackColor = Color.White;
             card.BorderStyle = BorderStyle.FixedSingle;
             card.Margin = new Padding(10);
 
             Label lblOrder = new Label();
-
             lblOrder.Text = "Order #" + orderId;
-            lblOrder.Font =
-                new Font("Segoe UI", 12, FontStyle.Bold);
-
+            lblOrder.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             lblOrder.Location = new Point(20, 15);
             lblOrder.AutoSize = true;
 
             Label lblTotal = new Label();
-
             lblTotal.Text = "RM " + total;
             lblTotal.ForeColor = Color.Green;
-
             lblTotal.Location = new Point(20, 50);
             lblTotal.AutoSize = true;
 
             Label lblStatus = new Label();
-
             lblStatus.Text = "Status: " + status;
+
             if (status == "Completed")
-            {
                 lblStatus.ForeColor = Color.Green;
-            }
             else if (status == "Pending")
-            {
                 lblStatus.ForeColor = Color.Orange;
-            }
             else if (status == "Cancelled")
-            {
                 lblStatus.ForeColor = Color.Red;
-            }
 
             lblStatus.Location = new Point(200, 50);
             lblStatus.AutoSize = true;
 
             Label lblDate = new Label();
-
             lblDate.Text = date.ToShortDateString();
-
             lblDate.Location = new Point(20, 80);
             lblDate.AutoSize = true;
 
@@ -134,22 +133,19 @@ namespace Gr8FoodSystem_Final
             card.Controls.Add(lblTotal);
             card.Controls.Add(lblStatus);
             card.Controls.Add(lblDate);
+
+            // =========================
+            // CANCEL BUTTON (ONLY PENDING)
+            // =========================
             if (status == "Pending")
             {
                 Button btnCancel = new Button();
-
                 btnCancel.Text = "Cancel Order";
-
                 btnCancel.Size = new Size(130, 40);
-
                 btnCancel.Location = new Point(480, 35);
-
                 btnCancel.BackColor = Color.Crimson;
-
                 btnCancel.ForeColor = Color.White;
-
                 btnCancel.FlatStyle = FlatStyle.Flat;
-
                 btnCancel.FlatAppearance.BorderSize = 0;
 
                 btnCancel.Click += (s, e) =>
@@ -162,64 +158,75 @@ namespace Gr8FoodSystem_Final
 
             return card;
         }
+
+        // =========================
+        // CANCEL ORDER + REFUND
+        // =========================
         private void CancelOrder(int orderId, decimal total)
         {
-            int customerId = 4;
 
-            using (SqlConnection con =
-                new SqlConnection(connectionString))
+            // CANCEL ORDER
+            string cancelQuery =
+                @"UPDATE Orders
+                  SET Status='Cancelled'
+                  WHERE OrderID=@id AND CustomerID = @cust";
+
+            SqlParameter[] cancelParams =
             {
-                con.Open();
+                new SqlParameter("@id", orderId),
+                new SqlParameter("@cust", customerId)
+            };
 
-                // UPDATE ORDER STATUS
+            db.ExecuteNonQuery(cancelQuery, cancelParams);
 
-                SqlCommand cmd = new SqlCommand(
-                    @"UPDATE Orders
-              SET Status='Cancelled'
-              WHERE OrderID=@id", con);
+            // REFUND WALLET
+            string refundQuery =
+                @"UPDATE Wallet
+                  SET Balance = Balance + @amount
+                  WHERE CustomerID=@cust";
 
-                cmd.Parameters.AddWithValue("@id", orderId);
+            SqlParameter[] refundParams =
+            {
+                new SqlParameter("@amount", total),
+                new SqlParameter("@cust", customerId)
+            };
 
-                cmd.ExecuteNonQuery();
-                SqlCommand refundCmd = new SqlCommand(
-                @"UPDATE Users
-                SET WalletBalance = WalletBalance + @amount
-                WHERE UserID=@cust", con);
+            db.ExecuteNonQuery(refundQuery, refundParams);
 
-                refundCmd.Parameters.AddWithValue("@amount", total);
+            // WALLET TRANSACTION
 
-                refundCmd.Parameters.AddWithValue("@cust", customerId);
+            string walletId = GetWalletID(customerId);
 
-                refundCmd.ExecuteNonQuery();
-
-                // REFUND WALLET
-
-                SqlCommand transCmd = new SqlCommand(
-                @"INSERT INTO WalletTransactions
-                (TransactionID, WalletID, Amount, Type, Date)
-                VALUES
-                (@tid, @wid, @amt, @type, @date)", con);
-
-                transCmd.Parameters.AddWithValue("@tid",
-                    "T" + DateTime.Now.Ticks.ToString().Substring(10));
-
-                transCmd.Parameters.AddWithValue("@wid", "W001");
-
-                transCmd.Parameters.AddWithValue("@amt", total);
-
-                transCmd.Parameters.AddWithValue("@type", "Refund");
-
-                transCmd.Parameters.AddWithValue("@date", DateTime.Now);
-
-                transCmd.ExecuteNonQuery();
-
-                MessageBox.Show(
-                    "Order cancelled and refund processed!");
-
-                LoadOrderHistory();
+            if (walletId == null)
+            {
+                MessageBox.Show("Wallet not found!");
+                return;
             }
+
+            string transQuery =
+                @"INSERT INTO WalletTransactions
+      (TransactionID, WalletID, Amount, Type, Date)
+      VALUES
+      (@tid, @wid, @amt, @type, @date)";
+
+            SqlParameter[] transParams =
+            {
+    new SqlParameter("@tid", "T" + DateTime.Now.Ticks.ToString().Substring(10)),
+    new SqlParameter("@wid", walletId),   //  REAL WalletID (FIXED)
+    new SqlParameter("@amt", total),
+    new SqlParameter("@type", "Refund"),  // or "Top Up"
+    new SqlParameter("@date", DateTime.Now)
+};
+
+            db.ExecuteNonQuery(transQuery, transParams);
+            MessageBox.Show("Order cancelled and refund processed!");
+
+            LoadOrderHistory();
+        }
+
+        private void flowHistory_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
-    }
-
-
+}

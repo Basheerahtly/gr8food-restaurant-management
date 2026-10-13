@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUpdateUserProfiles));
-            this.lblRemoveUserPortal = new System.Windows.Forms.Label();
+            this.lblUpdateUserPortal = new System.Windows.Forms.Label();
             this.lblBackToHome = new System.Windows.Forms.Label();
             this.pictureBoxBackToHome = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -90,16 +90,16 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblRemoveUserPortal
+            // lblUpdateUserPortal
             // 
-            this.lblRemoveUserPortal.AutoSize = true;
-            this.lblRemoveUserPortal.Font = new System.Drawing.Font("Century Gothic", 24F);
-            this.lblRemoveUserPortal.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblRemoveUserPortal.Location = new System.Drawing.Point(26, 116);
-            this.lblRemoveUserPortal.Name = "lblRemoveUserPortal";
-            this.lblRemoveUserPortal.Size = new System.Drawing.Size(478, 58);
-            this.lblRemoveUserPortal.TabIndex = 7;
-            this.lblRemoveUserPortal.Text = "Update User Profiles";
+            this.lblUpdateUserPortal.AutoSize = true;
+            this.lblUpdateUserPortal.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.lblUpdateUserPortal.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUpdateUserPortal.Location = new System.Drawing.Point(26, 116);
+            this.lblUpdateUserPortal.Name = "lblUpdateUserPortal";
+            this.lblUpdateUserPortal.Size = new System.Drawing.Size(478, 58);
+            this.lblUpdateUserPortal.TabIndex = 7;
+            this.lblUpdateUserPortal.Text = "Update User Profiles";
             // 
             // lblBackToHome
             // 
@@ -362,9 +362,9 @@
             this.comboBox1.Items.AddRange(new object[] {
             "System Admin",
             "Manager",
-            "Chef 1",
-            "Chef 2",
-            "Chef 3"});
+            "Chef1",
+            "Chef2",
+            "Chef3"});
             this.comboBox1.Location = new System.Drawing.Point(937, 75);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(231, 29);
@@ -472,14 +472,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.lblErrorUpdate);
             this.groupBox2.Controls.Add(this.lblErrorNewPassword);
+            this.groupBox2.Controls.Add(this.lblErrorConfirmPassword);
+            this.groupBox2.Controls.Add(this.lblErrorUpdate);
             this.groupBox2.Controls.Add(this.chkCurrentPassword);
             this.groupBox2.Controls.Add(this.chkConfirmPassword);
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.chkConfirmDelete);
             this.groupBox2.Controls.Add(this.chkNewPassword);
-            this.groupBox2.Controls.Add(this.lblErrorConfirmPassword);
             this.groupBox2.Controls.Add(this.lblErrorCurrentPassword);
             this.groupBox2.Controls.Add(this.txtConfirmPassword);
             this.groupBox2.Controls.Add(this.lblConfirmNewPassword);
@@ -499,10 +499,10 @@
             // 
             this.lblErrorNewPassword.AutoSize = true;
             this.lblErrorNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorNewPassword.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblErrorNewPassword.Location = new System.Drawing.Point(518, 107);
+            this.lblErrorNewPassword.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblErrorNewPassword.Location = new System.Drawing.Point(322, 134);
             this.lblErrorNewPassword.Name = "lblErrorNewPassword";
-            this.lblErrorNewPassword.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorNewPassword.Size = new System.Drawing.Size(0, 23);
             this.lblErrorNewPassword.TabIndex = 66;
             // 
             // chkCurrentPassword
@@ -510,7 +510,7 @@
             this.chkCurrentPassword.AutoSize = true;
             this.chkCurrentPassword.BackColor = System.Drawing.Color.Transparent;
             this.chkCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkCurrentPassword.Location = new System.Drawing.Point(26, 110);
+            this.chkCurrentPassword.Location = new System.Drawing.Point(23, 107);
             this.chkCurrentPassword.Name = "chkCurrentPassword";
             this.chkCurrentPassword.Size = new System.Drawing.Size(121, 21);
             this.chkCurrentPassword.TabIndex = 65;
@@ -549,9 +549,9 @@
             this.lblErrorConfirmPassword.AutoSize = true;
             this.lblErrorConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorConfirmPassword.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblErrorConfirmPassword.Location = new System.Drawing.Point(622, 107);
+            this.lblErrorConfirmPassword.Location = new System.Drawing.Point(622, 131);
             this.lblErrorConfirmPassword.Name = "lblErrorConfirmPassword";
-            this.lblErrorConfirmPassword.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorConfirmPassword.Size = new System.Drawing.Size(0, 23);
             this.lblErrorConfirmPassword.TabIndex = 62;
             // 
             // lblErrorCurrentPassword
@@ -559,10 +559,11 @@
             this.lblErrorCurrentPassword.AutoSize = true;
             this.lblErrorCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorCurrentPassword.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblErrorCurrentPassword.Location = new System.Drawing.Point(20, 107);
+            this.lblErrorCurrentPassword.Location = new System.Drawing.Point(21, 131);
             this.lblErrorCurrentPassword.Name = "lblErrorCurrentPassword";
-            this.lblErrorCurrentPassword.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorCurrentPassword.Size = new System.Drawing.Size(0, 23);
             this.lblErrorCurrentPassword.TabIndex = 56;
+            this.lblErrorCurrentPassword.Click += new System.EventHandler(this.lblErrorCurrentPassword_Click);
             // 
             // txtConfirmPassword
             // 
@@ -649,7 +650,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxBackToHome);
             this.Controls.Add(this.lblBackToHome);
-            this.Controls.Add(this.lblRemoveUserPortal);
+            this.Controls.Add(this.lblUpdateUserPortal);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUpdateUserProfiles";
@@ -672,7 +673,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblRemoveUserPortal;
+        private System.Windows.Forms.Label lblUpdateUserPortal;
         private System.Windows.Forms.Label lblBackToHome;
         private System.Windows.Forms.PictureBox pictureBoxBackToHome;
         private System.Windows.Forms.PictureBox pictureBox1;

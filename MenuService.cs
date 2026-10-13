@@ -8,38 +8,49 @@ namespace CHEF
     public class MenuService
     {
         DatabaseHelper databaseHelper = new DatabaseHelper(); //Database helper to handle database queries
+        ShiftHelper ShiftHelper = new ShiftHelper();
 
 
         //METHODS FOR MANAGE_MENU
-        public DataTable GetMenusByChef(int chefID) //Method to retrieve menu items based on clogged-in chef
+        public DataTable GetMenusByChef(string chefID)
         {
             // SQL query
             string query = @"
-            SELECT
-                MenuID,
-                MenuName,
-                Description,
-                Category,
-                Price,
-                MenuPic,
-                ChefID,
-                IsAvailable,
-                AvailableFrom,
-                AvailableUntil
-            FROM Menu_Table
-            WHERE ChefID = @ChefID
-            OR Category IN('Snacks', 'Drinks')";
+                            SELECT
+                            MenuID,
+                            MenuName,
+                            Description,
+                            Category,
+                            Price,
+                            MenuPic,
+                            IsAvailable,
+                            AvailableFrom,
+                            AvailableUntil
 
-            // SQL parameters
-            SqlParameter[] parameters =
+                           FROM Menu_Table";
+
+            // Get all menus
+            DataTable dt =databaseHelper.ExecuteQuery(query);
+
+            // Create filtered table
+            DataTable filteredTable =dt.Clone();
+
+            // Filter menus using access rules
+            foreach (DataRow row in dt.Rows)
             {
-                new SqlParameter("@ChefID",chefID)
-            };
+                string category =row["Category"].ToString();
 
-            // Executing query
-            return databaseHelper.ExecuteQuery(query, parameters);
+                bool canAccess =ShiftHelper.CanChefAccessCategory(chefID,category);
+
+                // Add allowed menus only
+                if (canAccess)
+                {
+                    filteredTable.ImportRow(row);
+                }
+            }
+
+            return filteredTable;
         }
-
         public DataTable GetMenuByID(int menuID)// Method to retrieve menu by menuID  
         {
             // SQL query
@@ -63,8 +74,8 @@ namespace CHEF
         {
             // SQL query
             string query = @"
-            INSERT INTO Menu_Table(MenuName,Description,Category,Price,MenuPic,ChefID,IsAvailable,AvailableFrom,AvailableUntil)
-            VALUES(@MenuName,@Description,@Category,@Price,@MenuPic,@ChefID,@IsAvailable,@AvailableFrom,@AvailableUntil)";
+            INSERT INTO Menu_Table(MenuName,Description,Category,Price,MenuPic,IsAvailable,AvailableFrom,AvailableUntil)
+            VALUES(@MenuName,@Description,@Category,@Price,@MenuPic,@IsAvailable,@AvailableFrom,@AvailableUntil)";
 
             // SQL parameters
             SqlParameter[] parameters =
@@ -79,8 +90,6 @@ namespace CHEF
 
                new SqlParameter("@MenuPic",menu.MenuPic),
 
-               new SqlParameter("@ChefID",menu.ChefID),
-
                new SqlParameter("@IsAvailable",menu.Available),
 
                new SqlParameter("@AvailableFrom",menu.AvailableFrom),
@@ -92,6 +101,22 @@ namespace CHEF
             databaseHelper.ExecuteNonQuery(query, parameters);
         }
 
+        public bool IsMenuUsedInOrders(int menuID)
+        {
+            string query = @"
+                          SELECT COUNT(*)
+                          FROM OrderItems
+                          WHERE MenuID = @MenuID";
+
+            SqlParameter[] parameters =
+            {
+                        new SqlParameter("@MenuID", menuID)
+            };
+
+            int count = Convert.ToInt32(databaseHelper.Executescalar(query, parameters));
+
+            return count > 0;
+        }
         public void DeleteMenu(int menuID)//Method to delete menu item from database
         {
             string query = @"

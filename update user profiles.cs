@@ -11,6 +11,8 @@ namespace assignment
     public partial class frmUpdateUserProfiles : Form
     {
         private readonly UserRepository _userRepository;
+        Validator Validator = new Validator();
+        PasswordHelper PasswordHelper = new PasswordHelper();
 
         // ─── State ────────────────────────────────────────────────────
         // Stores the found user so we don't query the database twice
@@ -351,6 +353,11 @@ namespace assignment
         private void radioButtonFemale_CheckedChanged_1(object sender, EventArgs e)
         {
             UpdateButtonState();
+        }
+
+        private void lblErrorCurrentPassword_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

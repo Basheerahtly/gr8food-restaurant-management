@@ -38,7 +38,7 @@ namespace CHEF
             {
                 using (MemoryStream ms =new MemoryStream(currentMenu.MenuPic))
                 {
-                     PicChange.Image=Image.FromStream(ms);
+                     PicBoxChange.Image=Image.FromStream(ms);
                 }
             }
         }

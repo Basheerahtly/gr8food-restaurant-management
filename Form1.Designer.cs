@@ -34,21 +34,22 @@
             this.panelOrderHistory = new System.Windows.Forms.Panel();
             this.btnOrderHistory = new System.Windows.Forms.Label();
             this.panelLogout = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelLogout = new System.Windows.Forms.Label();
             this.panelDashboard = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDashboard = new System.Windows.Forms.Label();
             this.panelFeedback = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelFeedback = new System.Windows.Forms.Label();
             this.panelOrders = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelMyOrders = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelBrowseMenu = new System.Windows.Forms.Label();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelTop = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
             this.labelNotification = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.labelYourWeekOrders = new System.Windows.Forms.Label();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.colFood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +67,6 @@
             this.labelWallet = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.labelWelcome = new System.Windows.Forms.Label();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
             this.panelOrderHistory.SuspendLayout();
             this.panelLogout.SuspendLayout();
@@ -74,6 +74,7 @@
             this.panelFeedback.SuspendLayout();
             this.panelOrders.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelTop.SuspendLayout();
             this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
@@ -81,7 +82,6 @@
             this.panelOrder.SuspendLayout();
             this.panelWallet.SuspendLayout();
             this.panelWelcome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSidebar
@@ -118,7 +118,7 @@
             this.btnOrderHistory.ForeColor = System.Drawing.Color.White;
             this.btnOrderHistory.Location = new System.Drawing.Point(15, 16);
             this.btnOrderHistory.Name = "btnOrderHistory";
-            this.btnOrderHistory.Size = new System.Drawing.Size(152, 22);
+            this.btnOrderHistory.Size = new System.Drawing.Size(193, 26);
             this.btnOrderHistory.TabIndex = 1;
             this.btnOrderHistory.Text = "🗓️ Order History\r\n";
             this.btnOrderHistory.Click += new System.EventHandler(this.btnOrderHistory_Click);
@@ -126,7 +126,7 @@
             // panelLogout
             // 
             this.panelLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelLogout.Controls.Add(this.label6);
+            this.panelLogout.Controls.Add(this.labelLogout);
             this.panelLogout.Location = new System.Drawing.Point(0, 450);
             this.panelLogout.Name = "panelLogout";
             this.panelLogout.Size = new System.Drawing.Size(180, 50);
@@ -134,21 +134,22 @@
             this.panelLogout.Click += new System.EventHandler(this.panelLogout_Cick);
             this.panelLogout.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogout_Paint);
             // 
-            // label6
+            // labelLogout
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(15, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 22);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "📤 Logout";
+            this.labelLogout.AutoSize = true;
+            this.labelLogout.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogout.ForeColor = System.Drawing.Color.White;
+            this.labelLogout.Location = new System.Drawing.Point(15, 16);
+            this.labelLogout.Name = "labelLogout";
+            this.labelLogout.Size = new System.Drawing.Size(117, 26);
+            this.labelLogout.TabIndex = 1;
+            this.labelLogout.Text = "📤 Logout";
+            this.labelLogout.Click += new System.EventHandler(this.labelLogout_Click);
             // 
             // panelDashboard
             // 
             this.panelDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelDashboard.Controls.Add(this.label1);
+            this.panelDashboard.Controls.Add(this.labelDashboard);
             this.panelDashboard.Location = new System.Drawing.Point(0, 100);
             this.panelDashboard.Name = "panelDashboard";
             this.panelDashboard.Size = new System.Drawing.Size(180, 50);
@@ -156,43 +157,44 @@
             this.panelDashboard.Click += new System.EventHandler(this.panelDashboard_Click);
             this.panelDashboard.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDashboard_Paint);
             // 
-            // label1
+            // labelDashboard
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 22);
-            this.label1.TabIndex = 1;
-            this.label1.Text = " 📌 Dashboard";
+            this.labelDashboard.AutoSize = true;
+            this.labelDashboard.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDashboard.ForeColor = System.Drawing.Color.White;
+            this.labelDashboard.Location = new System.Drawing.Point(15, 11);
+            this.labelDashboard.Name = "labelDashboard";
+            this.labelDashboard.Size = new System.Drawing.Size(162, 26);
+            this.labelDashboard.TabIndex = 1;
+            this.labelDashboard.Text = " 📌 Dashboard";
+            this.labelDashboard.Click += new System.EventHandler(this.label1_Click);
             // 
             // panelFeedback
             // 
             this.panelFeedback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelFeedback.Controls.Add(this.label5);
+            this.panelFeedback.Controls.Add(this.labelFeedback);
             this.panelFeedback.Location = new System.Drawing.Point(0, 310);
             this.panelFeedback.Name = "panelFeedback";
             this.panelFeedback.Size = new System.Drawing.Size(180, 50);
             this.panelFeedback.TabIndex = 2;
             this.panelFeedback.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFeedback_Paint);
             // 
-            // label5
+            // labelFeedback
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(15, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 22);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "📝  Feedback";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.labelFeedback.AutoSize = true;
+            this.labelFeedback.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFeedback.ForeColor = System.Drawing.Color.White;
+            this.labelFeedback.Location = new System.Drawing.Point(15, 16);
+            this.labelFeedback.Name = "labelFeedback";
+            this.labelFeedback.Size = new System.Drawing.Size(149, 26);
+            this.labelFeedback.TabIndex = 1;
+            this.labelFeedback.Text = "📝  Feedback";
+            this.labelFeedback.Click += new System.EventHandler(this.label5_Click);
             // 
             // panelOrders
             // 
             this.panelOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelOrders.Controls.Add(this.label3);
+            this.panelOrders.Controls.Add(this.labelMyOrders);
             this.panelOrders.Location = new System.Drawing.Point(0, 240);
             this.panelOrders.Name = "panelOrders";
             this.panelOrders.Size = new System.Drawing.Size(180, 50);
@@ -200,22 +202,22 @@
             this.panelOrders.Click += new System.EventHandler(this.panelOrders_Click);
             this.panelOrders.Paint += new System.Windows.Forms.PaintEventHandler(this.panelOrders_Paint);
             // 
-            // label3
+            // labelMyOrders
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(15, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 22);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "🛒  My Orders";
-            this.label3.Click += new System.EventHandler(this.panelOrders_Click);
+            this.labelMyOrders.AutoSize = true;
+            this.labelMyOrders.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMyOrders.ForeColor = System.Drawing.Color.White;
+            this.labelMyOrders.Location = new System.Drawing.Point(15, 16);
+            this.labelMyOrders.Name = "labelMyOrders";
+            this.labelMyOrders.Size = new System.Drawing.Size(165, 26);
+            this.labelMyOrders.TabIndex = 1;
+            this.labelMyOrders.Text = "🛒  My Orders";
+            this.labelMyOrders.Click += new System.EventHandler(this.panelOrders_Click);
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panelMenu.Controls.Add(this.label2);
+            this.panelMenu.Controls.Add(this.labelBrowseMenu);
             this.panelMenu.Location = new System.Drawing.Point(0, 170);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(180, 51);
@@ -223,17 +225,26 @@
             this.panelMenu.Click += new System.EventHandler(this.panelMenu_Click);
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
-            // label2
+            // labelBrowseMenu
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(15, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "📋 Browse Menu";
-            this.label2.Click += new System.EventHandler(this.panelMenu_Click);
+            this.labelBrowseMenu.AutoSize = true;
+            this.labelBrowseMenu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBrowseMenu.ForeColor = System.Drawing.Color.White;
+            this.labelBrowseMenu.Location = new System.Drawing.Point(15, 16);
+            this.labelBrowseMenu.Name = "labelBrowseMenu";
+            this.labelBrowseMenu.Size = new System.Drawing.Size(186, 26);
+            this.labelBrowseMenu.TabIndex = 1;
+            this.labelBrowseMenu.Text = "📋 Browse Menu";
+            this.labelBrowseMenu.Click += new System.EventHandler(this.panelMenu_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(220, 100);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
             // 
             // panelTop
             // 
@@ -245,15 +256,16 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(808, 70);
             this.panelTop.TabIndex = 2;
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Location = new System.Drawing.Point(589, 18);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 21);
+            this.lblName.Size = new System.Drawing.Size(75, 28);
             this.lblName.TabIndex = 2;
-            this.lblName.Text = "Duha";
+            this.lblName.Text = "Profile";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // labelNotification
@@ -261,7 +273,7 @@
             this.labelNotification.AutoSize = true;
             this.labelNotification.Location = new System.Drawing.Point(550, 18);
             this.labelNotification.Name = "labelNotification";
-            this.labelNotification.Size = new System.Drawing.Size(33, 21);
+            this.labelNotification.Size = new System.Drawing.Size(40, 28);
             this.labelNotification.TabIndex = 1;
             this.labelNotification.Text = "🔔";
             this.labelNotification.Click += new System.EventHandler(this.labelNotification_Click);
@@ -271,7 +283,7 @@
             this.txtSearch.Location = new System.Drawing.Point(300, 15);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.ReadOnly = true;
-            this.txtSearch.Size = new System.Drawing.Size(200, 29);
+            this.txtSearch.Size = new System.Drawing.Size(200, 34);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
@@ -279,7 +291,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelMain.Controls.Add(this.label7);
+            this.panelMain.Controls.Add(this.labelYourWeekOrders);
             this.panelMain.Controls.Add(this.dgvOrders);
             this.panelMain.Controls.Add(this.labelRecentOrders);
             this.panelMain.Controls.Add(this.panelStatus);
@@ -293,15 +305,15 @@
             this.panelMain.TabIndex = 3;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
-            // label7
+            // labelYourWeekOrders
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(100, 130);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(232, 21);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "You placed 3 orders this week!\r\n";
+            this.labelYourWeekOrders.AutoSize = true;
+            this.labelYourWeekOrders.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelYourWeekOrders.Location = new System.Drawing.Point(100, 130);
+            this.labelYourWeekOrders.Name = "labelYourWeekOrders";
+            this.labelYourWeekOrders.Size = new System.Drawing.Size(299, 28);
+            this.labelYourWeekOrders.TabIndex = 6;
+            this.labelYourWeekOrders.Text = "You placed 3 orders this week!\r\n";
             // 
             // dgvOrders
             // 
@@ -338,6 +350,7 @@
             this.dgvOrders.Location = new System.Drawing.Point(100, 290);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersVisible = false;
+            this.dgvOrders.RowHeadersWidth = 62;
             this.dgvOrders.Size = new System.Drawing.Size(650, 220);
             this.dgvOrders.TabIndex = 5;
             this.dgvOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrders_CellContentClick);
@@ -346,21 +359,25 @@
             // colFood
             // 
             this.colFood.HeaderText = "Food Name";
+            this.colFood.MinimumWidth = 8;
             this.colFood.Name = "colFood";
             // 
             // colQuantity
             // 
             this.colQuantity.HeaderText = "Quantity";
+            this.colQuantity.MinimumWidth = 8;
             this.colQuantity.Name = "colQuantity";
             // 
             // colPrice
             // 
             this.colPrice.HeaderText = "Price";
+            this.colPrice.MinimumWidth = 8;
             this.colPrice.Name = "colPrice";
             // 
             // colStatus
             // 
             this.colStatus.HeaderText = "Status";
+            this.colStatus.MinimumWidth = 8;
             this.colStatus.Name = "colStatus";
             // 
             // labelRecentOrders
@@ -368,7 +385,7 @@
             this.labelRecentOrders.AutoSize = true;
             this.labelRecentOrders.Location = new System.Drawing.Point(100, 260);
             this.labelRecentOrders.Name = "labelRecentOrders";
-            this.labelRecentOrders.Size = new System.Drawing.Size(116, 21);
+            this.labelRecentOrders.Size = new System.Drawing.Size(146, 28);
             this.labelRecentOrders.TabIndex = 4;
             this.labelRecentOrders.Text = "Recent Orders";
             // 
@@ -387,7 +404,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(57, 56);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 21);
+            this.label12.Size = new System.Drawing.Size(117, 28);
             this.label12.TabIndex = 1;
             this.label12.Text = "In Progress";
             // 
@@ -397,7 +414,7 @@
             this.labelStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStatus.Location = new System.Drawing.Point(57, 26);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(86, 21);
+            this.labelStatus.Size = new System.Drawing.Size(106, 28);
             this.labelStatus.TabIndex = 0;
             this.labelStatus.Text = "Last Order";
             // 
@@ -416,7 +433,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(57, 56);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 21);
+            this.label10.Size = new System.Drawing.Size(24, 28);
             this.label10.TabIndex = 1;
             this.label10.Text = "5";
             // 
@@ -426,7 +443,7 @@
             this.lblTotalOrders.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalOrders.Location = new System.Drawing.Point(57, 26);
             this.lblTotalOrders.Name = "lblTotalOrders";
-            this.lblTotalOrders.Size = new System.Drawing.Size(99, 21);
+            this.lblTotalOrders.Size = new System.Drawing.Size(122, 28);
             this.lblTotalOrders.TabIndex = 0;
             this.lblTotalOrders.Text = "Total Orders";
             // 
@@ -445,7 +462,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(57, 56);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 21);
+            this.label9.Size = new System.Drawing.Size(115, 28);
             this.label9.TabIndex = 1;
             this.label9.Text = "RM 120.00";
             // 
@@ -455,7 +472,7 @@
             this.labelWallet.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWallet.Location = new System.Drawing.Point(57, 26);
             this.labelWallet.Name = "labelWallet";
-            this.labelWallet.Size = new System.Drawing.Size(55, 21);
+            this.labelWallet.Size = new System.Drawing.Size(68, 28);
             this.labelWallet.TabIndex = 0;
             this.labelWallet.Text = "Wallet";
             // 
@@ -475,19 +492,9 @@
             this.labelWelcome.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWelcome.Location = new System.Drawing.Point(20, 20);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(260, 34);
+            this.labelWelcome.Size = new System.Drawing.Size(338, 46);
             this.labelWelcome.TabIndex = 0;
-            this.labelWelcome.Text = "Welcome Duha,\r\nReady to order something delicious today?\r\n";
-            // 
-            // picLogo
-            // 
-  
-            this.picLogo.Location = new System.Drawing.Point(0, 0);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(220, 100);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picLogo.TabIndex = 0;
-            this.picLogo.TabStop = false;
+            this.labelWelcome.Text = "Welcome,\r\nReady to order something delicious today?\r\n";
             // 
             // Form1
             // 
@@ -517,6 +524,7 @@
             this.panelOrders.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelTop.ResumeLayout(false);
             this.panelTop.PerformLayout();
             this.panelMain.ResumeLayout(false);
@@ -530,7 +538,6 @@
             this.panelWallet.PerformLayout();
             this.panelWelcome.ResumeLayout(false);
             this.panelWelcome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,14 +548,14 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Panel panelDashboard;
         private System.Windows.Forms.Panel panelFeedback;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelFeedback;
         private System.Windows.Forms.Panel panelOrders;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelMyOrders;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelBrowseMenu;
+        private System.Windows.Forms.Label labelDashboard;
         private System.Windows.Forms.Panel panelLogout;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelLogout;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblName;
@@ -571,7 +578,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelYourWeekOrders;
         private System.Windows.Forms.Panel panelOrderHistory;
         private System.Windows.Forms.Label btnOrderHistory;
     }

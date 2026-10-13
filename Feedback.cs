@@ -1,8 +1,9 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using assignment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,40 +14,39 @@ namespace Gr8FoodSystem_Final
 {
     public partial class Feedback : Form
     {
-        string connectionString = "Data Source=localhost;Initial Catalog=GR8Food;Integrated Security=True;TrustServerCertificate=True";
-        public Feedback()
+        private int customerId;
+        DatabaseHelper db = new DatabaseHelper();
+        public Feedback(int customerId)
         {
             InitializeComponent();
+            this.customerId = customerId;
             LoadCompletedOrders();
             this.TopLevel = false;
-            this.FormBorderStyle =
-                FormBorderStyle.None;
+            this.FormBorderStyle =FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
 
         }
         private void LoadCompletedOrders()
         {
-            using (SqlConnection con =
-                new SqlConnection(connectionString))
+            string query =
+                @"SELECT OrderID
+          FROM Orders
+          WHERE CustomerID=@id
+          AND Status='Completed'";
+
+            SqlParameter[] parameters =
             {
-                con.Open();
+        new SqlParameter("@id", customerId)
+    };
 
-                SqlCommand cmd = new SqlCommand(
-                    @"SELECT OrderID
-              FROM Orders
-              WHERE CustomerID = 4
-              AND Status = 'Completed'", con);
+            DataTable dt =db.ExecuteQuery(query, parameters);
 
-                SqlDataReader reader =
-                    cmd.ExecuteReader();
+            cmbOrders.Items.Clear();
 
-                while (reader.Read())
-                {
-                    cmbOrders.Items.Add(
-                        reader["OrderID"].ToString());
-                }
-
-                reader.Close();
+            foreach (DataRow row in dt.Rows)
+            {
+                cmbOrders.Items.Add(
+                    row["OrderID"].ToString());
             }
         }
         private void Feedback_Load(object sender, EventArgs e)
@@ -100,46 +100,27 @@ namespace Gr8FoodSystem_Final
 
             // MESSAGE WITH RATING
 
-            string message =
-               txtFeedback.Text + "[" + rating + "] ";
-            using (SqlConnection con =
-                new SqlConnection(connectionString))
-            {
-                con.Open();
+            string message =txtFeedback.Text + "[" + rating + "] ";
 
-                SqlCommand cmd = new SqlCommand(
-                    @"INSERT INTO Feedback
+            string query =  @"INSERT INTO Feedback
             (OrderID, Message, Response, Status, Date)
             VALUES
-            (@oid, @msg, @res, @status, @date)", con);
+            (@oid, @msg, @res, @status, @date)";
 
-                cmd.Parameters.AddWithValue(
-                    "@oid",
-                    cmbOrders.SelectedItem.ToString());
+            SqlParameter[] parameters =
+            {
+                new SqlParameter("@oid", cmbOrders.SelectedItem.ToString()),
+                new SqlParameter("@msg", message),
+                new SqlParameter("@res", ""),
+                new SqlParameter("@status", "Pending"),
+                new SqlParameter("@date", DateTime.Now)
+            };
 
-                cmd.Parameters.AddWithValue(
-                    "@msg",
-                    message);
-
-                cmd.Parameters.AddWithValue(
-                    "@res",
-                    "");
-
-                cmd.Parameters.AddWithValue(
-                    "@status",
-                    "Pending");
-
-                cmd.Parameters.AddWithValue(
-                    "@date",
-                    DateTime.Now);
-
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Feedback submitted!");
-
-                txtFeedback.Clear();
-            }
+            db.ExecuteNonQuery(query, parameters);
+            MessageBox.Show("Feedback submitted!");
+            txtFeedback.Clear();
         }
+        
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {

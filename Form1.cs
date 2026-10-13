@@ -1,7 +1,9 @@
-﻿using System;
+﻿using assignment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,12 @@ namespace Gr8FoodSystem_Final
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public int CustomerID;
+        DatabaseHelper db = new DatabaseHelper();
+        public Form1(int customerId)
         {
             InitializeComponent();
+            this.CustomerID = customerId;
         }
         private void OpenForm(Form form)
         {
@@ -115,9 +120,71 @@ namespace Gr8FoodSystem_Final
 
         }
 
+        private void LoadWalletBalance()
+        {
 
+            string query ="SELECT Balance FROM Wallet WHERE CustomerID=@id";
+
+            SqlParameter[] parameters =
+            {
+               new SqlParameter("@id", this.CustomerID)
+    };
+
+            object result =
+                db.Executescalar(query, parameters);
+
+            if (result != null)
+            {
+                label9.Text =
+                    "RM " + result.ToString();
+            }
+        }
+        private void LoadTotalOrders()
+        {
+            string query =
+                "SELECT COUNT(*) FROM Orders WHERE CustomerID=@id";
+
+            SqlParameter[] parameters =
+            {
+                   new SqlParameter("@id", this.CustomerID)
+    };
+
+            object result =
+                db.Executescalar(query, parameters);
+
+            label10.Text =
+                result.ToString();
+        }
+        private void LoadLastOrderStatus()
+        {
+
+            string query =@"SELECT TOP 1 Status
+                             FROM Orders
+                             WHERE CustomerID=@id
+                             ORDER BY OrderID DESC";
+
+            SqlParameter[] parameters =
+            {
+                   new SqlParameter("@id", this.CustomerID)
+    };
+
+            object result =
+                db.Executescalar(query, parameters);
+
+            if (result != null)
+            {
+                label12.Text =
+                    result.ToString();
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
-        { 
+        {
+            LoadWalletBalance();
+           
+            LoadTotalOrders();
+            
+            LoadLastOrderStatus();
+
             dgvOrders.Rows.Add("Burger", "2", "RM 15", "Completed");
             dgvOrders.Rows.Add("Pizza", "1", "RM 20", "In Progress");
             dgvOrders.Rows.Add("Pasta", "3", "RM 25", "Completed");
@@ -153,15 +220,18 @@ namespace Gr8FoodSystem_Final
         private void panelOrders_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            OpenForm(new MyOrders());
+            OpenForm(new MyOrders(this.CustomerID));
         }
 
         private void panelProfile_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            OpenForm(new Profile());
+            OpenForm(new Profile(this.CustomerID));
         }
-
+        public void RefreshWallet()
+        {
+            LoadWalletBalance();
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -170,13 +240,13 @@ namespace Gr8FoodSystem_Final
         private void btnOrderHistory_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            OpenForm(new OrderHistory());
+            OpenForm(new OrderHistory(this.CustomerID));
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
             panelMain.Controls.Clear();
-            OpenForm(new Feedback());
+            OpenForm(new Feedback(this.CustomerID));
         }
 
         private void panelDashboard_Paint(object sender, PaintEventArgs e)
@@ -190,8 +260,6 @@ namespace Gr8FoodSystem_Final
             
         }
 
-        
-
         private void panelLogout_Cick(object sender, EventArgs e)
         
         {
@@ -202,7 +270,7 @@ namespace Gr8FoodSystem_Final
         {
             panelMain.Controls.Clear();
 
-            Profile p = new Profile();
+            Profile p = new Profile(this.CustomerID);
 
             panelMain.Controls.Add(p);
 
@@ -226,6 +294,27 @@ namespace Gr8FoodSystem_Final
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1(this.CustomerID);
+            form1.ShowDialog();
+            this.Close();
+        }
+
+        private void labelLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+            this.Close();
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
         {
 
         }

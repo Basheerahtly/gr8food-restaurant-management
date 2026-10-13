@@ -118,6 +118,7 @@
             // picBoxLogo
             // 
             this.picBoxLogo.ErrorImage = null;
+            this.picBoxLogo.Image = global::assignment.Properties.Resources.WhatsApp_Image_2026_04_15_at_22_476;
             this.picBoxLogo.InitialImage = null;
             this.picBoxLogo.Location = new System.Drawing.Point(3, 4);
             this.picBoxLogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -138,7 +139,7 @@
             this.btnDashboard.Location = new System.Drawing.Point(3, 154);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(189, 69);
+            this.btnDashboard.Size = new System.Drawing.Size(168, 69);
             this.btnDashboard.TabIndex = 4;
             this.btnDashboard.Text = "⌂   Dashboard ";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -151,16 +152,17 @@
             this.btnMenu.BackColor = System.Drawing.Color.Transparent;
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenu.Font = new System.Drawing.Font("Gabriola", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenu.ForeColor = System.Drawing.Color.Transparent;
             this.btnMenu.Location = new System.Drawing.Point(3, 231);
             this.btnMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(224, 69);
+            this.btnMenu.Size = new System.Drawing.Size(184, 69);
             this.btnMenu.TabIndex = 5;
             this.btnMenu.Text = "🍽  Manage Menu ";
             this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnOrders
             // 
@@ -209,6 +211,7 @@
             this.btnLogOut.Text = "➜] Log out";
             this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // pnlTop
             // 
@@ -331,10 +334,10 @@
             this.btnChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnChanges.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChanges.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChanges.Location = new System.Drawing.Point(246, 11);
+            this.btnChanges.Location = new System.Drawing.Point(228, 11);
             this.btnChanges.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnChanges.Name = "btnChanges";
-            this.btnChanges.Size = new System.Drawing.Size(192, 38);
+            this.btnChanges.Size = new System.Drawing.Size(210, 38);
             this.btnChanges.TabIndex = 16;
             this.btnChanges.Text = "Preview Changes";
             this.btnChanges.UseVisualStyleBackColor = false;

@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CHEF
 {
     public class Menu
     {
         public int MenuID
-        { 
-          get;
-          set;
+        {
+            get;
+            set;
         }
         public string MenuName // Menu item name
         {
@@ -53,11 +49,8 @@ namespace CHEF
             get;
             set;
         }
-        public int ChefID      // Chef owner
-        {
-            get;
-            set;
-        }
+
+
     }
 }
 

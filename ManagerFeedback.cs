@@ -1,4 +1,5 @@
-﻿using System;
+﻿using assignment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -277,7 +278,7 @@ namespace prac
 
                 lblFbDetailsDate.Text = "-";
 
-                lblFbDetail.Text = "Feedback";
+                lblFbMsg.Text = "Feedback";
 
                 lblFeedbackTypePN.Text = "-";
 
@@ -356,7 +357,7 @@ namespace prac
 
 
                     // Feedback Message
-                    lblFbDetail.Text =
+                    lblFbMsg.Text =
                         row.Cells["Message"]
                         .Value.ToString();
 
@@ -466,7 +467,10 @@ namespace prac
 
             if (result == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.ShowDialog();
+                this.Close();
             }
         }
 
@@ -478,6 +482,14 @@ namespace prac
         private void lblNeutralNo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUpdProf_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmUpdateOwnProfile frmUpdateOwnProfile = new frmUpdateOwnProfile();
+            frmUpdateOwnProfile.ShowDialog();
+            this.Close();
         }
     }   
     

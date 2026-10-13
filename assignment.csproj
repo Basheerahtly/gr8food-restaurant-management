@@ -126,6 +126,12 @@
     <Compile Include="loginGR8.Designer.cs">
       <DependentUpon>loginGR8.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageOrder.Designer.cs">
+      <DependentUpon>ManageOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="Managerdashboard.cs">
       <SubType>Form</SubType>
@@ -265,6 +271,9 @@
     <EmbeddedResource Include="loginGR8.resx">
       <DependentUpon>loginGR8.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageOrder.resx">
+      <DependentUpon>ManageOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Managerdashboard.resx">
       <DependentUpon>Managerdashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +329,7 @@
     <EmbeddedResource Include="Wallet.resx">
       <DependentUpon>Wallet.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="GR8FoodDataSet.xsc">
       <DependentUpon>GR8FoodDataSet.xsd</DependentUpon>
     </None>
@@ -354,6 +364,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

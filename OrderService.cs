@@ -8,7 +8,7 @@ using System.Linq;
 public class OrderService
 {   //creating an instance of DatabaseHelper to use its methods for database operations
     private DatabaseHelper databaseHelper = new DatabaseHelper();
-
+    ShiftHelper ShiftHelper = new ShiftHelper();
     //Method to get active orders from the database
     public DataTable GetActiveOrders()
     {
@@ -30,51 +30,8 @@ public class OrderService
         return databaseHelper.ExecuteQuery(query);
     }
 
-    // Method to get chef kitchen activity
-    public DataTable GetChefKitchenActivity(int chefID)
-    {
-        // SQL query
-        string query = @"
-    SELECT DISTINCT TOP 3
-        OrderID,
-        Status,
-        StatusTime
-
-    FROM Orders
-
-    WHERE
-        CAST(OrderDateTime AS TIME)
-        BETWEEN @startTime AND @endTime
-
-    ORDER BY StatusTime DESC";
-
-        // SQL parameters
-        SqlParameter[] parameters =
-        {
-        new SqlParameter(
-            "@startTime",
-            ShiftHelper.GetShiftStartTime(
-                chefID
-            )
-        ),
-
-        new SqlParameter(
-            "@endTime",
-            ShiftHelper.GetShiftEndTime(
-                chefID
-            )
-        )
-    };
-
-        // Return activity
-        return databaseHelper.ExecuteQuery(
-            query,
-            parameters
-        );
-    }
-
     // Method to get chef-specific top dishes
-    public DataTable GetChefTopDishes(int chefID)
+    public DataTable GetChefTopDishes(string chefID)
     {
         // Get chef category
         string category =ShiftHelper.GetChefShift(chefID);
@@ -175,7 +132,7 @@ public class OrderService
     }
 
     // Method to get orders based on chef access
-    public DataTable GetChefOrders(int chefID)
+    public DataTable GetChefOrders(string chefID)
     {
         string query = @"
                SELECT 
@@ -214,7 +171,7 @@ public class OrderService
     }
 
     // Method to count chef-specific orders
-    public int GetChefOrderCount(int chefID,string status)
+    public int GetChefOrderCount(string chefID,string status)
     {
         // Getting chef-visible orders
         DataTable dt =GetChefOrders(chefID);

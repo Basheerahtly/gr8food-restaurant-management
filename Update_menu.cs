@@ -1,4 +1,5 @@
-﻿using System;
+﻿using assignment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,24 +16,29 @@ namespace CHEF
 
     public partial class Update_menu : Form
     {
-        private int loggedInChefID; //storing logged-in chefID
         private int selectedMenuID;
+
+        public string ChefID;
+
+        public string ChefName;
 
         private byte[] menuImage;
 
-        private MenuService menuService = new MenuService();
-        public Update_menu(int menuID,int chefID)
+        MenuService menuService = new MenuService();
+
+        ShiftHelper ShiftHelper = new ShiftHelper();
+        public Update_menu(int menuID,string ChefID)
         {
             InitializeComponent();
             selectedMenuID = menuID;
-            loggedInChefID = chefID;    
+            this.ChefID = ChefID;
         }
 
         private void Update_menu_Load(object sender, EventArgs e)
         {
             // Getting chef main category
             string chefCategory =
-                ShiftHelper.GetChefShift(loggedInChefID);
+                ShiftHelper.GetChefShift(ChefID);
             // Adding chef category
             cmbCategory.Items.Add(chefCategory);
             // Adding shared categories
@@ -150,7 +156,7 @@ namespace CHEF
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-           Chef_Dashboard chef_Dashboard = new Chef_Dashboard();
+           Chef_Dashboard chef_Dashboard = new Chef_Dashboard(ChefID,ChefName);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 chef_Dashboard.WindowState = FormWindowState.Maximized;
@@ -165,7 +171,7 @@ namespace CHEF
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            Manage_Orders manage_Orders = new Manage_Orders();
+            Manage_Orders manage_Orders = new Manage_Orders(ChefID);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 manage_Orders.WindowState = FormWindowState.Maximized;
@@ -177,6 +183,29 @@ namespace CHEF
             manage_Orders.ShowDialog();
             this.Hide();
 
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            Manage_Menu manage_Menu = new Manage_Menu(ChefID);
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                manage_Menu.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                manage_Menu.WindowState = FormWindowState.Normal;
+            }
+            manage_Menu.ShowDialog();
+            this.Hide();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace assignment
     public partial class frmRemoveUser : Form
     {
         private readonly UserRepository _userRepository;
+        SessionManager SessionManager = new SessionManager();
 
         public frmRemoveUser()
         {

@@ -28,48 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblRemove1 = new System.Windows.Forms.Label();
+            this.pnlRemove = new System.Windows.Forms.Panel();
             this.lblWarning = new System.Windows.Forms.Label();
             this.lblRemove = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlSide = new System.Windows.Forms.Panel();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picBoxWarning = new System.Windows.Forms.PictureBox();
+            this.pnlRemove.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxWarning)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTop
             // 
-            this.panel1.BackColor = System.Drawing.Color.IndianRed;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(513, 12);
-            this.panel1.TabIndex = 0;
+            this.pnlTop.BackColor = System.Drawing.Color.IndianRed;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(513, 12);
+            this.pnlTop.TabIndex = 0;
             // 
-            // label1
+            // lblRemove1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Remove Menu Item?";
+            this.lblRemove1.AutoSize = true;
+            this.lblRemove1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemove1.Location = new System.Drawing.Point(109, 154);
+            this.lblRemove1.Name = "lblRemove1";
+            this.lblRemove1.Size = new System.Drawing.Size(309, 32);
+            this.lblRemove1.TabIndex = 2;
+            this.lblRemove1.Text = "Remove Menu Item?";
             // 
-            // panel2
+            // pnlRemove
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.lblWarning);
-            this.panel2.Controls.Add(this.lblRemove);
-            this.panel2.Location = new System.Drawing.Point(94, 211);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(308, 125);
-            this.panel2.TabIndex = 3;
+            this.pnlRemove.BackColor = System.Drawing.Color.White;
+            this.pnlRemove.Controls.Add(this.lblWarning);
+            this.pnlRemove.Controls.Add(this.lblRemove);
+            this.pnlRemove.Location = new System.Drawing.Point(94, 211);
+            this.pnlRemove.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlRemove.Name = "pnlRemove";
+            this.pnlRemove.Size = new System.Drawing.Size(308, 125);
+            this.pnlRemove.TabIndex = 3;
             // 
             // lblWarning
             // 
@@ -93,14 +93,14 @@
             this.lblRemove.Text = "Are you sure you want to remove \r\nthe selected item from menu?";
             this.lblRemove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel3
+            // pnlSide
             // 
-            this.panel3.BackColor = System.Drawing.Color.IndianRed;
-            this.panel3.Location = new System.Drawing.Point(94, 211);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(11, 125);
-            this.panel3.TabIndex = 4;
+            this.pnlSide.BackColor = System.Drawing.Color.IndianRed;
+            this.pnlSide.Location = new System.Drawing.Point(94, 211);
+            this.pnlSide.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlSide.Name = "pnlSide";
+            this.pnlSide.Size = new System.Drawing.Size(11, 125);
+            this.pnlSide.TabIndex = 4;
             // 
             // btnRemove
             // 
@@ -130,16 +130,16 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // pictureBox1
+            // picBoxWarning
             // 
-            this.pictureBox1.Image = global::assignment.Properties.Resources._331_3312690_warning_icon_hd_png_download;
-            this.pictureBox1.Location = new System.Drawing.Point(222, 75);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.picBoxWarning.Image = global::assignment.Properties.Resources._331_3312690_warning_icon_hd_png_download;
+            this.picBoxWarning.Location = new System.Drawing.Point(222, 75);
+            this.picBoxWarning.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.picBoxWarning.Name = "picBoxWarning";
+            this.picBoxWarning.Size = new System.Drawing.Size(47, 62);
+            this.picBoxWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxWarning.TabIndex = 1;
+            this.picBoxWarning.TabStop = false;
             // 
             // Remove_menu
             // 
@@ -148,19 +148,20 @@
             this.ClientSize = new System.Drawing.Size(512, 492);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlSide);
+            this.Controls.Add(this.pnlRemove);
+            this.Controls.Add(this.lblRemove1);
+            this.Controls.Add(this.picBoxWarning);
+            this.Controls.Add(this.pnlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Remove_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Remove_menu";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Remove_menu_Load);
+            this.pnlRemove.ResumeLayout(false);
+            this.pnlRemove.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxWarning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,13 +169,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlTop;
+        private System.Windows.Forms.PictureBox picBoxWarning;
+        private System.Windows.Forms.Label lblRemove1;
+        private System.Windows.Forms.Panel pnlRemove;
         private System.Windows.Forms.Label lblWarning;
         private System.Windows.Forms.Label lblRemove;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlSide;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnCancel;
     }

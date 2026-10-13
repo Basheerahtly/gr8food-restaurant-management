@@ -1,4 +1,5 @@
-﻿using assignment.Helpers;
+﻿using assignment;
+using assignment.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,9 @@ namespace CHEF
 {
     public partial class Manage_Menu : Form
     {
-        private int loggedInChefID; //store logged-in chefID
+        public string ChefID; //store logged-in chefID
+
+        public string ChefName;
 
         private DataTable allMenus; //Store all menus in memory(Database loaded only once)
 
@@ -22,10 +25,13 @@ namespace CHEF
 
         MenuService menuService = new MenuService(); //MenuService object
 
-        public Manage_Menu() //Constructor
+        ShiftHelper ShiftHelper = new ShiftHelper();
+
+
+        public Manage_Menu(string chefRole) //Constructor
         {
             InitializeComponent();
-            loggedInChefID =SessionManager.CurrentUser.Id; 
+            ChefID = chefRole;
 
 
         }
@@ -36,7 +42,7 @@ namespace CHEF
             SetupSearchPlaceholder();//Setting up Search placeholder
             LoadMenu(); // Loading menu from database
            // Getting chef category
-            string chefCategory =ShiftHelper.GetChefShift(loggedInChefID);
+            string chefCategory =ShiftHelper.GetChefShift(ChefID);
             // Updating category button text
             btnMainCat.Text =chefCategory;
             RefreshMenu(); //Display all menus
@@ -45,9 +51,9 @@ namespace CHEF
         }
         private void LoadMenu() //Loading menu from database
         {
-            allMenus = menuService.GetMenusByChef(loggedInChefID);
-                
-            
+            allMenus = menuService.GetMenusByChef(ChefID);
+            DisplayMenus(allMenus);
+
         }
          
         private void DisplayMenus(DataTable dt) // Method to display menu
@@ -154,8 +160,7 @@ namespace CHEF
         {
             if (string.IsNullOrWhiteSpace(tbxSearch.Text))
             {
-                tbxSearch.Text = "Search menu item...";
-                tbxSearch.ForeColor = Color.Gray;
+                SetupSearchPlaceholder();
             }
         }
         private void CategoryButton_Click(object sender, EventArgs e) //Category button click
@@ -194,7 +199,7 @@ namespace CHEF
             if (e.ColumnIndex == dgvMenu.Columns["colUpdate"].Index)
             {
                 //Call update form
-                Update_menu Update_menu = new Update_menu(menuID,loggedInChefID);
+                Update_menu Update_menu = new Update_menu(menuID, ChefID);
                 if (this.WindowState == FormWindowState.Maximized)
                 {
                     Update_menu.WindowState = FormWindowState.Maximized;
@@ -213,7 +218,7 @@ namespace CHEF
             if (e.ColumnIndex == dgvMenu.Columns["colDelete"].Index)
             {
                 //Call Remove form
-                Remove_menu Remove_menu = new Remove_menu(menuID,loggedInChefID);
+                Remove_menu Remove_menu = new Remove_menu(menuID);
                 Remove_menu.ShowDialog();
                 LoadMenu(); //Reload database
                 RefreshMenu();//Refresh UI
@@ -222,7 +227,7 @@ namespace CHEF
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Add_menu add_menu = new Add_menu(loggedInChefID); //Call add_menu form
+            Add_menu add_menu = new Add_menu(ChefID); 
             if (this.WindowState == FormWindowState.Maximized)
             {
                 add_menu.WindowState = FormWindowState.Maximized;
@@ -232,9 +237,9 @@ namespace CHEF
                 add_menu.WindowState = FormWindowState.Normal;
             }
             add_menu.ShowDialog();
+            LoadMenu();
+            RefreshMenu();
             this.Close();
-            LoadMenu(); //ReloadMenus
-            RefreshMenu(); //Refresh UI
         }
         private void SetupDataGridView()//Method to set up dgv
         {
@@ -322,7 +327,7 @@ namespace CHEF
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Chef_Dashboard chef_Dashboard = new Chef_Dashboard();   
+            Chef_Dashboard chef_Dashboard = new Chef_Dashboard(ChefID,ChefName);   
             if (this.WindowState == FormWindowState.Maximized)
             {
                 chef_Dashboard.WindowState = FormWindowState.Maximized;
@@ -376,7 +381,7 @@ namespace CHEF
         }
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            Manage_Orders manage_Orders = new Manage_Orders();
+            Manage_Orders manage_Orders = new Manage_Orders(ChefID);
             if (this.WindowState == FormWindowState.Maximized)
             {
                 manage_Orders.WindowState = FormWindowState.Maximized;
@@ -388,6 +393,14 @@ namespace CHEF
             manage_Orders.ShowDialog();
             this.Close();
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
+            this.Close();
         }
     }
 }

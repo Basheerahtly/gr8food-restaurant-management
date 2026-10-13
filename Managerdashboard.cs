@@ -1,4 +1,5 @@
 ﻿using assignment;
+using assignment.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,9 +44,20 @@ namespace prac
 
 
                 string query =
-                "SELECT Type, SUM(Amount) AS Total " +
-                "FROM WalletTransactions " +
-                "GROUP BY Type";
+                @"SELECT
+                CASE
+                 WHEN Type IN ('TopUp','Top Up','Top-Up')
+                 THEN 'TopUp'
+                ELSE Type
+                END AS Type,
+                SUM(Amount) AS Total
+                FROM WalletTransactions
+                GROUP BY
+                CASE
+                WHEN Type IN ('TopUp','Top Up','Top-Up')
+                THEN 'TopUp'
+                 ELSE Type
+                END";
 
                 DataTable dt = db.ExecuteQuery(query);
 
@@ -182,7 +194,9 @@ namespace prac
 
             if (result == DialogResult.Yes)
             {
-                Managerdashboard login = new Managerdashboard();
+                this.Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.ShowDialog();
                 this.Close(); 
             }
         }
@@ -221,10 +235,11 @@ namespace prac
                 // TOTAL WALLET USAGE
                 object totalUse =
                     db.Executescalar(
-                    "SELECT SUM(Amount) FROM WalletTransactions WHERE Type='Payment'");
+                    "SELECT ISNULL(SUM(Amount),0) FROM WalletTransactions WHERE Type = 'Payment'");
+                
 
                 lblTotalWalletUsageNo.Text =
-                    totalUse.ToString();
+                    Convert.ToDecimal(totalUse).ToString("0.##");
 
 
 
@@ -232,10 +247,11 @@ namespace prac
                 // TOTAL TOPUP
                 object topup =
                     db.Executescalar(
-                    "SELECT SUM(Amount) FROM WalletTransactions WHERE Type='Top-Up'");
+                    "SELECT ISNULL(SUM(Amount),0) FROM WalletTransactions WHERE Type = 'TopUp'");
+                
 
                 lblMonthlyTopupNo.Text =
-                    topup.ToString();
+                    Convert.ToDecimal(topup).ToString("0.##");
 
 
                 // FEEDBACK LABEL
@@ -254,14 +270,14 @@ namespace prac
                     db.Executescalar(
                     "SELECT ISNULL(SUM(Amount),0) " +
                     "FROM WalletTransactions " +
-                    "WHERE Type='Top-Up' " +
+                    "WHERE Type='TopUp' " +
                     "AND MONTH(Date)=MONTH(GETDATE())");
 
                 object lastTopupObj =
                     db.Executescalar(
                     "SELECT ISNULL(SUM(Amount),0) " +
                     "FROM WalletTransactions " +
-                    "WHERE Type='Top-Up' " +
+                    "WHERE Type='TopUp' " +
                     "AND MONTH(Date)=MONTH(GETDATE())-1");
 
                 currentTopup =
@@ -331,8 +347,7 @@ namespace prac
 
                 // ================= ACTIVE CUSTOMERS % =================
 
-                lblActiveCust.Text =
-                    lblActiveCustomerNo.Text + " active users";
+                lblActiveCust.Text = lblActiveCustomerNo.Text + " active customers";
 
                 
 
@@ -380,6 +395,25 @@ namespace prac
         }
 
         private void chartFeedback_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdProf_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmUpdateOwnProfile frmUpdateOwnProfile = new frmUpdateOwnProfile();
+            frmUpdateOwnProfile.ShowDialog();
+            this.Close();
+
+        }
+
+        private void lblActiveCust_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartWallet_Click(object sender, EventArgs e)
         {
 
         }

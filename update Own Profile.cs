@@ -9,16 +9,21 @@ namespace assignment
     public partial class frmUpdateOwnProfile : Form
     {
         private readonly UserRepository _userRepository;
+        SessionManager SessionManager = new SessionManager();
+        Validator Validator = new Validator();
+        PasswordHelper PasswordHelper = new PasswordHelper();
 
         // ─── State ────────────────────────────────────────────────────
         // Username pulled from session — identifies who is logged in
-        private readonly string _sessionUsername = SessionManager.CurrentUser.Username;
+        string _sessionUsername;
         private User _currentAccount = null;
+        
 
         public frmUpdateOwnProfile()
         {
             InitializeComponent();
             _userRepository = new UserRepository();
+            _sessionUsername = SessionManager.CurrentUser?.Username;
             LoadAccountDetails();
             btnUpdate.Enabled = false;
             btnUpdatePassword.Enabled = false;
@@ -42,11 +47,11 @@ namespace assignment
             }
             */
 
-            lblCurrentAccountName.Text = _currentAccount.Username;
-            lblCurrentEmailName.Text = _currentAccount.Email;
-            lblCurrentPhoneNumber.Text = _currentAccount.PhoneNumber;
-            lblCurrentRoleName.Text = _currentAccount.Role;
-            lblCurrentGenderName.Text = _currentAccount.Gender;
+            lblCurrentAccountName.Text = SessionManager.CurrentUser.Username;
+            lblCurrentEmailName.Text = SessionManager.CurrentUser.Email;
+            lblCurrentPhoneNumber.Text = SessionManager.CurrentUser.PhoneNumber;
+            lblCurrentRoleName.Text = SessionManager.CurrentUser.Role;
+            lblCurrentGenderName.Text = SessionManager.CurrentUser.Gender;
         }
 
         // ─── Update Profile Button ────────────────────────────────────
@@ -89,15 +94,15 @@ namespace assignment
             // Build updated User object — blank fields keep existing values
             User updatedUser = new User
             {
-                Id = _currentAccount.Id,
-                Username = string.IsNullOrWhiteSpace(txtNewUsername.Text) ? _currentAccount.Username : txtNewUsername.Text.Trim(),
-                Email = string.IsNullOrWhiteSpace(txtEmail.Text) ? _currentAccount.Email : txtEmail.Text.Trim(),
-                PhoneNumber = string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ? _currentAccount.PhoneNumber : txtPhoneNumber.Text.Trim(),
-                Role = _currentAccount.Role, // admin cannot change their own role
+                Id = SessionManager.CurrentUser.Id,
+                Username = string.IsNullOrWhiteSpace(txtNewUsername.Text) ? SessionManager.CurrentUser.Username : txtNewUsername.Text.Trim(),
+                Email = string.IsNullOrWhiteSpace(txtEmail.Text) ? SessionManager.CurrentUser.Email : txtEmail.Text.Trim(),
+                PhoneNumber = string.IsNullOrWhiteSpace(txtPhoneNumber.Text) ? SessionManager.CurrentUser.PhoneNumber : txtPhoneNumber.Text.Trim(),
+                Role = SessionManager.CurrentUser.Role, // admin cannot change their own role
                 Gender = radioButtonMale.Checked ? "Male"
                             : radioButtonFemale.Checked ? "Female"
-                            : _currentAccount.Gender,
-                IsActive = _currentAccount.IsActive
+                            : SessionManager.CurrentUser.Gender,
+                IsActive = SessionManager.CurrentUser.IsActive
             };
 
             try
@@ -196,7 +201,7 @@ namespace assignment
             bool passwordsMatch = txtNewPassword.Text.Trim() == txtConfirmPassword.Text.Trim();
 
             chkConfirmPasswordUpdate.Enabled = allFilled && passwordsMatch;
-            btnUpdatePassword.Enabled = allFilled && passwordsMatch && chkConfirmPasswordUpdate.Checked;
+      
         }
 
         // ─── Field Change Events ──────────────────────────────────────
@@ -232,7 +237,7 @@ namespace assignment
             }
 
             lblErrorCurrentPassword.Text = PasswordHelper.VerifyPassword(
-                txtCurrentPassword.Text.Trim(), _currentAccount.Password)
+                txtCurrentPassword.Text.Trim(), SessionManager.CurrentUser.Password)
                 ? "" : "Current password does not match.";
 
             EnableUpdatePassword();
@@ -256,6 +261,13 @@ namespace assignment
         private void chkConfirmUpdate_CheckedChanged(object sender, EventArgs e)
         {
             UpdateButtonState();
+            bool allFilled = !string.IsNullOrEmpty(txtCurrentPassword.Text)
+                   && !string.IsNullOrEmpty(txtNewPassword.Text)
+                   && !string.IsNullOrEmpty(txtConfirmPassword.Text);
+
+            bool passwordsMatch = txtNewPassword.Text.Trim() == txtConfirmPassword.Text.Trim();
+
+            btnUpdatePassword.Enabled = allFilled && passwordsMatch && chkConfirmPasswordUpdate.Checked;
         }
 
         private void chkConfirmPasswordUpdate_CheckedChanged(object sender, EventArgs e)
@@ -330,6 +342,18 @@ namespace assignment
 
         }
 
+        private void chkConfirmPasswordUpdate_CheckedChanged_1(object sender, EventArgs e)
+        {
+            UpdateButtonState();
+            bool allFilled = !string.IsNullOrEmpty(txtCurrentPassword.Text)
+                   && !string.IsNullOrEmpty(txtNewPassword.Text)
+                   && !string.IsNullOrEmpty(txtConfirmPassword.Text);
+
+            bool passwordsMatch = txtNewPassword.Text.Trim() == txtConfirmPassword.Text.Trim();
+
+            btnUpdatePassword.Enabled = allFilled && passwordsMatch && chkConfirmPasswordUpdate.Checked;
+
+        }
     }
 }
 

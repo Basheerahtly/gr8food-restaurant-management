@@ -32,7 +32,7 @@
             this.pictureBoxBackToHome = new System.Windows.Forms.PictureBox();
             this.lblBackToHome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblRemoveUserPortal = new System.Windows.Forms.Label();
+            this.lblUpdateUserPortal = new System.Windows.Forms.Label();
             this.lblCurrentAccount = new System.Windows.Forms.Label();
             this.lblCurrentAccountName = new System.Windows.Forms.Label();
             this.lblCurrentEmail = new System.Windows.Forms.Label();
@@ -66,16 +66,18 @@
             this.chkConfirmPassword = new System.Windows.Forms.CheckBox();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.lblConfirmNewPassword = new System.Windows.Forms.Label();
-            this.btnUpdatePassword = new System.Windows.Forms.Button();
-            this.chkConfirmPasswordUpdate = new System.Windows.Forms.CheckBox();
             this.lblErrorUsername = new System.Windows.Forms.Label();
             this.lblErrorEmail = new System.Windows.Forms.Label();
             this.lblErrorPhone = new System.Windows.Forms.Label();
             this.lblErrorNewPassword = new System.Windows.Forms.Label();
             this.lblErrorConfirmPassword = new System.Windows.Forms.Label();
             this.lblErrorCurrentPassword = new System.Windows.Forms.Label();
+            this.chkConfirmPasswordUpdate = new System.Windows.Forms.CheckBox();
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
+            this.pictureBoxIconLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxBackToHome
@@ -112,16 +114,16 @@
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
-            // lblRemoveUserPortal
+            // lblUpdateUserPortal
             // 
-            this.lblRemoveUserPortal.AutoSize = true;
-            this.lblRemoveUserPortal.Font = new System.Drawing.Font("Century Gothic", 24F);
-            this.lblRemoveUserPortal.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lblRemoveUserPortal.Location = new System.Drawing.Point(33, 130);
-            this.lblRemoveUserPortal.Name = "lblRemoveUserPortal";
-            this.lblRemoveUserPortal.Size = new System.Drawing.Size(581, 58);
-            this.lblRemoveUserPortal.TabIndex = 14;
-            this.lblRemoveUserPortal.Text = "Update Own User Profile";
+            this.lblUpdateUserPortal.AutoSize = true;
+            this.lblUpdateUserPortal.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.lblUpdateUserPortal.ForeColor = System.Drawing.Color.DarkOliveGreen;
+            this.lblUpdateUserPortal.Location = new System.Drawing.Point(33, 130);
+            this.lblUpdateUserPortal.Name = "lblUpdateUserPortal";
+            this.lblUpdateUserPortal.Size = new System.Drawing.Size(581, 58);
+            this.lblUpdateUserPortal.TabIndex = 14;
+            this.lblUpdateUserPortal.Text = "Update Own User Profile";
             // 
             // lblCurrentAccount
             // 
@@ -135,6 +137,9 @@
             // 
             // lblCurrentAccountName
             // 
+            this.lblCurrentAccountName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentAccountName.AutoSize = true;
             this.lblCurrentAccountName.Font = new System.Drawing.Font("Constantia", 10F);
             this.lblCurrentAccountName.ForeColor = System.Drawing.Color.DarkRed;
@@ -145,6 +150,9 @@
             // 
             // lblCurrentEmail
             // 
+            this.lblCurrentEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentEmail.AutoSize = true;
             this.lblCurrentEmail.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblCurrentEmail.Location = new System.Drawing.Point(62, 353);
@@ -155,6 +163,9 @@
             // 
             // lblCurrentEmailName
             // 
+            this.lblCurrentEmailName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentEmailName.AutoSize = true;
             this.lblCurrentEmailName.Font = new System.Drawing.Font("Constantia", 10F);
             this.lblCurrentEmailName.ForeColor = System.Drawing.Color.DarkRed;
@@ -165,6 +176,9 @@
             // 
             // lblCurrentPhone
             // 
+            this.lblCurrentPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentPhone.AutoSize = true;
             this.lblCurrentPhone.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblCurrentPhone.Location = new System.Drawing.Point(62, 420);
@@ -175,6 +189,9 @@
             // 
             // lblCurrentPhoneNumber
             // 
+            this.lblCurrentPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentPhoneNumber.AutoSize = true;
             this.lblCurrentPhoneNumber.Font = new System.Drawing.Font("Constantia", 10F);
             this.lblCurrentPhoneNumber.ForeColor = System.Drawing.Color.DarkRed;
@@ -185,6 +202,9 @@
             // 
             // lblCurrentRole
             // 
+            this.lblCurrentRole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentRole.AutoSize = true;
             this.lblCurrentRole.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblCurrentRole.Location = new System.Drawing.Point(62, 487);
@@ -195,6 +215,9 @@
             // 
             // lblCurrentRoleName
             // 
+            this.lblCurrentRoleName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentRoleName.AutoSize = true;
             this.lblCurrentRoleName.Font = new System.Drawing.Font("Constantia", 10F);
             this.lblCurrentRoleName.ForeColor = System.Drawing.Color.DarkRed;
@@ -205,6 +228,9 @@
             // 
             // lblCurrentGender
             // 
+            this.lblCurrentGender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentGender.AutoSize = true;
             this.lblCurrentGender.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.lblCurrentGender.Location = new System.Drawing.Point(62, 556);
@@ -215,6 +241,9 @@
             // 
             // lblCurrentGenderName
             // 
+            this.lblCurrentGenderName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentGenderName.AutoSize = true;
             this.lblCurrentGenderName.Font = new System.Drawing.Font("Constantia", 10F);
             this.lblCurrentGenderName.ForeColor = System.Drawing.Color.DarkRed;
@@ -225,6 +254,9 @@
             // 
             // lblNewUsername
             // 
+            this.lblNewUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNewUsername.AutoSize = true;
             this.lblNewUsername.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewUsername.Location = new System.Drawing.Point(552, 284);
@@ -235,6 +267,9 @@
             // 
             // lblNewEmail
             // 
+            this.lblNewEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNewEmail.AutoSize = true;
             this.lblNewEmail.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewEmail.Location = new System.Drawing.Point(552, 356);
@@ -245,6 +280,9 @@
             // 
             // lblNewPhoneNumber
             // 
+            this.lblNewPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNewPhoneNumber.AutoSize = true;
             this.lblNewPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewPhoneNumber.Location = new System.Drawing.Point(552, 420);
@@ -255,6 +293,9 @@
             // 
             // lblChangeRole
             // 
+            this.lblChangeRole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblChangeRole.AutoSize = true;
             this.lblChangeRole.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangeRole.Location = new System.Drawing.Point(552, 486);
@@ -265,6 +306,9 @@
             // 
             // lblChangeGender
             // 
+            this.lblChangeGender.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblChangeGender.AutoSize = true;
             this.lblChangeGender.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChangeGender.Location = new System.Drawing.Point(552, 556);
@@ -275,44 +319,59 @@
             // 
             // txtNewUsername
             // 
-            this.txtNewUsername.Location = new System.Drawing.Point(758, 284);
+            this.txtNewUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNewUsername.Location = new System.Drawing.Point(757, 279);
             this.txtNewUsername.Name = "txtNewUsername";
-            this.txtNewUsername.Size = new System.Drawing.Size(195, 26);
+            this.txtNewUsername.Size = new System.Drawing.Size(292, 26);
             this.txtNewUsername.TabIndex = 31;
             this.txtNewUsername.TextChanged += new System.EventHandler(this.txtNewUsername_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(758, 354);
+            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmail.Location = new System.Drawing.Point(760, 356);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(195, 26);
+            this.txtEmail.Size = new System.Drawing.Size(289, 26);
             this.txtEmail.TabIndex = 32;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(758, 415);
+            this.txtPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(760, 420);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(195, 26);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(289, 26);
             this.txtPhoneNumber.TabIndex = 33;
             this.txtPhoneNumber.TextChanged += new System.EventHandler(this.txtPhoneNumber_TextChanged);
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "System Admin",
             "Manager",
-            "Chef 1",
-            "Chef 2",
-            "Chef 3"});
-            this.comboBox1.Location = new System.Drawing.Point(758, 482);
+            "Chef1",
+            "Chef2",
+            "Chef3"});
+            this.comboBox1.Location = new System.Drawing.Point(757, 484);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 28);
+            this.comboBox1.Size = new System.Drawing.Size(292, 28);
             this.comboBox1.TabIndex = 34;
             // 
             // radioButtonMale
             // 
+            this.radioButtonMale.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonMale.AutoSize = true;
             this.radioButtonMale.Location = new System.Drawing.Point(758, 557);
             this.radioButtonMale.Name = "radioButtonMale";
@@ -324,6 +383,9 @@
             // 
             // radioButtonFemale
             // 
+            this.radioButtonFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButtonFemale.AutoSize = true;
             this.radioButtonFemale.Location = new System.Drawing.Point(866, 555);
             this.radioButtonFemale.Name = "radioButtonFemale";
@@ -335,8 +397,11 @@
             // 
             // chkConfirmUpdate
             // 
+            this.chkConfirmUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chkConfirmUpdate.AutoSize = true;
-            this.chkConfirmUpdate.Location = new System.Drawing.Point(387, 696);
+            this.chkConfirmUpdate.Location = new System.Drawing.Point(760, 700);
             this.chkConfirmUpdate.Name = "chkConfirmUpdate";
             this.chkConfirmUpdate.Size = new System.Drawing.Size(147, 24);
             this.chkConfirmUpdate.TabIndex = 37;
@@ -346,24 +411,34 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(355, 726);
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(211)))), ((int)(((byte)(200)))));
+            this.btnUpdate.Location = new System.Drawing.Point(698, 730);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(219, 55);
+            this.btnUpdate.Size = new System.Drawing.Size(269, 95);
             this.btnUpdate.TabIndex = 38;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(1152, 176);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.panel1.Location = new System.Drawing.Point(1168, 257);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(3, 525);
+            this.panel1.Size = new System.Drawing.Size(10, 398);
             this.panel1.TabIndex = 39;
             // 
             // chkCurrentPassword
             // 
+            this.chkCurrentPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chkCurrentPassword.AutoSize = true;
             this.chkCurrentPassword.BackColor = System.Drawing.Color.Transparent;
             this.chkCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -391,16 +466,22 @@
             // 
             // txtCurrentPassword
             // 
+            this.txtCurrentPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCurrentPassword.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCurrentPassword.Location = new System.Drawing.Point(1316, 285);
+            this.txtCurrentPassword.Location = new System.Drawing.Point(1306, 283);
             this.txtCurrentPassword.Name = "txtCurrentPassword";
-            this.txtCurrentPassword.Size = new System.Drawing.Size(279, 29);
+            this.txtCurrentPassword.Size = new System.Drawing.Size(291, 29);
             this.txtCurrentPassword.TabIndex = 68;
             this.txtCurrentPassword.UseSystemPasswordChar = true;
             this.txtCurrentPassword.TextChanged += new System.EventHandler(this.txtCurrentPassword_TextChanged);
             // 
             // chkNewPassword
             // 
+            this.chkNewPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chkNewPassword.AutoSize = true;
             this.chkNewPassword.BackColor = System.Drawing.Color.Transparent;
             this.chkNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -414,10 +495,13 @@
             // 
             // txtNewPassword
             // 
+            this.txtNewPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNewPassword.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(1316, 429);
+            this.txtNewPassword.Location = new System.Drawing.Point(1306, 429);
             this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(279, 29);
+            this.txtNewPassword.Size = new System.Drawing.Size(366, 29);
             this.txtNewPassword.TabIndex = 70;
             this.txtNewPassword.UseSystemPasswordChar = true;
             this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
@@ -438,6 +522,9 @@
             // 
             // chkConfirmPassword
             // 
+            this.chkConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chkConfirmPassword.AutoSize = true;
             this.chkConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.chkConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -451,10 +538,13 @@
             // 
             // txtConfirmPassword
             // 
+            this.txtConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConfirmPassword.Font = new System.Drawing.Font("Gadugi", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(1316, 565);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(1306, 568);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(279, 29);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(366, 29);
             this.txtConfirmPassword.TabIndex = 73;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
@@ -473,28 +563,11 @@
             this.lblConfirmNewPassword.TabIndex = 72;
             this.lblConfirmNewPassword.Text = "Confirm New Password";
             // 
-            // btnUpdatePassword
-            // 
-            this.btnUpdatePassword.Location = new System.Drawing.Point(1346, 726);
-            this.btnUpdatePassword.Name = "btnUpdatePassword";
-            this.btnUpdatePassword.Size = new System.Drawing.Size(219, 55);
-            this.btnUpdatePassword.TabIndex = 76;
-            this.btnUpdatePassword.Text = "Update Password";
-            this.btnUpdatePassword.UseVisualStyleBackColor = true;
-            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
-            // 
-            // chkConfirmPasswordUpdate
-            // 
-            this.chkConfirmPasswordUpdate.AutoSize = true;
-            this.chkConfirmPasswordUpdate.Location = new System.Drawing.Point(1378, 696);
-            this.chkConfirmPasswordUpdate.Name = "chkConfirmPasswordUpdate";
-            this.chkConfirmPasswordUpdate.Size = new System.Drawing.Size(147, 24);
-            this.chkConfirmPasswordUpdate.TabIndex = 75;
-            this.chkConfirmPasswordUpdate.Text = "Confirm Update";
-            this.chkConfirmPasswordUpdate.UseVisualStyleBackColor = true;
-            // 
             // lblErrorUsername
             // 
+            this.lblErrorUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrorUsername.AutoSize = true;
             this.lblErrorUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
             this.lblErrorUsername.ForeColor = System.Drawing.Color.DarkRed;
@@ -505,6 +578,9 @@
             // 
             // lblErrorEmail
             // 
+            this.lblErrorEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrorEmail.AutoSize = true;
             this.lblErrorEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
             this.lblErrorEmail.ForeColor = System.Drawing.Color.DarkRed;
@@ -515,6 +591,9 @@
             // 
             // lblErrorPhone
             // 
+            this.lblErrorPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrorPhone.AutoSize = true;
             this.lblErrorPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
             this.lblErrorPhone.ForeColor = System.Drawing.Color.DarkRed;
@@ -525,6 +604,9 @@
             // 
             // lblErrorNewPassword
             // 
+            this.lblErrorNewPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrorNewPassword.AutoSize = true;
             this.lblErrorNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
             this.lblErrorNewPassword.ForeColor = System.Drawing.Color.DarkRed;
@@ -535,6 +617,9 @@
             // 
             // lblErrorConfirmPassword
             // 
+            this.lblErrorConfirmPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrorConfirmPassword.AutoSize = true;
             this.lblErrorConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
             this.lblErrorConfirmPassword.ForeColor = System.Drawing.Color.DarkRed;
@@ -545,19 +630,61 @@
             // 
             // lblErrorCurrentPassword
             // 
+            this.lblErrorCurrentPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblErrorCurrentPassword.AutoSize = true;
             this.lblErrorCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
             this.lblErrorCurrentPassword.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblErrorCurrentPassword.Location = new System.Drawing.Point(1518, 317);
+            this.lblErrorCurrentPassword.Location = new System.Drawing.Point(2277, 476);
             this.lblErrorCurrentPassword.Name = "lblErrorCurrentPassword";
             this.lblErrorCurrentPassword.Size = new System.Drawing.Size(0, 15);
             this.lblErrorCurrentPassword.TabIndex = 82;
+            // 
+            // chkConfirmPasswordUpdate
+            // 
+            this.chkConfirmPasswordUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkConfirmPasswordUpdate.AutoSize = true;
+            this.chkConfirmPasswordUpdate.Location = new System.Drawing.Point(1395, 710);
+            this.chkConfirmPasswordUpdate.Name = "chkConfirmPasswordUpdate";
+            this.chkConfirmPasswordUpdate.Size = new System.Drawing.Size(147, 24);
+            this.chkConfirmPasswordUpdate.TabIndex = 75;
+            this.chkConfirmPasswordUpdate.Text = "Confirm Update";
+            this.chkConfirmPasswordUpdate.UseVisualStyleBackColor = true;
+            this.chkConfirmPasswordUpdate.CheckedChanged += new System.EventHandler(this.chkConfirmPasswordUpdate_CheckedChanged_1);
+            // 
+            // btnUpdatePassword
+            // 
+            this.btnUpdatePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUpdatePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(211)))), ((int)(((byte)(200)))));
+            this.btnUpdatePassword.Location = new System.Drawing.Point(1346, 740);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(242, 85);
+            this.btnUpdatePassword.TabIndex = 76;
+            this.btnUpdatePassword.Text = "Update Password";
+            this.btnUpdatePassword.UseVisualStyleBackColor = false;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdatePassword_Click);
+            // 
+            // pictureBoxIconLogo
+            // 
+            this.pictureBoxIconLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxIconLogo.Image")));
+            this.pictureBoxIconLogo.Location = new System.Drawing.Point(1889, -1);
+            this.pictureBoxIconLogo.Name = "pictureBoxIconLogo";
+            this.pictureBoxIconLogo.Size = new System.Drawing.Size(280, 129);
+            this.pictureBoxIconLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxIconLogo.TabIndex = 83;
+            this.pictureBoxIconLogo.TabStop = false;
             // 
             // frmUpdateOwnProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1878, 924);
+            this.ClientSize = new System.Drawing.Size(2161, 1060);
+            this.Controls.Add(this.pictureBoxIconLogo);
             this.Controls.Add(this.lblErrorCurrentPassword);
             this.Controls.Add(this.lblErrorConfirmPassword);
             this.Controls.Add(this.lblErrorNewPassword);
@@ -600,7 +727,7 @@
             this.Controls.Add(this.lblCurrentAccountName);
             this.Controls.Add(this.lblCurrentAccount);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblRemoveUserPortal);
+            this.Controls.Add(this.lblUpdateUserPortal);
             this.Controls.Add(this.pictureBoxBackToHome);
             this.Controls.Add(this.lblBackToHome);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -609,6 +736,7 @@
             this.Load += new System.EventHandler(this.frmUpdateOwnProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackToHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIconLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -619,7 +747,7 @@
         private System.Windows.Forms.PictureBox pictureBoxBackToHome;
         private System.Windows.Forms.Label lblBackToHome;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblRemoveUserPortal;
+        private System.Windows.Forms.Label lblUpdateUserPortal;
         private System.Windows.Forms.Label lblCurrentAccount;
         private System.Windows.Forms.Label lblCurrentAccountName;
         private System.Windows.Forms.Label lblCurrentEmail;
@@ -653,13 +781,14 @@
         private System.Windows.Forms.CheckBox chkConfirmPassword;
         private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label lblConfirmNewPassword;
-        private System.Windows.Forms.Button btnUpdatePassword;
-        private System.Windows.Forms.CheckBox chkConfirmPasswordUpdate;
         private System.Windows.Forms.Label lblErrorUsername;
         private System.Windows.Forms.Label lblErrorEmail;
         private System.Windows.Forms.Label lblErrorPhone;
         private System.Windows.Forms.Label lblErrorNewPassword;
         private System.Windows.Forms.Label lblErrorConfirmPassword;
         private System.Windows.Forms.Label lblErrorCurrentPassword;
+        private System.Windows.Forms.CheckBox chkConfirmPasswordUpdate;
+        private System.Windows.Forms.Button btnUpdatePassword;
+        private System.Windows.Forms.PictureBox pictureBoxIconLogo;
     }
 }

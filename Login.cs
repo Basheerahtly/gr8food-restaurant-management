@@ -12,6 +12,11 @@ namespace assignment
     public partial class frmLogin : Form
     {
         private readonly UserRepository _userRepository;
+        SessionManager SessionManager = new SessionManager();
+        public string thisrole;
+        public string thisname;
+        public int thisId;
+        PasswordHelper PasswordHelper = new PasswordHelper();
 
         // ─── State ────────────────────────────────────────────────────
         private int _attemptsRemaining = 3;
@@ -43,48 +48,57 @@ namespace assignment
                 lblError.Text = "Please enter your username and password.";
                 return;
             }
-
-            // Retrieve user from database via UserRepository
-            // The form does not write any SQL — that is the repository's job (Separation of Concerns)
-            User user = _userRepository.GetUserByUsername(username);
-
-            // Check if user exists
-            if (user == null)
+            try
             {
-                MessageBox.Show("User does not exist.", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                // Check if user exists
+                User user = _userRepository.GetUserByUsername(username);
+                if (user == null)
+                {
+                    MessageBox.Show("User does not exist.", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                // Retrieve user from database via UserRepository
+                // The form does not write any SQL — that is the repository's job (Separation of Concerns
+                thisrole = user.Role;
+                thisname = user.Username;
+                thisId = user.Id;
+
+                // Check if account has been disabled by admin
+                if (!user.IsActive)
+                {
+                    MessageBox.Show(
+                        "Your account has been disabled.\nPlease contact the system administrator.",
+                        "Account Disabled",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Verify password using PasswordHelper
+                // PasswordHelper hashes the entered password and compares it to the stored hash
+                // Passwords are never stored or compared as plain text (Security best practice)
+                if (PasswordHelper.VerifyPassword(password, user.Password))
+                {
+                    // Store the logged-in user globally using SessionManager
+                    // This allows all other forms to access the current user without passing it manually
+                    SessionManager.Login(user);
+
+                    MessageBox.Show($"Welcome, {user.Username}!", "Login Successful",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Hide();
+                    OpenRoleForm(user.Role);
+                }
+                else
+                {
+                    HandleFailedAttempt();
+                }
             }
-
-            // Check if account has been disabled by admin
-            if (!user.IsActive)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Your account has been disabled.\nPlease contact the system administrator.",
-                    "Account Disabled",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                return;
-            }
-
-            // Verify password using PasswordHelper
-            // PasswordHelper hashes the entered password and compares it to the stored hash
-            // Passwords are never stored or compared as plain text (Security best practice)
-            if (PasswordHelper.VerifyPassword(password, user.Password))
-            {
-                // Store the logged-in user globally using SessionManager
-                // This allows all other forms to access the current user without passing it manually
-                SessionManager.Login(user);
-
-                MessageBox.Show($"Welcome, {user.Username}!", "Login Successful",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                this.Hide();
-                OpenRoleForm(user.Role);
-            }
-            else
-            {
-                HandleFailedAttempt();
+                MessageBox.Show("Login Failed: " + ex.Message,
+    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -94,41 +108,46 @@ namespace assignment
         // Uses a switch statement so adding new roles only requires one new case here
         private void OpenRoleForm(string role)
         {
-            Form nextForm;
-
-            switch (role)
+            try
             {
-                case "System Admin":
-                    nextForm = new frmSystemAdmin();
-                    break;
-                
-                case "Customer":
-                    nextForm = new Form1();
-                    break;
-                case "Manager":
-                    nextForm = new Managerdashboard();
-                    break;
-                case "Chef":
-                    nextForm = new Chef_Dashboard();
-                    break;
-                
-                    /*
-            case "Cashier":
-                nextForm = new frmCashier();
-                break;
-            case "Kitchen Staff":
-                nextForm = new frmKitchen();
-                break;
-                */
-                default:
-                    MessageBox.Show($"No dashboard found for role: {role}",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Show();
-                    return;
-            }
+                Form nextForm;
+                switch (role)
+                {
+                    case "System Admin":
+                        nextForm = new frmSystemAdmin();
+                        break;
 
-            nextForm.ShowDialog();
-            this.Close();
+                    case "Customer":
+                        nextForm = new Form1(thisId);
+                        break;
+                    case "Manager":
+                        nextForm = new Managerdashboard();
+                        break;
+                    case "Chef1":
+                        nextForm = new Chef_Dashboard(thisrole, thisname);
+                        break;
+                    case "Chef2":
+                        nextForm = new Chef_Dashboard(thisrole, thisname);
+                        break;
+                    case "Chef3":
+                        nextForm = new Chef_Dashboard(thisrole, thisname);
+                        break;
+                    default:
+                        MessageBox.Show($"No dashboard found for role: {role}",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Show();
+                        return;
+                }
+
+                nextForm.ShowDialog();
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to open dashboard: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Show();
+            }
         }
 
         // ─── Failed Login Handler ─────────────────────────────────────
@@ -177,6 +196,16 @@ namespace assignment
             frmEntrance frmEntrance = new frmEntrance();
             frmEntrance.ShowDialog();
             this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

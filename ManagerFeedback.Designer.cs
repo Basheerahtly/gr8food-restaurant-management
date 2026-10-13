@@ -35,7 +35,7 @@
             this.lblManagerResponse = new System.Windows.Forms.Label();
             this.txtResponse = new System.Windows.Forms.TextBox();
             this.btnRespond = new System.Windows.Forms.Button();
-            this.pnlFeedbackManagement = new System.Windows.Forms.Panel();
+            this.pnlFeedbackManagementHdr = new System.Windows.Forms.Panel();
             this.lblFbSubtitle = new System.Windows.Forms.Label();
             this.lblFeedbackManagement = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -47,21 +47,21 @@
             this.btnResetFb = new System.Windows.Forms.Button();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.btnFilterFb = new System.Windows.Forms.Button();
-            this.pnlNegativeFb = new System.Windows.Forms.Panel();
+            this.pnlNegativeFbCard = new System.Windows.Forms.Panel();
             this.lblNegativePercent = new System.Windows.Forms.Label();
             this.picNegative = new System.Windows.Forms.PictureBox();
             this.lblNegativeNo = new System.Windows.Forms.Label();
             this.lblNegativeFb = new System.Windows.Forms.Label();
-            this.pnlTotalFb = new System.Windows.Forms.Panel();
+            this.pnlTotalFbCard = new System.Windows.Forms.Panel();
             this.picTotalFeedback = new System.Windows.Forms.PictureBox();
             this.lblTtlFb = new System.Windows.Forms.Label();
             this.lblTotalFeedback = new System.Windows.Forms.Label();
-            this.pnlNeutralFb = new System.Windows.Forms.Panel();
+            this.pnlNeutralFbCard = new System.Windows.Forms.Panel();
             this.lblNeutralPercent = new System.Windows.Forms.Label();
             this.picNeutral = new System.Windows.Forms.PictureBox();
             this.lblNeutralNo = new System.Windows.Forms.Label();
             this.lblNeutralFb = new System.Windows.Forms.Label();
-            this.pnlPositiveFb = new System.Windows.Forms.Panel();
+            this.pnlPositiveFbCard = new System.Windows.Forms.Panel();
             this.lblPositivePercent = new System.Windows.Forms.Label();
             this.picPositive = new System.Windows.Forms.PictureBox();
             this.lblPositiveNo = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.lblFbDetailsDate = new System.Windows.Forms.Label();
             this.lblFb = new System.Windows.Forms.Label();
             this.pnlFeedbackMsg = new System.Windows.Forms.Panel();
-            this.lblFbDetail = new System.Windows.Forms.Label();
+            this.lblFbMsg = new System.Windows.Forms.Label();
             this.lblFeedbackType = new System.Windows.Forms.Label();
             this.lblFbName = new System.Windows.Forms.Label();
             this.lblFbTopic = new System.Windows.Forms.Label();
@@ -97,14 +97,14 @@
             this.tlpnlFbBody = new System.Windows.Forms.TableLayoutPanel();
             this.pnlFeedbackList = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeedback)).BeginInit();
-            this.pnlFeedbackManagement.SuspendLayout();
-            this.pnlNegativeFb.SuspendLayout();
+            this.pnlFeedbackManagementHdr.SuspendLayout();
+            this.pnlNegativeFbCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNegative)).BeginInit();
-            this.pnlTotalFb.SuspendLayout();
+            this.pnlTotalFbCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTotalFeedback)).BeginInit();
-            this.pnlNeutralFb.SuspendLayout();
+            this.pnlNeutralFbCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNeutral)).BeginInit();
-            this.pnlPositiveFb.SuspendLayout();
+            this.pnlPositiveFbCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPositive)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFeedbackList)).BeginInit();
             this.pnlFbDetails.SuspendLayout();
@@ -165,7 +165,7 @@
             this.lblManagerResponse.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblManagerResponse.Location = new System.Drawing.Point(-3, 199);
             this.lblManagerResponse.Name = "lblManagerResponse";
-            this.lblManagerResponse.Size = new System.Drawing.Size(202, 28);
+            this.lblManagerResponse.Size = new System.Drawing.Size(170, 23);
             this.lblManagerResponse.TabIndex = 2;
             this.lblManagerResponse.Text = " Manager Response:";
             // 
@@ -199,16 +199,16 @@
             this.btnRespond.UseVisualStyleBackColor = false;
             this.btnRespond.Click += new System.EventHandler(this.btnRespond_Click);
             // 
-            // pnlFeedbackManagement
+            // pnlFeedbackManagementHdr
             // 
-            this.pnlFeedbackManagement.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.pnlFeedbackManagement.Controls.Add(this.lblFbSubtitle);
-            this.pnlFeedbackManagement.Controls.Add(this.lblFeedbackManagement);
-            this.pnlFeedbackManagement.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFeedbackManagement.Location = new System.Drawing.Point(0, 0);
-            this.pnlFeedbackManagement.Name = "pnlFeedbackManagement";
-            this.pnlFeedbackManagement.Size = new System.Drawing.Size(984, 50);
-            this.pnlFeedbackManagement.TabIndex = 7;
+            this.pnlFeedbackManagementHdr.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.pnlFeedbackManagementHdr.Controls.Add(this.lblFbSubtitle);
+            this.pnlFeedbackManagementHdr.Controls.Add(this.lblFeedbackManagement);
+            this.pnlFeedbackManagementHdr.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFeedbackManagementHdr.Location = new System.Drawing.Point(0, 0);
+            this.pnlFeedbackManagementHdr.Name = "pnlFeedbackManagementHdr";
+            this.pnlFeedbackManagementHdr.Size = new System.Drawing.Size(984, 50);
+            this.pnlFeedbackManagementHdr.TabIndex = 7;
             // 
             // lblFbSubtitle
             // 
@@ -217,7 +217,7 @@
             this.lblFbSubtitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblFbSubtitle.Location = new System.Drawing.Point(13, 24);
             this.lblFbSubtitle.Name = "lblFbSubtitle";
-            this.lblFbSubtitle.Size = new System.Drawing.Size(597, 28);
+            this.lblFbSubtitle.Size = new System.Drawing.Size(521, 23);
             this.lblFbSubtitle.TabIndex = 1;
             this.lblFbSubtitle.Text = "View customer feedback and respond to enhance their experience\r\n";
             // 
@@ -228,7 +228,7 @@
             this.lblFeedbackManagement.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblFeedbackManagement.Location = new System.Drawing.Point(12, 0);
             this.lblFeedbackManagement.Name = "lblFeedbackManagement";
-            this.lblFeedbackManagement.Size = new System.Drawing.Size(335, 36);
+            this.lblFeedbackManagement.Size = new System.Drawing.Size(284, 31);
             this.lblFeedbackManagement.TabIndex = 0;
             this.lblFeedbackManagement.Text = "Feedback Management";
             // 
@@ -253,9 +253,9 @@
             this.dtpToDate.CustomFormat = "dd/MM/yyy";
             this.dtpToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpToDate.Location = new System.Drawing.Point(393, 26);
+            this.dtpToDate.Location = new System.Drawing.Point(393, 28);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(162, 30);
+            this.dtpToDate.Size = new System.Drawing.Size(162, 26);
             this.dtpToDate.TabIndex = 9;
             // 
             // lblToDate
@@ -287,9 +287,9 @@
             this.cmbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCustomer.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cmbCustomer.FormattingEnabled = true;
-            this.cmbCustomer.Location = new System.Drawing.Point(3, 26);
+            this.cmbCustomer.Location = new System.Drawing.Point(3, 28);
             this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(217, 30);
+            this.cmbCustomer.Size = new System.Drawing.Size(217, 26);
             this.cmbCustomer.TabIndex = 5;
             this.cmbCustomer.Text = " 👤 -- All Customers --";
             this.cmbCustomer.SelectedIndexChanged += new System.EventHandler(this.cmbCustomer_SelectedIndexChanged);
@@ -326,9 +326,9 @@
             this.dtpFromDate.CustomFormat = "dd/MM/yyyy";
             this.dtpFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFromDate.Location = new System.Drawing.Point(226, 26);
+            this.dtpFromDate.Location = new System.Drawing.Point(226, 28);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(161, 30);
+            this.dtpFromDate.Size = new System.Drawing.Size(161, 26);
             this.dtpFromDate.TabIndex = 6;
             // 
             // btnFilterFb
@@ -346,18 +346,18 @@
             this.btnFilterFb.UseVisualStyleBackColor = false;
             this.btnFilterFb.Click += new System.EventHandler(this.btnFilterFb_Click);
             // 
-            // pnlNegativeFb
+            // pnlNegativeFbCard
             // 
-            this.pnlNegativeFb.BackColor = System.Drawing.Color.SeaShell;
-            this.pnlNegativeFb.Controls.Add(this.lblNegativePercent);
-            this.pnlNegativeFb.Controls.Add(this.picNegative);
-            this.pnlNegativeFb.Controls.Add(this.lblNegativeNo);
-            this.pnlNegativeFb.Controls.Add(this.lblNegativeFb);
-            this.pnlNegativeFb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNegativeFb.Location = new System.Drawing.Point(621, 3);
-            this.pnlNegativeFb.Name = "pnlNegativeFb";
-            this.pnlNegativeFb.Size = new System.Drawing.Size(201, 104);
-            this.pnlNegativeFb.TabIndex = 14;
+            this.pnlNegativeFbCard.BackColor = System.Drawing.Color.SeaShell;
+            this.pnlNegativeFbCard.Controls.Add(this.lblNegativePercent);
+            this.pnlNegativeFbCard.Controls.Add(this.picNegative);
+            this.pnlNegativeFbCard.Controls.Add(this.lblNegativeNo);
+            this.pnlNegativeFbCard.Controls.Add(this.lblNegativeFb);
+            this.pnlNegativeFbCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNegativeFbCard.Location = new System.Drawing.Point(621, 3);
+            this.pnlNegativeFbCard.Name = "pnlNegativeFbCard";
+            this.pnlNegativeFbCard.Size = new System.Drawing.Size(201, 104);
+            this.pnlNegativeFbCard.TabIndex = 14;
             // 
             // lblNegativePercent
             // 
@@ -366,7 +366,7 @@
             this.lblNegativePercent.ForeColor = System.Drawing.Color.Black;
             this.lblNegativePercent.Location = new System.Drawing.Point(106, 81);
             this.lblNegativePercent.Name = "lblNegativePercent";
-            this.lblNegativePercent.Size = new System.Drawing.Size(63, 32);
+            this.lblNegativePercent.Size = new System.Drawing.Size(53, 28);
             this.lblNegativePercent.TabIndex = 13;
             this.lblNegativePercent.Text = "24%";
             // 
@@ -388,7 +388,7 @@
             this.lblNegativeNo.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNegativeNo.Location = new System.Drawing.Point(110, 36);
             this.lblNegativeNo.Name = "lblNegativeNo";
-            this.lblNegativeNo.Size = new System.Drawing.Size(56, 65);
+            this.lblNegativeNo.Size = new System.Drawing.Size(46, 54);
             this.lblNegativeNo.TabIndex = 8;
             this.lblNegativeNo.Text = "6";
             // 
@@ -399,21 +399,21 @@
             this.lblNegativeFb.ForeColor = System.Drawing.Color.Crimson;
             this.lblNegativeFb.Location = new System.Drawing.Point(86, 15);
             this.lblNegativeFb.Name = "lblNegativeFb";
-            this.lblNegativeFb.Size = new System.Drawing.Size(112, 32);
+            this.lblNegativeFb.Size = new System.Drawing.Size(93, 28);
             this.lblNegativeFb.TabIndex = 6;
             this.lblNegativeFb.Text = "Negative";
             // 
-            // pnlTotalFb
+            // pnlTotalFbCard
             // 
-            this.pnlTotalFb.BackColor = System.Drawing.Color.Honeydew;
-            this.pnlTotalFb.Controls.Add(this.picTotalFeedback);
-            this.pnlTotalFb.Controls.Add(this.lblTtlFb);
-            this.pnlTotalFb.Controls.Add(this.lblTotalFeedback);
-            this.pnlTotalFb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTotalFb.Location = new System.Drawing.Point(3, 3);
-            this.pnlTotalFb.Name = "pnlTotalFb";
-            this.pnlTotalFb.Size = new System.Drawing.Size(200, 104);
-            this.pnlTotalFb.TabIndex = 13;
+            this.pnlTotalFbCard.BackColor = System.Drawing.Color.Honeydew;
+            this.pnlTotalFbCard.Controls.Add(this.picTotalFeedback);
+            this.pnlTotalFbCard.Controls.Add(this.lblTtlFb);
+            this.pnlTotalFbCard.Controls.Add(this.lblTotalFeedback);
+            this.pnlTotalFbCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTotalFbCard.Location = new System.Drawing.Point(3, 3);
+            this.pnlTotalFbCard.Name = "pnlTotalFbCard";
+            this.pnlTotalFbCard.Size = new System.Drawing.Size(200, 104);
+            this.pnlTotalFbCard.TabIndex = 13;
             // 
             // picTotalFeedback
             // 
@@ -433,7 +433,7 @@
             this.lblTtlFb.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTtlFb.Location = new System.Drawing.Point(107, 40);
             this.lblTtlFb.Name = "lblTtlFb";
-            this.lblTtlFb.Size = new System.Drawing.Size(84, 65);
+            this.lblTtlFb.Size = new System.Drawing.Size(69, 54);
             this.lblTtlFb.TabIndex = 5;
             this.lblTtlFb.Text = "25";
             // 
@@ -444,22 +444,22 @@
             this.lblTotalFeedback.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lblTotalFeedback.Location = new System.Drawing.Point(74, 23);
             this.lblTotalFeedback.Name = "lblTotalFeedback";
-            this.lblTotalFeedback.Size = new System.Drawing.Size(175, 32);
+            this.lblTotalFeedback.Size = new System.Drawing.Size(146, 28);
             this.lblTotalFeedback.TabIndex = 4;
             this.lblTotalFeedback.Text = "Total Feedback";
             // 
-            // pnlNeutralFb
+            // pnlNeutralFbCard
             // 
-            this.pnlNeutralFb.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.pnlNeutralFb.Controls.Add(this.lblNeutralPercent);
-            this.pnlNeutralFb.Controls.Add(this.picNeutral);
-            this.pnlNeutralFb.Controls.Add(this.lblNeutralNo);
-            this.pnlNeutralFb.Controls.Add(this.lblNeutralFb);
-            this.pnlNeutralFb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNeutralFb.Location = new System.Drawing.Point(415, 3);
-            this.pnlNeutralFb.Name = "pnlNeutralFb";
-            this.pnlNeutralFb.Size = new System.Drawing.Size(200, 104);
-            this.pnlNeutralFb.TabIndex = 14;
+            this.pnlNeutralFbCard.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.pnlNeutralFbCard.Controls.Add(this.lblNeutralPercent);
+            this.pnlNeutralFbCard.Controls.Add(this.picNeutral);
+            this.pnlNeutralFbCard.Controls.Add(this.lblNeutralNo);
+            this.pnlNeutralFbCard.Controls.Add(this.lblNeutralFb);
+            this.pnlNeutralFbCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlNeutralFbCard.Location = new System.Drawing.Point(415, 3);
+            this.pnlNeutralFbCard.Name = "pnlNeutralFbCard";
+            this.pnlNeutralFbCard.Size = new System.Drawing.Size(200, 104);
+            this.pnlNeutralFbCard.TabIndex = 14;
             // 
             // lblNeutralPercent
             // 
@@ -468,7 +468,7 @@
             this.lblNeutralPercent.ForeColor = System.Drawing.Color.Black;
             this.lblNeutralPercent.Location = new System.Drawing.Point(93, 82);
             this.lblNeutralPercent.Name = "lblNeutralPercent";
-            this.lblNeutralPercent.Size = new System.Drawing.Size(63, 32);
+            this.lblNeutralPercent.Size = new System.Drawing.Size(53, 28);
             this.lblNeutralPercent.TabIndex = 12;
             this.lblNeutralPercent.Text = "37%";
             // 
@@ -490,7 +490,7 @@
             this.lblNeutralNo.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNeutralNo.Location = new System.Drawing.Point(97, 41);
             this.lblNeutralNo.Name = "lblNeutralNo";
-            this.lblNeutralNo.Size = new System.Drawing.Size(56, 65);
+            this.lblNeutralNo.Size = new System.Drawing.Size(46, 54);
             this.lblNeutralNo.TabIndex = 7;
             this.lblNeutralNo.Text = "9";
             this.lblNeutralNo.Click += new System.EventHandler(this.lblNeutralNo_Click);
@@ -502,22 +502,22 @@
             this.lblNeutralFb.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblNeutralFb.Location = new System.Drawing.Point(82, 20);
             this.lblNeutralFb.Name = "lblNeutralFb";
-            this.lblNeutralFb.Size = new System.Drawing.Size(96, 32);
+            this.lblNeutralFb.Size = new System.Drawing.Size(79, 28);
             this.lblNeutralFb.TabIndex = 5;
             this.lblNeutralFb.Text = "Neutral";
             // 
-            // pnlPositiveFb
+            // pnlPositiveFbCard
             // 
-            this.pnlPositiveFb.BackColor = System.Drawing.Color.MintCream;
-            this.pnlPositiveFb.Controls.Add(this.lblPositivePercent);
-            this.pnlPositiveFb.Controls.Add(this.picPositive);
-            this.pnlPositiveFb.Controls.Add(this.lblPositiveNo);
-            this.pnlPositiveFb.Controls.Add(this.lblPositiveFb);
-            this.pnlPositiveFb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPositiveFb.Location = new System.Drawing.Point(209, 3);
-            this.pnlPositiveFb.Name = "pnlPositiveFb";
-            this.pnlPositiveFb.Size = new System.Drawing.Size(200, 104);
-            this.pnlPositiveFb.TabIndex = 14;
+            this.pnlPositiveFbCard.BackColor = System.Drawing.Color.MintCream;
+            this.pnlPositiveFbCard.Controls.Add(this.lblPositivePercent);
+            this.pnlPositiveFbCard.Controls.Add(this.picPositive);
+            this.pnlPositiveFbCard.Controls.Add(this.lblPositiveNo);
+            this.pnlPositiveFbCard.Controls.Add(this.lblPositiveFb);
+            this.pnlPositiveFbCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlPositiveFbCard.Location = new System.Drawing.Point(209, 3);
+            this.pnlPositiveFbCard.Name = "pnlPositiveFbCard";
+            this.pnlPositiveFbCard.Size = new System.Drawing.Size(200, 104);
+            this.pnlPositiveFbCard.TabIndex = 14;
             // 
             // lblPositivePercent
             // 
@@ -526,7 +526,7 @@
             this.lblPositivePercent.ForeColor = System.Drawing.Color.Lime;
             this.lblPositivePercent.Location = new System.Drawing.Point(113, 82);
             this.lblPositivePercent.Name = "lblPositivePercent";
-            this.lblPositivePercent.Size = new System.Drawing.Size(63, 32);
+            this.lblPositivePercent.Size = new System.Drawing.Size(53, 28);
             this.lblPositivePercent.TabIndex = 11;
             this.lblPositivePercent.Text = "40%";
             // 
@@ -548,7 +548,7 @@
             this.lblPositiveNo.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPositiveNo.Location = new System.Drawing.Point(109, 37);
             this.lblPositiveNo.Name = "lblPositiveNo";
-            this.lblPositiveNo.Size = new System.Drawing.Size(84, 65);
+            this.lblPositiveNo.Size = new System.Drawing.Size(69, 54);
             this.lblPositiveNo.TabIndex = 6;
             this.lblPositiveNo.Text = "10";
             // 
@@ -559,7 +559,7 @@
             this.lblPositiveFb.ForeColor = System.Drawing.Color.Green;
             this.lblPositiveFb.Location = new System.Drawing.Point(98, 20);
             this.lblPositiveFb.Name = "lblPositiveFb";
-            this.lblPositiveFb.Size = new System.Drawing.Size(98, 32);
+            this.lblPositiveFb.Size = new System.Drawing.Size(83, 28);
             this.lblPositiveFb.TabIndex = 2;
             this.lblPositiveFb.Text = "Positive";
             // 
@@ -569,7 +569,7 @@
             this.lblFeedbackList.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedbackList.Location = new System.Drawing.Point(43, 15);
             this.lblFeedbackList.Name = "lblFeedbackList";
-            this.lblFeedbackList.Size = new System.Drawing.Size(164, 31);
+            this.lblFeedbackList.Size = new System.Drawing.Size(136, 25);
             this.lblFeedbackList.TabIndex = 14;
             this.lblFeedbackList.Text = "Feedback List:";
             // 
@@ -637,7 +637,7 @@
             this.lblFeedbackTypePN.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedbackTypePN.Location = new System.Drawing.Point(120, 106);
             this.lblFeedbackTypePN.Name = "lblFeedbackTypePN";
-            this.lblFeedbackTypePN.Size = new System.Drawing.Size(29, 28);
+            this.lblFeedbackTypePN.Size = new System.Drawing.Size(26, 23);
             this.lblFeedbackTypePN.TabIndex = 16;
             this.lblFeedbackTypePN.Text = ": -";
             // 
@@ -647,7 +647,7 @@
             this.lblFbDetailTopic.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFbDetailTopic.Location = new System.Drawing.Point(120, 89);
             this.lblFbDetailTopic.Name = "lblFbDetailTopic";
-            this.lblFbDetailTopic.Size = new System.Drawing.Size(135, 28);
+            this.lblFbDetailTopic.Size = new System.Drawing.Size(116, 23);
             this.lblFbDetailTopic.TabIndex = 15;
             this.lblFbDetailTopic.Text = ": Food Quality\r\n";
             // 
@@ -657,7 +657,7 @@
             this.lblFbDetailsDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFbDetailsDate.Location = new System.Drawing.Point(117, 72);
             this.lblFbDetailsDate.Name = "lblFbDetailsDate";
-            this.lblFbDetailsDate.Size = new System.Drawing.Size(139, 28);
+            this.lblFbDetailsDate.Size = new System.Drawing.Size(118, 23);
             this.lblFbDetailsDate.TabIndex = 14;
             this.lblFbDetailsDate.Text = ": 30 April 2026\n";
             // 
@@ -667,7 +667,7 @@
             this.lblFb.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFb.Location = new System.Drawing.Point(3, 129);
             this.lblFb.Name = "lblFb";
-            this.lblFb.Size = new System.Drawing.Size(106, 28);
+            this.lblFb.Size = new System.Drawing.Size(92, 23);
             this.lblFb.TabIndex = 13;
             this.lblFb.Text = "Feedback:";
             // 
@@ -676,23 +676,23 @@
             this.pnlFeedbackMsg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlFeedbackMsg.BackColor = System.Drawing.Color.Gainsboro;
-            this.pnlFeedbackMsg.Controls.Add(this.lblFbDetail);
+            this.pnlFeedbackMsg.Controls.Add(this.lblFbMsg);
             this.pnlFeedbackMsg.Location = new System.Drawing.Point(0, 149);
             this.pnlFeedbackMsg.Name = "pnlFeedbackMsg";
             this.pnlFeedbackMsg.Size = new System.Drawing.Size(236, 37);
             this.pnlFeedbackMsg.TabIndex = 10;
             // 
-            // lblFbDetail
+            // lblFbMsg
             // 
-            this.lblFbDetail.AutoSize = true;
-            this.lblFbDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFbDetail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFbDetail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFbDetail.Location = new System.Drawing.Point(0, 0);
-            this.lblFbDetail.Name = "lblFbDetail";
-            this.lblFbDetail.Size = new System.Drawing.Size(95, 28);
-            this.lblFbDetail.TabIndex = 14;
-            this.lblFbDetail.Text = "Feedback";
+            this.lblFbMsg.AutoSize = true;
+            this.lblFbMsg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFbMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFbMsg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblFbMsg.Location = new System.Drawing.Point(0, 0);
+            this.lblFbMsg.Name = "lblFbMsg";
+            this.lblFbMsg.Size = new System.Drawing.Size(84, 23);
+            this.lblFbMsg.TabIndex = 14;
+            this.lblFbMsg.Text = "Feedback";
             // 
             // lblFeedbackType
             // 
@@ -700,7 +700,7 @@
             this.lblFeedbackType.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFeedbackType.Location = new System.Drawing.Point(3, 106);
             this.lblFeedbackType.Name = "lblFeedbackType";
-            this.lblFeedbackType.Size = new System.Drawing.Size(171, 28);
+            this.lblFeedbackType.Size = new System.Drawing.Size(144, 23);
             this.lblFeedbackType.TabIndex = 10;
             this.lblFeedbackType.Text = "★ Feedback Type";
             // 
@@ -710,7 +710,7 @@
             this.lblFbName.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFbName.Location = new System.Drawing.Point(55, 32);
             this.lblFbName.Name = "lblFbName";
-            this.lblFbName.Size = new System.Drawing.Size(77, 31);
+            this.lblFbName.Size = new System.Drawing.Size(64, 25);
             this.lblFbName.TabIndex = 1;
             this.lblFbName.Text = "Name\r\n";
             // 
@@ -720,7 +720,7 @@
             this.lblFbTopic.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFbTopic.Location = new System.Drawing.Point(3, 89);
             this.lblFbTopic.Name = "lblFbTopic";
-            this.lblFbTopic.Size = new System.Drawing.Size(93, 28);
+            this.lblFbTopic.Size = new System.Drawing.Size(78, 23);
             this.lblFbTopic.TabIndex = 11;
             this.lblFbTopic.Text = "📋 Topic";
             // 
@@ -742,7 +742,7 @@
             this.lblFbDetails.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblFbDetails.Location = new System.Drawing.Point(5, 8);
             this.lblFbDetails.Name = "lblFbDetails";
-            this.lblFbDetails.Size = new System.Drawing.Size(200, 31);
+            this.lblFbDetails.Size = new System.Drawing.Size(165, 25);
             this.lblFbDetails.TabIndex = 0;
             this.lblFbDetails.Text = "Feedback Details:";
             // 
@@ -752,7 +752,7 @@
             this.lblFbDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFbDate.Location = new System.Drawing.Point(3, 72);
             this.lblFbDate.Name = "lblFbDate";
-            this.lblFbDate.Size = new System.Drawing.Size(88, 28);
+            this.lblFbDate.Size = new System.Drawing.Size(75, 23);
             this.lblFbDate.TabIndex = 12;
             this.lblFbDate.Text = "🗓 Date\r\n";
             // 
@@ -850,6 +850,7 @@
             this.btnUpdProf.Text = "👤 Update Profile";
             this.btnUpdProf.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdProf.UseVisualStyleBackColor = false;
+            this.btnUpdProf.Click += new System.EventHandler(this.btnUpdProf_Click);
             // 
             // btnLogout
             // 
@@ -878,10 +879,10 @@
             this.tlpnlFbCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpnlFbCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpnlFbCards.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpnlFbCards.Controls.Add(this.pnlTotalFb, 0, 0);
-            this.tlpnlFbCards.Controls.Add(this.pnlNegativeFb, 3, 0);
-            this.tlpnlFbCards.Controls.Add(this.pnlPositiveFb, 1, 0);
-            this.tlpnlFbCards.Controls.Add(this.pnlNeutralFb, 2, 0);
+            this.tlpnlFbCards.Controls.Add(this.pnlTotalFbCard, 0, 0);
+            this.tlpnlFbCards.Controls.Add(this.pnlNegativeFbCard, 3, 0);
+            this.tlpnlFbCards.Controls.Add(this.pnlPositiveFbCard, 1, 0);
+            this.tlpnlFbCards.Controls.Add(this.pnlNeutralFbCard, 2, 0);
             this.tlpnlFbCards.Location = new System.Drawing.Point(159, 129);
             this.tlpnlFbCards.Name = "tlpnlFbCards";
             this.tlpnlFbCards.RowCount = 1;
@@ -969,7 +970,7 @@
             // 
             // ManagerFeedback
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(20F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -978,7 +979,7 @@
             this.Controls.Add(this.tlpnlOuterFb);
             this.Controls.Add(this.tlpnlFbCards);
             this.Controls.Add(this.pnlSidebarFeedback);
-            this.Controls.Add(this.pnlFeedbackManagement);
+            this.Controls.Add(this.pnlFeedbackManagementHdr);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ManagerFeedback";
@@ -986,19 +987,19 @@
             this.Text = "t";
             this.Load += new System.EventHandler(this.Feedback_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeedback)).EndInit();
-            this.pnlFeedbackManagement.ResumeLayout(false);
-            this.pnlFeedbackManagement.PerformLayout();
-            this.pnlNegativeFb.ResumeLayout(false);
-            this.pnlNegativeFb.PerformLayout();
+            this.pnlFeedbackManagementHdr.ResumeLayout(false);
+            this.pnlFeedbackManagementHdr.PerformLayout();
+            this.pnlNegativeFbCard.ResumeLayout(false);
+            this.pnlNegativeFbCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNegative)).EndInit();
-            this.pnlTotalFb.ResumeLayout(false);
-            this.pnlTotalFb.PerformLayout();
+            this.pnlTotalFbCard.ResumeLayout(false);
+            this.pnlTotalFbCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTotalFeedback)).EndInit();
-            this.pnlNeutralFb.ResumeLayout(false);
-            this.pnlNeutralFb.PerformLayout();
+            this.pnlNeutralFbCard.ResumeLayout(false);
+            this.pnlNeutralFbCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNeutral)).EndInit();
-            this.pnlPositiveFb.ResumeLayout(false);
-            this.pnlPositiveFb.PerformLayout();
+            this.pnlPositiveFbCard.ResumeLayout(false);
+            this.pnlPositiveFbCard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPositive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFeedbackList)).EndInit();
             this.pnlFbDetails.ResumeLayout(false);
@@ -1028,7 +1029,7 @@
         private System.Windows.Forms.Label lblManagerResponse;
         private System.Windows.Forms.TextBox txtResponse;
         private System.Windows.Forms.Button btnRespond;
-        private System.Windows.Forms.Panel pnlFeedbackManagement;
+        private System.Windows.Forms.Panel pnlFeedbackManagementHdr;
         private System.Windows.Forms.Label lblFeedbackManagement;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lblFbSubtitle;
@@ -1040,19 +1041,19 @@
         private System.Windows.Forms.Button btnFilterFb;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.Label lblToDate;
-        private System.Windows.Forms.Panel pnlNegativeFb;
+        private System.Windows.Forms.Panel pnlNegativeFbCard;
         private System.Windows.Forms.PictureBox picNegative;
         private System.Windows.Forms.Label lblNegativeNo;
         private System.Windows.Forms.Label lblNegativeFb;
-        private System.Windows.Forms.Panel pnlTotalFb;
+        private System.Windows.Forms.Panel pnlTotalFbCard;
         private System.Windows.Forms.PictureBox picTotalFeedback;
         private System.Windows.Forms.Label lblTtlFb;
         private System.Windows.Forms.Label lblTotalFeedback;
-        private System.Windows.Forms.Panel pnlNeutralFb;
+        private System.Windows.Forms.Panel pnlNeutralFbCard;
         private System.Windows.Forms.PictureBox picNeutral;
         private System.Windows.Forms.Label lblNeutralNo;
         private System.Windows.Forms.Label lblNeutralFb;
-        private System.Windows.Forms.Panel pnlPositiveFb;
+        private System.Windows.Forms.Panel pnlPositiveFbCard;
         private System.Windows.Forms.PictureBox picPositive;
         private System.Windows.Forms.Label lblPositiveNo;
         private System.Windows.Forms.Label lblFeedbackList;
@@ -1065,7 +1066,7 @@
         private System.Windows.Forms.Label lblFbName;
         private System.Windows.Forms.Label lblFbDate;
         private System.Windows.Forms.Label lblFb;
-        private System.Windows.Forms.Label lblFbDetail;
+        private System.Windows.Forms.Label lblFbMsg;
         private System.Windows.Forms.Panel pnlFeedbackMsg;
         private System.Windows.Forms.Label lblFbDetailsDate;
         private System.Windows.Forms.Label lblFeedbackTypePN;

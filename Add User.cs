@@ -12,6 +12,8 @@ namespace assignment
     public partial class frmAddUser : Form
     {
         private readonly UserRepository _userRepository;
+        Validator Validator = new Validator();
+        PasswordHelper PasswordHelper = new PasswordHelper();
 
         public frmAddUser()
         {
@@ -24,9 +26,6 @@ namespace assignment
 
         private void pictureBoxBackToHome_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmSystemAdmin frmSystemAdmin = new frmSystemAdmin();
-            frmSystemAdmin.ShowDialog();
             this.Close();
         }
 
@@ -174,6 +173,41 @@ namespace assignment
         private void btnClear_Click(object sender, EventArgs e) 
         {
             ClearForm();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSecurity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblAddUserPortal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAddUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
